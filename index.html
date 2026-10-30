@@ -671,6 +671,82 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
 .hero>div:first-child{background:linear-gradient(135deg,#fff 0%,#EEF6F0 100%)}
 .btn.ghost{background:transparent}
 .kpi .bar i{background:linear-gradient(90deg,var(--brand),#3F9A63)} .spin{border-color:#D5E6DA;border-top-color:var(--brand)}
+/* ---- v3 ---- */
+.chk-list{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.chk-row{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:var(--surface)}
+.chk-row .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px;flex:none;color:#fff;background:var(--muted)}
+.chk-row.ok .ic{background:var(--ok)} .chk-row.bad .ic{background:var(--bad)} .chk-row.warn .ic{background:var(--warn)}
+.chk-row.bad{border-color:#F3B6C0;background:var(--bad-bg)}
+.chk-row b{display:block;font-size:13.5px} .chk-row small{color:var(--muted);font-size:12.5px}
+.pasos{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+details.aj>summary{cursor:pointer;list-style:none}
+details.aj>summary::-webkit-details-marker{display:none}
+.sub-card.tF{border-left:5px solid var(--bad)} .sub-card.tS{border-left:5px solid var(--ok)}
+.sub-card .t b .pill{font-size:10.5px;vertical-align:2px}
+.op-top h1 .pill{font-size:11px;vertical-align:2px;background:rgba(255,255,255,.92)}
+.it .prevq{grid-area:pv;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:64px;border-radius:10px;background:var(--orange-soft);color:var(--orange-ink);padding:3px 8px;line-height:1.1}
+.it .prevq small{font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.it .prevq b{font-size:17px;font-variant-numeric:tabular-nums}
+.items.r2 .it{grid-template-areas:"c1 des des" "pv obs q"}
+@media (min-width:700px){
+  .items.r2 .it,.items.r2 .it-head{grid-template-columns:150px minmax(0,1fr) 80px auto 200px}
+  .items.r2 .it{grid-template-areas:"c1 des pv q obs"}
+}
+@media (min-width:700px){ .items.r2 .it-head span:nth-child(3){min-width:0;text-align:center} .items.r2 .it-head span:nth-child(4){min-width:196px;text-align:center} }
+.items.r2 .it{grid-template-areas:"c1 des des" "pv q q" "obs obs obs"}
+.items.r2 .it .q{justify-self:end}
+@media (min-width:700px){ .items.r2 .it{grid-template-areas:"c1 des pv q obs"} }
+
+/* ---------- v3 · Pantallas sin desplazamiento lateral ---------- */
+.content{max-width:none}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(165px,1fr))}
+.grid.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,540px),1fr))}
+.grid.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+table{font-size:13px}
+th{padding:7px 8px;white-space:normal;line-height:1.2}
+td{padding:5px 8px}
+td.desc{min-width:190px;max-width:none;white-space:normal}
+td.wrap{white-space:normal}
+td .sub2,.sub2{display:block;font-size:11.5px;color:var(--muted);font-weight:500;margin-top:1px;white-space:normal}
+.cts{display:inline-grid;grid-template-columns:repeat(3,minmax(30px,auto));gap:6px;font-variant-numeric:tabular-nums}
+.cts i{font-style:normal;text-align:right} .cts i.nul{color:var(--line)} .cts i.fin{font-weight:800;color:var(--fg)}
+.av2{display:flex;align-items:center;gap:8px;min-width:120px} .av2 .avance{flex:1;min-width:60px} .av2 span{font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.mchip.off{background:#FCE4E8;border-color:#F3B6C0;color:var(--bad)}
+.rcard .acts .btn{white-space:normal;text-align:left}
+.filters .fld input[type=search]{min-width:180px}
+/* menú lateral contraíble */
+.side{position:sticky}
+.side-tg{position:absolute;top:8px;right:8px;z-index:3;width:28px;height:28px;border-radius:8px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:#fff;font-weight:800;cursor:pointer;line-height:1}
+.app{transition:grid-template-columns .2s var(--ease)}
+.app.mini{grid-template-columns:66px minmax(0,1fr)}
+.app.mini .side{padding:0 6px 14px;overflow-x:hidden}
+.app.mini .side .brand{margin:0 -6px 8px;padding:44px 6px 12px}
+.app.mini .side .brand .logo-txt b,.app.mini .side .brand .logo-txt span:not(.leaf){display:none}
+.app.mini .side .brand .logo-txt .leaf{width:38px;height:38px;margin:0}
+.app.mini .side-tg{right:50%;transform:translateX(50%)}
+.app.mini .nav-sec,.app.mini .foot-side{display:none}
+.app.mini .nav-item{justify-content:center;padding:10px 0}
+.app.mini .nav-item>span:not(.ic){display:none}
+.app.mini .nav-item .new{display:block;position:absolute;top:2px;right:2px;font-size:8.5px;padding:0 4px}
+.app.mini .nav-item[aria-current="page"]::before{left:-6px}
+@media (max-width:1500px){
+  .top{padding-right:250px}
+  .ark{width:235px;padding-right:18px}
+  .ark::before{clip-path:polygon(50px 0,100% 0,100% 100%,0 100%)}
+  .ark::after{clip-path:polygon(62px 0,100% 0,100% 100%,12px 100%)}
+  .ark img{height:36px}
+  .content{padding:16px 18px 0}
+  .kpi .v{font-size:clamp(19px,1.9vw,25px)}
+}
+@media (max-width:900px){
+  .side-tg{display:none}
+  .app.mini{grid-template-columns:1fr}
+  .navlist{flex-wrap:wrap;overflow-x:visible}
+  .app.mini .nav-item>span:not(.ic){display:inline}
+  .app.mini .nav-sec{display:none}
+  .app.mini .side .brand .logo-txt b{display:block}
+  .top{padding-right:16px}
+}
 
 </style></head><body>
 <script>document.body.dataset.unidad='verde';</script>
@@ -693,7 +769,7 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
       <img src="data:image/png;base64,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" alt="Arketops">
     </div>
     <div class="modos">
-      <button class="modo" type="button" id="goConteo"><span class="ic" data-ic="scan"></span><h2>Hoja de conteo</h2><p>Para quien cuenta: elige su nombre, ve solo el ítem y la descripción de los subgrupos que le asignaron y registra cantidades. Funciona desde el celular.</p><span class="cta">Entrar a contar →</span></button>
+      <button class="modo" type="button" id="goConteo"><span class="ic" data-ic="scan"></span><h2>Hoja de conteo</h2><p>Para quien cuenta: elige su nombre, ve solo el ítem y la descripción de los bloques que le asignaron y registra cantidades. Funciona desde el celular.</p><span class="cta">Entrar a contar →</span></button>
       <button class="modo ctl" type="button" id="goControl"><span class="ic" data-ic="chart"></span><h2>Centro de control</h2><p>Para el encargado y la auditoría: carga de existencias, asignación de subgrupos, avance en vivo, diferencias, segundo y tercer conteo, y plano de ajuste para SIESA.</p><span class="cta">Entrar con clave →</span></button>
     </div>
     <div class="pie"><span>Agrococorollo · Punto de venta PV001</span><span>Arketops – Soluciones Contables y Empresariales · Área de Control · Medellín</span></div>
@@ -724,6 +800,7 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
 <!-- ============ CENTRO DE CONTROL ============ -->
 <div class="app" id="ctlApp" hidden>
 <aside class="side">
+  <button class="side-tg" type="button" id="sideTg" title="Contraer / expandir el menú" aria-label="Contraer o expandir el menú">«</button>
   <div class="brand"><div class="logo-txt"><span class="leaf" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 4-14 16-16-1 11-7 15-16 16z"/><path d="M4 20c4-5 8-8 12-10"/></svg></span><b>AGROCOCOROLLO</b><span>Control de Inventarios</span></div></div>
   <nav class="navlist" aria-label="Secciones">
     <div class="nav-sec">Conteo</div>
@@ -740,7 +817,7 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
     <div class="nav-sec">Salir</div>
     <button class="nav-item" type="button" data-go-portada data-ic="scan"><span class="ic"></span><span>Ir a la hoja de conteo</span></button>
   </nav>
-  <div class="foot-side">v2.1 · Arketops · Área de Control</div>
+  <div class="foot-side">v3.0 · Arketops · Área de Control</div>
 </aside>
 
 <div class="main">
@@ -756,7 +833,7 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
 <!-- ============ INICIO ============ -->
 <section class="view" id="v-inicio">
   <div class="hero">
-    <div><h2>Cargue las existencias y arme el inventario</h2><p>Arrastre la consulta de existencias de SIESA (<b>Item · Desc. item · SUBGRUPO · Existencia · Costo prom. unit. (ins)</b>). La app la reconoce por su contenido, deja por fuera los ítems <b>INACTIVO / BLOQUEADO</b> y arma una hoja de conteo por subgrupo. Volver a cargar una consulta nueva <b>actualiza</b> existencias y costos sin perder lo ya contado.</p></div>
+    <div><h2>Cargue las existencias y arme el inventario</h2><p>Arrastre la consulta de existencias de SIESA (<b>Item · Desc. item · SUBGRUPO · Existencia · Costo prom. unit. (ins)</b>). La app la reconoce por su contenido y arma una hoja de conteo por subgrupo. Los ítems <b>INACTIVO / BLOQUEADO</b> sin existencia quedan por fuera; los que tienen existencia se cuentan marcados. Volver a cargar una consulta nueva <b>actualiza</b> existencias y costos sin perder lo ya contado.</p></div>
     <label class="drop" id="dropAll"><input type="file" id="fAll" accept=".xlsx,.xlsm,.xls,.csv"><span class="drop-ic" data-ic="upload"></span><b>Soltar la consulta de existencias aquí</b><small>o haga clic para buscarla · .xls · .xlsx · .csv</small></label>
   </div>
   <div class="grid g2" style="margin-top:14px">
@@ -767,24 +844,24 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
     <div class="grid g3">
       <div><b>1 · Centro de control</b><p class="muted small" style="margin:4px 0 0">Cargue las existencias, cree los operadores y asigne subgrupos. Abra la ronda 1.</p></div>
       <div><b>2 · Hoja de conteo</b><p class="muted small" style="margin:4px 0 0">Cada operador entra con su nombre desde el celular, ve solo ítem y descripción y registra cantidades. Todo se guarda al instante.</p></div>
-      <div><b>3 · Rondas y plano</b><p class="muted small" style="margin:4px 0 0">Al cerrar la ronda 1 la app arma la ronda 2 solo con diferencias; luego la 3. Al final genera el plano de ajuste para SIESA.</p></div>
+      <div><b>3 · Rondas y plano</b><p class="muted small" style="margin:4px 0 0">Al cerrar la ronda 1 (sin nada pendiente) la app arma la ronda 2 con las diferencias, separadas en faltantes y sobrantes; luego la 3. Al final genera el plano de conteo físico para SIESA.</p></div>
     </div></div>
 </section>
 
 <!-- ============ TABLERO ============ -->
 <section class="view" id="v-tablero" hidden>
-  <div class="filters sticky-f"><label class="fld">Ronda<select id="t_ronda"></select></label><label class="fld">Subgrupo<select id="t_sub"></select></label><span class="live" id="liveT"><i></i>actualizando en vivo</span><span class="muted small" id="t_info" style="margin-left:auto"></span></div>
+  <div class="filters sticky-f"><label class="fld">Ronda<select id="t_ronda"></select></label><label class="fld">Bloque<select id="t_sub"></select></label><span class="live" id="liveT"><i></i>actualizando en vivo</span><span class="muted small" id="t_info" style="margin-left:auto"></span></div>
   <div class="kpis kpis-x" id="kpisT"></div>
   <div class="grid g2">
-    <div class="panel"><div class="hd"><h2>Avance por subgrupo <span class="tag">clic en una barra para filtrar</span></h2></div><div class="chart-box" style="height:380px"><canvas id="chSub"></canvas></div></div>
+    <div class="panel"><div class="hd"><h2>Avance por bloque <span class="tag">clic en una barra para filtrar</span></h2></div><div class="chart-box" style="height:380px"><canvas id="chSub"></canvas></div></div>
     <div class="panel"><div class="hd"><h2>Operadores <span class="tag">quién va cómo</span></h2></div><div id="tblOps"></div></div>
   </div>
   <div class="grid g2" style="margin-top:14px">
     <div class="panel"><div class="hd"><h2>Ritmo del conteo <span class="tag">registros por cada 15 minutos</span></h2></div><div class="chart-box"><canvas id="chRitmo"></canvas></div><div class="muted small" id="ritmo"></div></div>
-    <div class="panel"><div class="hd"><h2>Diferencias en pesos por subgrupo <span class="tag">contado − existencia, a costo (ins)</span></h2></div><div class="chart-box"><canvas id="chDif"></canvas></div></div>
+    <div class="panel"><div class="hd"><h2>Diferencias en pesos por bloque <span class="tag">contado − existencia, a costo (ins)</span></h2></div><div class="chart-box"><canvas id="chDif"></canvas></div></div>
   </div>
   <div class="grid g2" style="margin-top:14px">
-    <div class="panel"><div class="hd"><h2>Ítems sin contar por subgrupo <span class="tag">lo que falta en esta ronda</span></h2></div><div id="tblPend"></div></div>
+    <div class="panel"><div class="hd"><h2>Ítems sin contar por bloque <span class="tag">la ronda no cierra hasta llegar a cero</span></h2></div><div id="tblPend"></div></div>
     <div class="panel"><div class="hd"><h2>Últimos registros <span class="tag">lo que acaba de pasar</span></h2></div><div id="tblLog"></div></div>
   </div>
 </section>
@@ -796,8 +873,8 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
     <div class="panel"><div class="hd"><h2>Operadores</h2><span class="muted small">Nombre y PIN opcional para entrar desde el celular</span></div>
       <div class="opbox"><label class="fld">Nombre<input type="text" id="op_nom" placeholder="Nombre del operador"></label><label class="fld">PIN<input type="text" id="op_pin" inputmode="numeric" maxlength="6" placeholder="opcional" style="width:90px"></label><button class="btn pri" type="button" id="op_add">Agregar</button></div>
       <div id="tblOperadores"></div></div>
-    <div class="panel"><div class="hd"><h2>Asignación de subgrupos <span class="tag" id="asigTag"></span></h2><div style="display:flex;gap:6px"><button class="btn" type="button" id="asigAuto">Repartir automático</button><button class="btn" type="button" id="asigClear">Limpiar</button></div></div>
-      <div id="tblAsig"></div></div>
+    <div class="panel"><div class="hd"><h2>Asignación de bloques <span class="tag" id="asigTag"></span></h2><div style="display:flex;gap:6px"><button class="btn" type="button" id="asigAuto">Repartir automático</button><button class="btn" type="button" id="asigClear">Limpiar</button></div></div>
+      <div id="asigTipo"></div><div id="tblAsig"></div></div>
   </div>
 </section>
 
@@ -822,12 +899,32 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
 
 <!-- ============ PLANO ============ -->
 <section class="view" id="v-planos" hidden>
-  <div class="filters"><label class="fld">Tipo<select id="p_tipo"><option value="">Salidas y entradas</option><option value="S">Solo salidas (faltantes)</option><option value="E">Solo entradas (sobrantes)</option></select></label><label class="fld">Subgrupo<select id="p_sub"></select></label><button class="btn" type="button" id="p_all">Marcar todo</button><button class="btn" type="button" id="p_none">Desmarcar</button>
-    <div style="margin-left:auto;display:flex;gap:8px"><button class="btn pri" type="button" id="btnSal">Plano de SALIDAS</button><button class="btn pri" type="button" id="btnEnt">Plano de ENTRADAS</button></div></div>
-  <div id="plaMsg"></div>
-  <div class="kpis" id="kpisPla"></div>
-  <div class="panel"><div id="tblPla"></div></div>
-  <p class="note">Formato del conector SIESA «Ajuste de inventario»: hoja Documentos y hoja Movimientos. Los códigos de documento, motivo, CO y bodega se fijan en Parámetros; se ajustarán al plano real de Agrococorollo cuando se reciba.</p>
+  <div class="grid g2">
+    <div class="panel"><div class="hd"><h2>Plano SIESA · Conteo físico <span class="tag">toda la maestra con la cantidad contada definitiva</span></h2></div>
+      <div class="form2">
+        <label class="fld">Compañía<input type="number" id="pl_cia" min="1" step="1"></label>
+        <label class="fld">Consecutivo del conteo físico (lo da SIESA)<input type="number" id="pl_cons" min="1" step="1" placeholder="Ej. 4"></label>
+      </div>
+      <div id="plaChecks" class="chk-list"></div>
+      <div class="filters" style="margin:12px 0 0"><button class="btn pri" type="button" id="btnPlano">Descargar plano SIESA</button><button class="btn" type="button" id="btnPlanoSop">Soporte en Excel</button></div>
+    </div>
+    <div class="panel"><div class="hd"><h2>Cómo se sube</h2></div>
+      <ol class="pasos">
+        <li>Finalice el inventario en <b>Rondas y asignación</b>. Cada ítem queda con su <b>último conteo</b> como cantidad definitiva.</li>
+        <li>En SIESA genere el <b>conteo físico</b> de la bodega y copie el <b>consecutivo</b> que le asigna.</li>
+        <li>Escriba ese número aquí y descargue el plano. Trae las hojas <b>Inicial</b>, <b>Físico</b> y <b>Final</b> de la plantilla del conector, con el ítem completo (con ceros) y la bodega en texto.</li>
+        <li>Al importarlo en SIESA indique el conteo definitivo y deje marcada <b>«Si no tiene conteos, asignar cero a los tres conteos»</b>: así los inactivos sin existencia, que no van en el plano, quedan en cero.</li>
+      </ol>
+      <p class="note">El plano lleva la <b>cantidad contada</b>, no la diferencia: SIESA calcula el ajuste contra su existencia. El «Ajuste neto esperado» de abajo sirve para comparar con lo que SIESA calcule.</p>
+    </div>
+  </div>
+  <div class="kpis" id="kpisPla" style="margin-top:14px"></div>
+  <div class="panel"><div class="hd"><h2>Vista previa · hoja Físico</h2><label class="fld">Buscar<input type="search" id="pl_q" placeholder="Ítem o descripción"></label></div><div id="tblPla"></div></div>
+  <details class="panel aj" style="margin-top:14px"><summary><b>Otro formato: ajuste de inventario por diferencias</b> <span class="muted small">(salidas y entradas · para empresas que no usan el conteo físico de SIESA)</span></summary>
+    <div class="filters" style="margin-top:12px"><label class="fld">Tipo<select id="p_tipo"><option value="">Salidas y entradas</option><option value="S">Solo salidas (faltantes)</option><option value="E">Solo entradas (sobrantes)</option></select></label><label class="fld">Subgrupo<select id="p_sub"></select></label><button class="btn" type="button" id="p_all">Marcar todo</button><button class="btn" type="button" id="p_none">Desmarcar</button>
+      <div style="margin-left:auto;display:flex;gap:8px"><button class="btn" type="button" id="btnSal">Plano de SALIDAS</button><button class="btn" type="button" id="btnEnt">Plano de ENTRADAS</button></div></div>
+    <div id="tblAj"></div>
+  </details>
 </section>
 
 <!-- ============ DATOS ============ -->
@@ -847,6 +944,7 @@ tr.clk{cursor:pointer} tr.clk:hover td{background:#EAF1FE}
     <div class="panel"><div class="hd"><h2>Acceso y firmas</h2></div><div class="form2" id="prAcc"></div></div>
     <div class="panel"><div class="hd"><h2>Control de versiones</h2></div>
     <div class="tbl-wrap"><table><thead><tr><th>Versión</th><th>Fecha</th><th>Cambio</th><th>Motivo</th></tr></thead><tbody>
+      <tr><td><b>3.0</b></td><td>30-oct-2026</td><td class="desc">Servidor v3 para muchos celulares a la vez: cada conteo es una fila nueva en la hoja CONTEOS (nada se borra ni se reescribe), los celulares envían por lotes y refrescan solo lo nuevo; la caché evita leer la hoja cuando no hay cambios. Lo que el operador escribe no se borra con un refresco y la cola sobrevive a recargar la página o perder la señal. Plano SIESA de conteo físico (Inicial / Físico / Final) con toda la maestra y la cantidad definitiva = último conteo; ítem con ceros solo en el plano. Nada queda sin contar y la ronda no cierra con pendientes. Rondas 2 y 3 por FALTANTES y SOBRANTES con el conteo anterior visible. Inactivos con existencia entran al conteo. Pantallas sin desplazamiento lateral: menú contraíble y tablas compactas.</td><td class="desc">Prueba con 10 personas: la v2.1 se bloqueaba y borraba conteos.</td></tr>
       <tr><td><b>2.1</b></td><td>27-oct-2026</td><td class="desc">Servidor compartido (Google Apps Script + hoja de cálculo) fijo en el archivo: todos los celulares y el centro de control usan la misma base en tiempo real. La clave del centro de control se valida contra el servidor.</td><td class="desc">Publicación para conteo en vivo.</td></tr>
       <tr><td><b>2.0</b></td><td>27-oct-2026</td><td class="desc">Hoja de conteo en formato horizontal (ítem y U.M. destacados, vista de tabla en pantallas anchas). Tablero con «Ítems sin contar por subgrupo» y consolidado con filtro Todos / Contados / Sin contar / Con diferencia. Lector de existencias más flexible: reconoce Ítem o Referencia, costo (ins) o cualquier costo unitario, subgrupo / grupo / línea, elige la hoja correcta del Excel y muestra las columnas reconocidas antes de cargar.</td><td class="desc">Pedidos del 27-oct-2026.</td></tr>
       <tr><td><b>1.0</b></td><td>27-oct-2026</td><td class="desc">Primera versión para Agrococorollo sobre el núcleo Arketops: hoja de conteo por subgrupos para celular, centro de control con avance en vivo, rondas 1-2-3 sobre diferencias, consolidado, puntos a revisar y plano SIESA.</td><td class="desc">Réplica del Control de Inventarios OR adaptada a conteo manual por subgrupos.</td></tr>
@@ -1529,100 +1627,123 @@ Object.assign(ARK.ICONS, {
 const ST = ARK.store('agro_inv1_');
 const DEF_P = {
   empresa: 'Agrococorollo', nit: '', bodega: 'PV001', bodDesc: 'PUNTO DE VENTA AGROCOCOROLLO',
-  clave: '', excluir: 'INACTIVO, BLOQUEADO',
-  tolUnd: 0, tolDec: 0.05, difGrande: 300000, cero: false, r2Pend: true, r3Crit: 'teo', final: 'ultimo', maxEdits: 3, inactMin: 30,
+  clave: '', excluir: 'INAC*, BLOQUEADO, BLOQUEADA, NO USAR', cia: 1, itemLen: 7,
+  tolUnd: 0, tolDec: 0.05, difGrande: 300000, r3Crit: 'teo', maxEdits: 3, inactMin: 30,
   co: '001', tipoSal: 'CIS', tipoEnt: 'CEA', motSal: '01', motEnt: '01', un: '', estado: '0', num: 1, fecha: '', ffmt: 'AAAAMMDD', notas: 'AJUSTE POR INVENTARIO FISICO', resp: '',
   firma1n: '', firma1c: 'Auditor · Área de Control', firma2n: '', firma2c: 'Encargado del inventario', firma3n: '', firma3c: 'Gerencia Agrococorollo',
   servidor: ''
 };
 /* URL del servidor compartido (Google Apps Script). Va fija en el archivo para que todos los
-   dispositivos —celulares de los operadores y centro de control— usen la misma base. Vacío = modo local. */
+   dispositivos —celulares de los operadores y centro de control— usen la misma base. */
 const SERVIDOR_FIJO = 'https://script.google.com/macros/s/AKfycbzUgCYwbef2LwDMYPdhQkRwA6RWbUPsy12CWYVXHupoe8cjAkl4FUeNorB8trNJdK-93w/exec';
 let P = Object.assign({}, DEF_P, ST.get('p', {}));
-if (SERVIDOR_FIJO) P.servidor = SERVIDOR_FIJO;
-const saveP = () => { ST.set('p', P); SYNC.push({ P }); };
+['cero', 'r2Pend', 'final'].forEach(k => delete P[k]);   // reglas retiradas en la v3: nada queda sin contar y manda el último conteo
+if (P.excluir === 'INACTIVO, BLOQUEADO') P.excluir = DEF_P.excluir;   // v3 reconoce también INACT., INAC., INACIVO y NO USAR
+P.servidor = SERVIDOR_FIJO;
+const saveP = () => { ST.set('p', P); };
 
-/* ---------- Modelo compartido (lo que viaja entre celulares y centro de control) ---------- */
+/* ---------- Modelo del centro de control ----------
+   Los conteos llegan del servidor como filas (una por registro, solo se agregan):
+   [hora, ronda, ítem, cantidad, operador, observación, fuera, nuevo, descripción, id].
+   «cont» (último conteo por ronda e ítem) y «log» (historial) se arman aplicando esas filas en orden. */
 const DB_VACIA = () => ({
-  inv: null,        // {id, nombre, fecha, creado, estado, ronda, rondas:{1:{estado,abierta,cerrada,items:[]}}}
-  items: {},        // code → {item, ref, desc, sub, grupo, linea, um, teo, cp, bods}
+  inv: null,        // {id, nombre, fecha, creado, estado, ronda, rondas:{1:{estado,abierta,cerrada},2:{estado,items,tipo},3:{…}}}
+  items: {},        // código sin ceros → {item, cod (con ceros, solo para el plano), ref, desc, sub, grupo, linea, um, teo, cp, bods, inact}
   excl: [],         // ítems dejados por fuera y por qué
   ops: [],          // {id, nombre, pin, creado}
-  asig: { 1: {}, 2: {}, 3: {} },   // ronda → sub → [opId]
-  cont: { 1: {}, 2: {}, 3: {} },   // ronda → code → {q, op, ts, n, obs, nuevo, desc, fuera}
+  asig: { 1: {}, 2: {}, 3: {} },   // ronda → bloque (subgrupo, o «FALTANTES · subgrupo» / «SOBRANTES · subgrupo») → [opId]
+  cont: { 1: {}, 2: {}, 3: {} },   // ronda → código → {q, op, ts, n, obs, nuevo, desc, fuera}
   log: [],          // {ts, r, item, q, prev, op}
-  corte: ''
+  filas: [],        // filas crudas del servidor (para el respaldo)
+  corte: '', ver: '', iver: '', fila: 1
 });
 let DB = DB_VACIA();
+function aplicarFila(f) {
+  const [ts, r, item, q, op, obs, fuera, nuevo, desc] = f;
+  const c = DB.cont[r] || (DB.cont[r] = {}), prev = c[item];
+  if (q == null) delete c[item];
+  else c[item] = { q, op, ts, n: prev ? (prev.q !== q ? (prev.n || 1) + 1 : (prev.n || 1)) : 1, obs: obs || '', fuera: !!fuera, nuevo: !!nuevo, desc: desc || (prev && prev.desc) || '' };
+  DB.log.push({ ts, r, item, q, prev: prev ? prev.q : null, op });
+  DB.filas.push(f);
+}
+/** Foto completa del servidor (al entrar al centro de control). */
+function cargarFoto(d) {
+  DB = DB_VACIA();
+  ['inv', 'items', 'excl', 'ops', 'asig', 'corte', 'ver', 'iver', 'fila'].forEach(k => { if (d[k] !== undefined && d[k] !== null) DB[k] = d[k]; });
+  (d.filas || []).forEach(aplicarFila);
+}
+/** Novedades desde la última lectura. Devuelve true si algo cambió. */
+function aplicarDelta(d, conEstado) {
+  let cambio = false;
+  if (conEstado && d.inv !== undefined) { ['inv', 'ops', 'asig', 'excl', 'corte'].forEach(k => { if (d[k] !== undefined) DB[k] = d[k] === null ? DB_VACIA()[k] : d[k]; }); cambio = true; }
+  if (conEstado && d.items) { DB.items = d.items; cambio = true; }
+  if (conEstado) { DB.ver = d.ver; DB.iver = d.iver; }
+  if (d.filas && d.filas.length) { d.filas.forEach(aplicarFila); cambio = true; }
+  if (d.fila) DB.fila = d.fila;
+  return cambio;
+}
 
-/* ---------- SYNC · implementación local (localStorage; varias pestañas del mismo equipo se ven entre sí) ---------- */
-const SYNC_LOCAL = (() => {
-  const K = ['inv', 'items', 'excl', 'ops', 'asig', 'cont', 'log', 'corte'];
-  const leer = () => { const d = DB_VACIA(); K.forEach(k => { const v = ST.get(k); if (v !== undefined && v !== null) d[k] = v; }); return d; };
-  const subs = [];
-  window.addEventListener('storage', e => { if (e.key && e.key.startsWith('agro_inv1_') && e.key !== 'agro_inv1_p' && e.key !== 'agro_inv1_vista') subs.forEach(f => f()); });
-  const hojaDe = (d, r) => {
-    if (!d.inv) return [];
-    if (r === 1) return Object.keys(d.items);
-    return (d.inv.rondas[r] && d.inv.rondas[r].items) || [];
-  };
-  return {
-    modo: 'local',
-    async pull() { return leer(); },
-    async push(parts) { Object.entries(parts).forEach(([k, v]) => { if (k === 'P') ST.set('p', v); else ST.set(k, v); }); return { ok: true }; },
-    async opLista() { const d = leer(); return { inv: d.inv ? { nombre: d.inv.nombre, ronda: d.inv.ronda, estado: d.inv.estado } : null, ops: d.ops.map(o => ({ id: o.id, nombre: o.nombre, pin: !!o.pin })) }; },
-    async opEntrar(id, pin) {
-      const d = leer(); const op = d.ops.find(o => o.id === id); if (!op) return { ok: false, msg: 'Operador no encontrado.' };
-      if (op.pin && String(op.pin) !== String(pin || '')) return { ok: false, msg: 'PIN incorrecto.' };
-      return Object.assign({ ok: true }, this._hoja(d, op, true));
-    },
-    async opRefrescar(id) { const d = leer(); const op = d.ops.find(o => o.id === id); if (!op) return { ok: false, msg: 'Operador no encontrado.' }; return Object.assign({ ok: true }, this._hoja(d, op, false)); },
-    _hoja(d, op, conMaestra) {
-      const inv = d.inv; if (!inv) return { op: { id: op.id, nombre: op.nombre }, inv: null, subs: [] };
-      const r = inv.ronda, abierta = inv.estado === 'abierto' && inv.rondas[r] && inv.rondas[r].estado === 'abierta';
-      const asig = d.asig[r] || {}, mios = Object.keys(asig).filter(s => (asig[s] || []).includes(op.id));
-      const codes = hojaDe(d, r), cont = d.cont[r] || {};
-      const subs = mios.map(s => ({ sub: s, items: codes.filter(c => (d.items[c] ? subCorta(d.items[c].sub) : SIN_SUB) === s).map(c => { const it = d.items[c], x = cont[c]; return { item: c, ref: it.ref, desc: it.desc, um: it.um, q: x ? x.q : null, obs: x ? x.obs : '', op: x ? x.op : null, ts: x ? x.ts : null }; }) }));
-      // ítems contados por este operador fuera de sus subgrupos (los ve para poder corregirlos)
-      const fuera = Object.entries(cont).filter(([c, x]) => x.fuera && x.op === op.id).map(([c, x]) => { const it = d.items[c]; return { item: c, desc: it ? it.desc : x.desc, um: it ? it.um : '', q: x.q, obs: x.obs, nuevo: !it, ts: x.ts }; });
-      const maestra = !conMaestra ? undefined : Object.values(d.items).map(it => ({ item: it.item, ref: it.ref, desc: it.desc, um: it.um, sub: subCorta(it.sub) }));
-      return { op: { id: op.id, nombre: op.nombre }, inv: { nombre: inv.nombre, ronda: r, abierta, estado: inv.estado }, subs, fuera, maestra, ts: Date.now() };
-    },
-    async opContar(opId, r, item, q, obs, extra) {
-      const d = leer(); const op = d.ops.find(o => o.id === opId); if (!op) return { ok: false, msg: 'Operador no encontrado.' };
-      if (!d.inv || d.inv.estado !== 'abierto' || d.inv.ronda !== r || d.inv.rondas[r].estado !== 'abierta') return { ok: false, msg: 'La ronda no está abierta.' };
-      const cont = d.cont[r] || (d.cont[r] = {}); const prev = cont[item]; const ts = Date.now();
-      if (q === null) { delete cont[item]; } else {
-        cont[item] = { q, op: opId, ts, n: prev ? (prev.q !== q ? (prev.n || 1) + 1 : (prev.n || 1)) : 1, obs: obs || '', fuera: !!(extra && extra.fuera), nuevo: !!(extra && extra.nuevo), desc: extra && extra.desc || (prev && prev.desc) || '' };
-      }
-      d.log.push({ ts, r, item, q, prev: prev ? prev.q : null, op: opId }); if (d.log.length > 20000) d.log = d.log.slice(-20000);
-      ST.set('cont', d.cont); ST.set('log', d.log);
-      return { ok: true, ts };
-    },
-    onChange(f) { subs.push(f); }
-  };
-})();
+/* ---------- Bloques de conteo (iguales en la app y en el servidor) ----------
+   Ronda 1: un bloque por subgrupo. Rondas 2 y 3: «FALTANTES · subgrupo» y «SOBRANTES · subgrupo». */
+const hojaDeD = (d, r) => { if (!d.inv) return []; if (+r === 1) return Object.keys(d.items); return (d.inv.rondas[r] && d.inv.rondas[r].items) || []; };
+function blkDe(d, c, r) {
+  const it = d.items[c], s = it ? subCorta(it.sub) : SIN_SUB;
+  if (+r === 1) return s;
+  const rd = d.inv && d.inv.rondas[r], t = rd && rd.tipo && rd.tipo[c];
+  return t ? (t === 'S' ? 'SOBRANTES · ' : 'FALTANTES · ') + s : s;
+}
+const tipoBlk = b => /^FALTANTES · /.test(b) ? 'F' : /^SOBRANTES · /.test(b) ? 'S' : '';
+const subDeBlk = b => String(b).replace(/^(FALTANTES|SOBRANTES) · /, '');
+/** Orden de los subgrupos = su código en SIESA («1100 - …», «1200 - …»); SIN SUBGRUPO al final. */
+const cmpS = (x, y) => x < y ? -1 : x > y ? 1 : 0;
+function ordenSubs(d) { const o = {}; Object.values(d.items || {}).forEach(it => { const s = subCorta(it.sub), k = it.sub ? String(it.sub) : '￿' + s; if (o[s] == null || k < o[s]) o[s] = k; }); return o; }
+const llaveSub = (o, s) => o[s] || '￿' + s;
+function compararBlk(o) { const rt = { '': 0, F: 1, S: 2 }; return (a, b) => (rt[tipoBlk(a)] - rt[tipoBlk(b)]) || cmpS(llaveSub(o, subDeBlk(a)), llaveSub(o, subDeBlk(b))); }
 
-/* ---------- SYNC · implementación remota (servidor compartido; se activa cuando hay URL en Parámetros) ---------- */
-const SYNC_REMOTO = url => {
-  const call = async (accion, datos) => {
-    const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(Object.assign({ accion, clave: P.clave }, datos || {})) });
-    if (!r.ok) throw new Error('Servidor: ' + r.status);
-    const j = await r.json(); if (j && j.error) throw new Error(j.error); return j;
+/* ---------- SYNC · servidor compartido (Google Apps Script) ----------
+   Contrato v3. Centro de control (con clave): login · pull · pullDelta · push · nuevoInventario · cargarFilas.
+   Operadores: opLista · opEntrar · opRefrescar · opGuardar · opMaestra. */
+const SYNC = (() => {
+  const call = async (accion, datos, ms) => {
+    if (!P.servidor || /^__/.test(P.servidor)) throw new Error('Este archivo no tiene configurado el servidor compartido.');
+    const ctl = typeof AbortController !== 'undefined' ? new AbortController() : null, t = ctl ? setTimeout(() => ctl.abort(), ms || 45000) : null;
+    try {
+      const r = await fetch(P.servidor, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(Object.assign({ accion, clave: P.clave }, datos || {})), signal: ctl ? ctl.signal : undefined });
+      if (!r.ok) throw new Error('Servidor: ' + r.status);
+      const j = await r.json();
+      if (j && j.error) { const e = new Error(/Acción desconocida/.test(j.error) ? 'El servidor todavía tiene la versión anterior: pegue el código del servidor v3 en Apps Script y publique una nueva versión.' : j.error); e.servidor = true; e.ocupado = !!j.ocupado; throw e; }
+      return j;
+    } catch (e) { if (e.name === 'AbortError') throw new Error('El servidor tardó demasiado en responder.'); throw e; }
+    finally { if (t) clearTimeout(t); }
   };
-  const subs = []; let timer = null;
   return {
     modo: 'remoto',
-    async pull() { return call('pull'); },
-    async push(parts) { return call('push', { parts }); },
-    async opLista() { return call('opLista'); },
-    async opEntrar(id, pin) { return call('opEntrar', { id, pin }); },
-    async opRefrescar(id) { return call('opRefrescar', { id }); },
-    async opContar(opId, r, item, q, obs, extra) { return call('opContar', { opId, r, item, q, obs, extra }); },
-    onChange(f) { subs.push(f); if (!timer) timer = setInterval(() => subs.forEach(g => g()), 6000); }
+    login: clave => call('login', { clave }),
+    pull: () => call('pull', {}, 90000),
+    pullDelta: (ver, iver, fila) => call('pullDelta', { ver, iver, fila }),
+    push: parts => call('push', { parts }, 90000),
+    nuevoInventario: (inv, asig) => call('nuevoInventario', { inv, asig }),
+    cargarFilas: filas => call('cargarFilas', { filas }, 90000),
+    opLista: () => call('opLista'),
+    opEntrar: (id, pin) => call('opEntrar', { id, pin }, 60000),
+    opRefrescar: (id, ver, fila) => call('opRefrescar', { id, ver, fila }, 25000),
+    opGuardar: (opId, regs) => call('opGuardar', { opId, regs }, 30000),
+    opMaestra: () => call('opMaestra', {}, 60000)
   };
-};
-let SYNC = P.servidor ? SYNC_REMOTO(P.servidor) : SYNC_LOCAL;
+})();
+/* Cada cambio del centro de control marca una «generación»: una lectura que salió antes de un cambio
+   propio no reemplaza el estado (solo aporta los conteos nuevos), para que una foto vieja no deshaga lo guardado. */
+let PUSH_GEN = 0, PUSHING = 0;
+async function guardarServidor(parts) {
+  PUSH_GEN++; PUSHING++;
+  try { const r = await SYNC.push(parts); if (r && r.ver) { DB.ver = r.ver; DB.iver = r.iver; } return r; }
+  finally { PUSHING--; PUSH_GEN++; }
+}
+async function iniciarInventarioServidor(inv, asig) {
+  PUSH_GEN++; PUSHING++;
+  try { const r = await SYNC.nuevoInventario(inv, asig); DB.cont = { 1: {}, 2: {}, 3: {} }; DB.log = []; DB.filas = []; DB.fila = r.fila || 1; DB.ver = r.ver; DB.iver = r.iver; return r; }
+  finally { PUSHING--; PUSH_GEN++; }
+}
 
 /* ---------- Lectura de la consulta de existencias (reconoce el archivo por contenido) ---------- */
 const COLS = {
@@ -1640,6 +1761,12 @@ const COLS = {
   periodo: ['PERIODO', 'PERÍODO', 'FECHA', 'FECHA CORTE', 'CORTE']
 };
 const NOMBRE_COL = { item: 'Ítem', ref: 'Referencia', desc: 'Descripción', sub: 'Subgrupo', grupo: 'Grupo', linea: 'Línea', bod: 'Bodega', bodDesc: 'Nombre bodega', um: 'U.M.', teo: 'Existencia', cpIns: 'Costo (ins)', cp: 'Costo', periodo: 'Período' };
+/** Marcas de inactivo en la descripción. Cada marca va como palabra («NO USAR», «BLOQUEADO»); con * al final es un
+    comienzo de palabra («INAC*» = INACTIVO, INACT., INAC., INACIVO…). Así «ESPINACA», «BLOQUE» o «BLOQUEADOR» no cuentan. */
+function regexInactivos(txt) {
+  const t = String(txt || '').split(',').map(s => norm(s).trim()).filter(Boolean).map(s => { const pre = s.endsWith('*'); s = s.replace(/\*$/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); return pre ? s + '[A-Z0-9]*\\.?' : s + '(?![A-Z0-9])'; });
+  return t.length ? new RegExp('(?:^|[^A-Z0-9])((?:' + t.join('|') + '))') : /$^/;
+}
 /** Busca en las primeras filas la que mejor se parece a un encabezado y mapea cada campo a su columna. */
 function mapearEncabezado(matriz) {
   const N = s => norm(s).replace(/\s+/g, ' ').replace(/[:*]/g, '').trim();
@@ -1667,30 +1794,41 @@ function leerExistencias(matriz) {
   const colCod = map.item != null ? map.item : map.ref, colRef = map.ref != null ? map.ref : colCod;
   const colCp = map.cpIns != null ? map.cpIns : map.cp;
   const colGrupo = map.sub != null ? 'sub' : map.grupo != null ? 'grupo' : map.linea != null ? 'linea' : null;   // cómo se arman las hojas de conteo
-  const exclRe = new RegExp((P.excluir || '').split(',').map(s => s.trim()).filter(Boolean).map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') || '$^', 'i');
-  const items = {}, excl = []; let corte = '', filas = 0;
+  const exclRe = regexInactivos(P.excluir);
+  const items = {}, excl = []; let corte = '', filas = 0; const largos = {};
   for (let i = hr + 1; i < matriz.length; i++) {
-    const r = matriz[i] || []; const code = clean(r[colCod]); if (!code) continue;
-    const desc = clean(r[map.desc]); if (!desc && !num(r[map.teo])) continue;
+    const r = matriz[i] || []; const raw = r[colCod]; const code = clean(typeof raw === 'number' ? String(Math.round(raw)) : raw); if (!code) continue;
+    const desc = clean(r[map.desc]); if (!desc && !num(r[map.teo])) continue; const descN = norm(desc);
     if (/^TOTAL/i.test(code) || /^TOTAL/i.test(desc)) continue;
     filas++;
     const bod = map.bod != null ? clean(r[map.bod]) : '', bodDesc = map.bodDesc != null ? clean(r[map.bodDesc]) : '', teo = num(r[map.teo]) || 0;
     const cp = colCp != null ? (num(r[colCp]) || 0) : 0;
     if (!corte && map.periodo != null) corte = clean(r[map.periodo]);
-    const key = String(code).replace(/\.0+$/, '').replace(/^0+(?=\d)/, '');
-    const motivo = exclRe.test(desc) ? 'Descripción marcada ' + (desc.match(exclRe) || [''])[0].toUpperCase() : /^INACT/i.test(bod) || /^INACT/i.test(bodDesc) ? 'Bodega ' + (bod || bodDesc) : '';
-    if (motivo) { excl.push({ item: key, desc, sub: clean(colGrupo ? r[map[colGrupo]] : ''), bod: bod || bodDesc, teo, motivo }); continue; }
-    const it = items[key] || (items[key] = { item: key, ref: clean(r[colRef]) || key, desc, sub: clean(colGrupo ? r[map[colGrupo]] : '') || '', grupo: clean(map.grupo != null ? r[map.grupo] : ''), linea: clean(map.linea != null ? r[map.linea] : ''), um: (clean(map.um != null ? r[map.um] : '') || 'UND').toUpperCase(), teo: 0, cp: 0, bods: [] });
+    const cod = String(code).replace(/\.0+$/, ''), key = cod.replace(/^0+(?=\d)/, '');
+    if (/^0\d+$/.test(cod)) largos[cod.length] = (largos[cod.length] || 0) + 1;
+    const mI = descN.match(exclRe), marcaInact = mI ? 'Descripción marcada «' + mI[1].trim() + '»' : '';
+    const bodInact = /^INACT/i.test(bod) || /^INACT/i.test(bodDesc);
+    // Inactivos/bloqueados: sin existencia quedan fuera (SIESA les asigna cero); con existencia entran al conteo marcados
+    if (bodInact || (marcaInact && !teo)) { excl.push({ item: key, cod, desc, sub: clean(colGrupo ? r[map[colGrupo]] : ''), bod: bod || bodDesc, teo, motivo: bodInact ? 'Bodega ' + (bod || bodDesc) + ' (no hace parte de la toma)' : marcaInact + ' sin existencia' }); continue; }
+    const it = items[key] || (items[key] = { item: key, cod, ref: clean(r[colRef]) || key, desc, sub: clean(colGrupo ? r[map[colGrupo]] : '') || '', grupo: clean(map.grupo != null ? r[map.grupo] : ''), linea: clean(map.linea != null ? r[map.linea] : ''), um: (clean(map.um != null ? r[map.um] : '') || 'UND').toUpperCase(), teo: 0, cp: 0, bods: [] });
+    if (marcaInact) { it.inact = true; it.motInact = marcaInact; }
     it.teo = r3(it.teo + teo); if (cp && (!it.cp || teo > 0)) it.cp = cp; const b = bod || bodDesc; if (b && !it.bods.includes(b)) it.bods.push(b);
   }
   const n = Object.keys(items).length; if (!n) throw new Error('El archivo no trae ítems activos.');
+  // Código completo para el plano de SIESA: si la consulta trae códigos con ceros a la izquierda, se completan todos al mismo largo
+  const L = +(Object.entries(largos).sort((a, b) => b[1] - a[1])[0] || [0])[0] || (+P.itemLen || 0);
+  if (L) Object.values(items).concat(excl).forEach(it => { if (/^\d+$/.test(it.cod || '') && it.cod.length < L) it.cod = it.cod.padStart(L, '0'); });
   const encabezado = (matriz[hr] || []);
   const mapa = Object.entries(map).map(([k, j]) => ({ campo: NOMBRE_COL[k] || k, col: clean(encabezado[j]) }));
   const avisos = [];
   if (colCp == null) avisos.push('No encontré columna de costo: las diferencias no se valorizan.'); else if (map.cpIns == null) avisos.push('No hay «Costo prom. unit. (ins)»: uso ' + clean(encabezado[colCp]) + '.');
   if (!colGrupo) avisos.push('No hay subgrupo, grupo ni línea: toda la hoja de conteo queda en un solo bloque «SIN SUBGRUPO».'); else if (colGrupo !== 'sub') avisos.push('No hay columna SUBGRUPO: las hojas se arman por ' + NOMBRE_COL[colGrupo].toUpperCase() + '.');
   if (map.item == null) avisos.push('No hay columna Ítem: uso la Referencia como código.');
-  return { items, excl, corte, mapa, avisos, filas, agrupa: colGrupo ? NOMBRE_COL[colGrupo] : 'ninguno' };
+  const nInact = Object.values(items).filter(i => i.inact).length;
+  if (nInact) avisos.push(nInact + ' ítems inactivos o bloqueados tienen existencia: entran a las hojas de conteo marcados INACTIVO (si no se cuentan, SIESA los dejaría en cero).');
+  const bods = [...new Set(Object.values(items).flatMap(i => i.bods))];
+  if (bods.length > 1) avisos.push('La consulta trae varias bodegas (' + bods.join(', ') + '): el conteo y el plano se arman como una sola toma.');
+  return { items, excl, corte, mapa, avisos, filas, agrupa: colGrupo ? NOMBRE_COL[colGrupo] : 'ninguno', largo: L };
 }
 /** Lee todas las hojas del archivo y se queda con la que mejor parece una consulta de existencias. */
 async function leerMejorHoja(file) {
@@ -1713,38 +1851,55 @@ async function cargarExistencias(file) {
   busy(true, 'Leyendo ' + file.name + '…');
   try {
     const { hoja, matriz } = await leerMejorHoja(file);
-    const { items, excl, corte, mapa, avisos, filas, agrupa } = leerExistencias(matriz);
+    const { items, excl, corte, mapa, avisos, filas, agrupa, largo } = leerExistencias(matriz);
     const antes = Object.keys(DB.items).length, contados = Object.values(DB.cont).reduce((a, c) => a + Object.keys(c).length, 0);
     const nuevos = Object.keys(items).filter(k => !DB.items[k]).length, salen = Object.keys(DB.items).filter(k => !items[k]).length;
     busy(false);
     const mapaHtml = `<details class="small" style="margin-top:8px"><summary class="muted" style="cursor:pointer">Columnas reconocidas (${mapa.length}) · hojas de conteo por ${esc(agrupa)}${hoja ? ' · hoja «' + esc(hoja) + '»' : ''}</summary><div class="kv2" style="margin-top:6px">${mapa.map(m => `<span>${esc(m.campo)}</span><b>${esc(m.col)}</b>`).join('')}</div></details>${avisos.map(a => `<p class="small" style="margin:6px 0 0;color:var(--warn)">⚠ ${esc(a)}</p>`).join('')}`;
-    const resumen = `<div class="kv2"><span>Ítems activos</span><b>${fmtN(Object.keys(items).length)}</b><span>Con existencia &gt; 0</span><b>${fmtN(Object.values(items).filter(i => i.teo > 0).length)}</b><span>Subgrupos</span><b>${fmtN(new Set(Object.values(items).map(i => subCorta(i.sub))).size)}</b><span>Valor a costo (ins)</span><b>${fmt$(Object.values(items).reduce((a, i) => a + i.teo * i.cp, 0))}</b><span>Filas leídas</span><b>${fmtN(filas)}</b><span>Dejados por fuera</span><b>${fmtN(excl.length)}</b>${antes ? `<span>Nuevos frente a la carga anterior</span><b>${fmtN(nuevos)}</b><span>Ya no aparecen</span><b>${fmtN(salen)}</b>` : ''}</div>`;
+    const resumen = `<div class="kv2"><span>Ítems activos</span><b>${fmtN(Object.keys(items).length)}</b><span>Con existencia &gt; 0</span><b>${fmtN(Object.values(items).filter(i => i.teo > 0).length)}</b><span>Subgrupos</span><b>${fmtN(new Set(Object.values(items).map(i => subCorta(i.sub))).size)}</b><span>Valor a costo (ins)</span><b>${fmt$(Object.values(items).reduce((a, i) => a + i.teo * i.cp, 0))}</b><span>Filas leídas</span><b>${fmtN(filas)}</b><span>Inactivos con existencia (se cuentan)</span><b>${fmtN(Object.values(items).filter(i => i.inact).length)}</b><span>Dejados por fuera</span><b>${fmtN(excl.length)}</b><span>Código del ítem en el plano</span><b>${esc((Object.values(items)[0] || {}).cod || '')}${largo ? ' · ' + largo + ' dígitos' : ''}</b>${antes ? `<span>Nuevos frente a la carga anterior</span><b>${fmtN(nuevos)}</b><span>Ya no aparecen</span><b>${fmtN(salen)}</b>` : ''}</div>`;
     const ok = await modal({ titulo: antes ? '¿Actualizar las existencias?' : '¿Crear el inventario con esta consulta?', html: `<p class="muted small">${esc(file.name)}${corte ? ' · período ' + esc(corte) : ''}</p>${resumen}${mapaHtml}${contados ? `<p class="small" style="margin-top:8px">Hay <b>${fmtN(contados)}</b> registros de conteo: se conservan y se cruzan por código de ítem.</p>` : ''}${antes ? '' : '<label class="fld" style="margin-top:10px">Nombre del inventario<input type="text" id="mNom" value="Inventario físico ' + esc(ARK.MESES[new Date().getMonth()]) + ' ' + new Date().getFullYear() + '"></label>'}`, ok: antes ? 'Actualizar' : 'Crear inventario' });
     if (!ok) return;
-    DB.items = items; DB.excl = excl; DB.corte = corte;
+    busy(true, 'Guardando en el servidor…');
     if (!DB.inv) {
       const nom = ($('#mNom') && $('#mNom').value.trim()) || 'Inventario físico';
-      DB.inv = { id: uid(), nombre: nom, fecha: ARK.isoDate(new Date()), creado: Date.now(), estado: 'abierto', ronda: 1, rondas: { 1: { estado: 'pendiente', items: null }, 2: { estado: 'pendiente', items: [] }, 3: { estado: 'pendiente', items: [] } } };
+      DB.inv = invNuevo(nom); DB.asig = { 1: {}, 2: {}, 3: {} };
+      await iniciarInventarioServidor(DB.inv, DB.asig);
     }
-    await SYNC.push({ items: DB.items, excl: DB.excl, corte: DB.corte, inv: DB.inv });
+    DB.items = items; DB.excl = excl; DB.corte = corte;
+    await guardarServidor({ items: DB.items, excl: DB.excl, corte: DB.corte });
+    busy(false);
     calcular(); renderTodo(); toast('Existencias cargadas: ' + fmtN(Object.keys(items).length) + ' ítems activos.');
   } catch (e) { busy(false); toast(e.message || String(e)); console.error(e); }
 }
-function respaldo() { const b = new Blob([JSON.stringify({ v: 1, fecha: new Date().toISOString(), P, DB })], { type: 'application/json' }); ARK.saveBlob(b, `RESPALDO_INVENTARIO_AGRO_${ARK.isoDate(new Date())}.json`); }
+const invNuevo = nom => ({ id: uid(), nombre: nom, fecha: ARK.isoDate(new Date()), creado: Date.now(), estado: 'abierto', ronda: 1, rondas: { 1: { estado: 'pendiente', items: null }, 2: { estado: 'pendiente', items: [] }, 3: { estado: 'pendiente', items: [] } } });
+function respaldo() {
+  const d = { inv: DB.inv, items: DB.items, excl: DB.excl, ops: DB.ops, asig: DB.asig, corte: DB.corte, filas: DB.filas };
+  const b = new Blob([JSON.stringify({ v: 3, fecha: new Date().toISOString(), P: Object.assign({}, P, { clave: '' }), DB: d })], { type: 'application/json' });
+  ARK.saveBlob(b, `RESPALDO_INVENTARIO_AGRO_${ARK.isoDate(new Date())}.json`);
+}
+/** Convierte los conteos de un respaldo de la v2 (cont por ronda) a filas. */
+function filasDesdeCont(cont) {
+  const out = []; [1, 2, 3].forEach(r => Object.entries((cont || {})[r] || {}).forEach(([item, x]) => { if (x && x.q != null) out.push([x.ts || Date.now(), r, item, x.q, x.op || '', x.obs || '', x.fuera ? 1 : 0, x.nuevo ? 1 : 0, x.desc || '', uid()]); }));
+  return out.sort((a, b) => a[0] - b[0]);
+}
 async function restaurar(file) {
-  try { const j = JSON.parse(await file.text()); if (!j.DB) throw new Error('El archivo no es un respaldo de esta app.');
-    const ok = await modal({ titulo: '¿Restaurar este respaldo?', html: `<p class="small">Reemplaza todo lo que hay ahora: inventario, existencias, operadores y conteos.</p><p class="muted small">${esc(file.name)} · ${esc(j.fecha || '')}</p>`, ok: 'Restaurar' }); if (!ok) return;
-    DB = Object.assign(DB_VACIA(), j.DB); P = Object.assign({}, DEF_P, j.P || {}); ST.set('p', P);
-    await SYNC.push({ inv: DB.inv, items: DB.items, excl: DB.excl, ops: DB.ops, asig: DB.asig, cont: DB.cont, log: DB.log, corte: DB.corte, P });
-    calcular(); renderTodo(); toast('Respaldo restaurado.');
-  } catch (e) { toast(e.message || String(e)); }
+  try {
+    const j = JSON.parse(await file.text()); if (!j.DB || !j.DB.inv) throw new Error('El archivo no es un respaldo de esta app.');
+    const filas = j.DB.filas || filasDesdeCont(j.DB.cont);
+    const ok = await modal({ titulo: '¿Restaurar este respaldo?', html: `<p class="small">Reemplaza en el servidor el inventario, las existencias, los operadores y los conteos (${fmtN(filas.length)} registros). La hoja de conteos actual queda archivada en Google.</p><p class="muted small">${esc(file.name)} · ${esc(j.fecha || '')}</p>`, ok: 'Restaurar' }); if (!ok) return;
+    busy(true, 'Restaurando…');
+    await iniciarInventarioServidor(j.DB.inv, j.DB.asig || { 1: {}, 2: {}, 3: {} });
+    await guardarServidor({ items: j.DB.items || {}, excl: j.DB.excl || [], ops: j.DB.ops || [], corte: j.DB.corte || '' });
+    for (let i = 0; i < filas.length; i += 1500) await SYNC.cargarFilas(filas.slice(i, i + 1500));
+    cargarFoto(await SYNC.pull()); busy(false); calcular(); renderTodo(); toast('Respaldo restaurado.');
+  } catch (e) { busy(false); toast(e.message || String(e)); }
 }
 
 /* ---------- Modal genérico ---------- */
 function modal(o) {
   return new Promise(res => {
     const m = $('#modal'), box = $('#modalBox');
-    box.innerHTML = `<h3>${esc(o.titulo)}</h3>${o.html || ''}<div class="row"><button class="btn" type="button" id="mCancel">${esc(o.cancel || 'Cancelar')}</button><button class="btn pri" type="button" id="mOk">${esc(o.ok || 'Aceptar')}</button></div>`;
+    box.innerHTML = `<h3>${esc(o.titulo)}</h3>${o.html || ''}<div class="row"><button class="btn" type="button" id="mCancel" ${o.cancel === false ? 'hidden' : ''}>${esc(o.cancel || 'Cancelar')}</button><button class="btn pri" type="button" id="mOk">${esc(o.ok || 'Aceptar')}</button></div>`;
     m.hidden = false; const fin = v => { m.hidden = true; res(v); };
     $('#mCancel').onclick = () => fin(false); $('#mOk').onclick = () => fin(true);
     const first = box.querySelector('input,select'); if (first) setTimeout(() => first.focus(), 50);
@@ -1753,70 +1908,74 @@ function modal(o) {
 
 /* ---- src/js/02_modelo.js ---- */
 /* =====================================================================
-   02 · Modelo: hojas por ronda, consolidado, avance, ritmo y hallazgos
+   02 · Modelo: hojas y bloques por ronda, consolidado, avance, ritmo y hallazgos
+   Reglas v3: nada queda sin contar (un 0 es un conteo), la cantidad final de
+   cada ítem es su último conteo (SIESA ajusta con el conteo definitivo) y las
+   rondas 2 y 3 se arman por FALTANTES y SOBRANTES de la ronda anterior.
    ===================================================================== */
 let R = null, H = [];
 const tolDe = um => /^UND?$|^UN$|^UNIDAD/.test(um || 'UND') ? (+P.tolUnd || 0) : (+P.tolDec || 0);
 const opNom = id => { const o = DB.ops.find(x => x.id === id); return o ? o.nombre : (id ? '¿?' : '—'); };
 const subDe = code => { const it = DB.items[code]; return it ? subCorta(it.sub) : SIN_SUB; };
-/** Códigos que entran en la hoja de una ronda. */
-function hojaRonda(r) {
-  if (!DB.inv) return [];
-  if (r === 1) return Object.keys(DB.items);
-  return (DB.inv.rondas[r] && DB.inv.rondas[r].items) || [];
-}
+const hojaRonda = r => hojaDeD(DB, r);
+const blk = (code, r) => blkDe(DB, code, r);
+let ORD_SUB = {}, CMP_BLK = () => 0;
 /** Diferencia de un ítem tras una ronda: usa el último conteo disponible hasta esa ronda. */
 function estadoTras(code, r) {
   const it = DB.items[code]; let q = null, qr = 0;
   for (let k = 1; k <= r; k++) { const c = DB.cont[k] && DB.cont[k][code]; if (c && c.q != null) { q = c.q; qr = k; } }
   const teo = it ? it.teo : 0, tol = tolDe(it && it.um);
-  const fin = q != null ? q : (P.cero ? 0 : null);
-  const dif = fin == null ? null : r3(fin - teo);
-  return { q, qr, fin, dif, difAj: dif == null ? 0 : (Math.abs(dif) <= tol ? 0 : dif), teo };
+  const dif = q == null ? null : r3(q - teo);
+  return { q, qr, dif, difAj: dif == null ? 0 : (Math.abs(dif) <= tol ? 0 : dif), teo };
 }
-/** Lista de ítems que deben pasar a la ronda siguiente. */
+/** Ítems que pasan a la ronda r, marcados como faltante (F) o sobrante (S). */
 function candidatosRonda(r) {
-  const prev = r - 1, base = hojaRonda(prev);
-  return base.filter(code => {
-    const c = DB.cont[prev] && DB.cont[prev][code]; const e = estadoTras(code, prev);
-    if (!c) return !!P.r2Pend;                      // no contado en la ronda anterior
-    if (r === 3 && P.r3Crit === 'c1') { const c1 = DB.cont[1] && DB.cont[1][code]; return !c1 || Math.abs(c.q - c1.q) > tolDe(DB.items[code] && DB.items[code].um); }
-    return e.difAj !== 0;
+  const prev = r - 1, items = [], tipo = {};
+  hojaRonda(prev).forEach(code => {
+    const c = DB.cont[prev] && DB.cont[prev][code]; if (!c) return;     // no pasa: al cerrar no puede quedar nada sin contar
+    const e = estadoTras(code, prev);
+    let pasa = e.difAj !== 0, t = e.difAj < 0 ? 'F' : 'S';
+    if (r === 3 && P.r3Crit === 'c1') { const c1 = DB.cont[1] && DB.cont[1][code]; pasa = !!c1 && Math.abs(c.q - c1.q) > tolDe((DB.items[code] || {}).um); if (pasa && !e.difAj) t = c.q < c1.q ? 'F' : 'S'; }
+    if (pasa) { items.push(code); tipo[code] = t; }
   });
+  return { items, tipo };
 }
 function calcular() {
   if (!DB.inv) { R = null; H = []; return; }
-  const rAct = DB.inv.ronda, lines = [], hojas = [1, 2, 3].map(r => new Set(hojaRonda(r)));
+  ORD_SUB = ordenSubs(DB); CMP_BLK = compararBlk(ORD_SUB);
+  const rAct = +DB.inv.ronda, abiertaAct = DB.inv.rondas[rAct] && DB.inv.rondas[rAct].estado === 'abierta', lines = [], hojas = [1, 2, 3].map(r => new Set(hojaRonda(r)));
   for (const code of Object.keys(DB.items)) {
     const it = DB.items[code]; const c = [1, 2, 3].map(r => DB.cont[r] && DB.cont[r][code] || null);
     let fin = null, finR = 0, op = null, ts = 0, n = 0;
-    c.forEach((x, i) => { if (x && x.q != null) { if (P.final === 'ultimo' || fin == null) { fin = x.q; finR = i + 1; op = x.op; ts = x.ts; } n += x.n || 1; } });
-    if (P.final === 'mayoria' && c.filter(Boolean).length >= 2) { const vals = c.filter(Boolean).map(x => x.q); const m = vals.find(v => vals.filter(w => w === v).length >= 2); if (m != null) fin = m; }
+    c.forEach((x, i) => { if (x && x.q != null) { fin = x.q; finR = i + 1; op = x.op; ts = x.ts; n += x.n || 1; } });
     const enHoja = hojas.map(h => h.has(code));
-    const contado = fin != null, q = contado ? fin : (P.cero ? 0 : null);
-    const dif = q == null ? null : r3(q - it.teo), tol = tolDe(it.um);
+    const contado = fin != null;
+    const dif = !contado ? null : r3(fin - it.teo), tol = tolDe(it.um);
     const difAj = dif == null ? 0 : (Math.abs(dif) <= tol ? 0 : dif);
-    const nov = q == null ? 'PENDIENTE' : difAj < 0 ? 'FALTANTE' : difAj > 0 ? 'SOBRANTE' : 'SIN NOVEDAD';
-    lines.push({ k: code, item: code, ref: it.ref, desc: it.desc, sub: subCorta(it.sub), grupo: it.grupo, um: it.um, teo: it.teo, cp: it.cp, vTeo: r3(it.teo * it.cp),
-      c1: c[0] ? c[0].q : null, c2: c[1] ? c[1].q : null, c3: c[2] ? c[2].q : null, fin: q, finR, dif, difAj, vDif: difAj * it.cp, nov, op, ts, n, enHoja, contado, fuera: c.some(x => x && x.fuera), obs: c.map(x => x && x.obs).filter(Boolean).join(' · ') });
+    const nov = !contado ? 'PENDIENTE' : difAj < 0 ? 'FALTANTE' : difAj > 0 ? 'SOBRANTE' : 'SIN NOVEDAD';
+    const pendAct = enHoja[rAct - 1] && !c[rAct - 1] && DB.inv.estado === 'abierto';
+    lines.push({ k: code, item: code, cod: it.cod || code, ref: it.ref, desc: it.desc, sub: subCorta(it.sub), grupo: it.grupo, um: it.um, teo: it.teo, cp: it.cp, vTeo: r3(it.teo * it.cp), inact: !!it.inact,
+      c1: c[0] ? c[0].q : null, c2: c[1] ? c[1].q : null, c3: c[2] ? c[2].q : null, fin, finR, dif, difAj, vDif: difAj * it.cp, nov, op, ts, n, enHoja, contado, pendAct, blkAct: enHoja[rAct - 1] ? blk(code, rAct) : '',
+      fuera: c.some(x => x && x.fuera), obs: c.map(x => x && x.obs).filter(Boolean).join(' · ') });
   }
-  // ítems contados que no existen en la maestra
+  // ítems contados que no existen en la consulta (no pueden ir al plano)
   const nuevos = [];
-  [1, 2, 3].forEach(r => Object.entries(DB.cont[r] || {}).forEach(([code, x]) => { if (!DB.items[code] && x.nuevo) nuevos.push({ k: code, item: code, ref: code, desc: x.desc || '(sin descripción)', sub: SIN_SUB, um: '', teo: 0, cp: 0, vTeo: 0, c1: r === 1 ? x.q : null, c2: r === 2 ? x.q : null, c3: r === 3 ? x.q : null, fin: x.q, finR: r, dif: x.q, difAj: x.q, vDif: 0, nov: 'SOBRANTE', op: x.op, ts: x.ts, n: x.n, enHoja: [false, false, false], contado: true, nuevo: true, obs: x.obs || '' }); }));
-  const subs = [...new Set(lines.map(l => l.sub))].sort();
-  // avance por ronda / subgrupo / operador
+  [1, 2, 3].forEach(r => Object.entries(DB.cont[r] || {}).forEach(([code, x]) => { if (!DB.items[code] && x.nuevo) nuevos.push({ k: code, item: code, cod: code, ref: code, desc: x.desc || '(sin descripción)', sub: SIN_SUB, um: '', teo: 0, cp: 0, vTeo: 0, c1: r === 1 ? x.q : null, c2: r === 2 ? x.q : null, c3: r === 3 ? x.q : null, fin: x.q, finR: r, dif: x.q, difAj: x.q, vDif: 0, nov: 'SOBRANTE', op: x.op, ts: x.ts, n: x.n, enHoja: [false, false, false], contado: true, nuevo: true, obs: x.obs || '' }); }));
+  const subs = [...new Set(lines.map(l => l.sub))].sort((a, b) => cmpS(llaveSub(ORD_SUB, a), llaveSub(ORD_SUB, b)));
+  // avance por ronda / bloque / operador
   const av = {};
   [1, 2, 3].forEach(r => {
-    const codes = hojaRonda(r), cont = DB.cont[r] || {}, porSub = {}, porOp = {};
-    codes.forEach(code => { const s = subDe(code); const ps = porSub[s] || (porSub[s] = { sub: s, total: 0, cont: 0, ops: DB.asig[r] && DB.asig[r][s] || [], ult: 0, vDif: 0, nDif: 0 }); ps.total++;
-      const x = cont[code]; if (x) { ps.cont++; ps.ult = Math.max(ps.ult, x.ts); const e = estadoTras(code, r); if (e.difAj) { ps.nDif++; ps.vDif += e.difAj * (DB.items[code].cp || 0); } } });
-    Object.values(cont).forEach(x => { const po = porOp[x.op] || (porOp[x.op] = { op: x.op, nombre: opNom(x.op), cont: 0, ini: x.ts, ult: 0, subs: new Set() }); po.cont++; po.ini = Math.min(po.ini, x.ts); po.ult = Math.max(po.ult, x.ts); });
-    Object.entries(DB.asig[r] || {}).forEach(([s, ids]) => ids.forEach(id => { const po = porOp[id] || (porOp[id] = { op: id, nombre: opNom(id), cont: 0, ini: 0, ult: 0, subs: new Set() }); po.subs.add(s); }));
-    Object.values(porOp).forEach(po => { po.asig = [...po.subs].reduce((a, s) => a + (porSub[s] ? porSub[s].total : 0), 0); po.subs = [...po.subs]; po.horas = po.ini && po.ult > po.ini ? (po.ult - po.ini) / 36e5 : 0; po.ritmo = po.horas > 0.05 ? po.cont / po.horas : null; });
-    av[r] = { total: codes.length, cont: codes.filter(c => cont[c]).length, porSub, porOp, estado: DB.inv.rondas[r].estado };
+    const codes = hojaRonda(r), cont = DB.cont[r] || {}, porBlk = {}, porOp = {};
+    codes.forEach(code => { const b = blk(code, r); const pb = porBlk[b] || (porBlk[b] = { blk: b, sub: subDeBlk(b), tipo: tipoBlk(b), total: 0, cont: 0, ops: (DB.asig[r] && DB.asig[r][b]) || [], ult: 0, vDif: 0, nDif: 0 }); pb.total++;
+      const x = cont[code]; if (x) { pb.cont++; pb.ult = Math.max(pb.ult, x.ts); const e = estadoTras(code, r); if (e.difAj) { pb.nDif++; pb.vDif += e.difAj * ((DB.items[code] || {}).cp || 0); } } });
+    Object.values(cont).forEach(x => { const po = porOp[x.op] || (porOp[x.op] = { op: x.op, nombre: opNom(x.op), cont: 0, ini: x.ts, ult: 0, blks: new Set() }); po.cont++; po.ini = Math.min(po.ini, x.ts); po.ult = Math.max(po.ult, x.ts); });
+    Object.entries(DB.asig[r] || {}).forEach(([b, ids]) => (ids || []).forEach(id => { const po = porOp[id] || (porOp[id] = { op: id, nombre: opNom(id), cont: 0, ini: 0, ult: 0, blks: new Set() }); po.blks.add(b); }));
+    Object.values(porOp).forEach(po => { po.asig = [...po.blks].reduce((a, b) => a + (porBlk[b] ? porBlk[b].total : 0), 0); po.blks = [...po.blks].sort(CMP_BLK); po.horas = po.ini && po.ult > po.ini ? (po.ult - po.ini) / 36e5 : 0; po.ritmo = po.horas > 0.05 ? po.cont / po.horas : null; });
+    const lista = Object.values(porBlk).sort((a, b) => CMP_BLK(a.blk, b.blk));
+    av[r] = { total: codes.length, cont: codes.filter(c => cont[c]).length, porBlk, lista, porOp, estado: DB.inv.rondas[r].estado };
   });
   const a = agg(lines);
-  R = { lines, nuevos, subs, av, rAct, a, fechaConteo: DB.inv.fecha };
+  R = { lines, nuevos, subs, av, rAct, abiertaAct, a, fechaConteo: DB.inv.fecha };
   construirHallazgos();
 }
 function agg(lines) {
@@ -1825,27 +1984,36 @@ function agg(lines) {
   o.vNeto = o.vFalt + o.vSobr; o.vAbs = Math.abs(o.vFalt) + o.vSobr; o.exact = o.cont ? o.ok / o.cont : 0; o.avance = o.n ? o.cont / o.n : 0;
   return o;
 }
-/** Registros por bloques de 15 minutos de una ronda (para el ritmo). */
+/** Ítems contados por bloques de 15 minutos de una ronda (para el ritmo; sale de los conteos, no de la bitácora). */
 function ritmoRonda(r) {
-  const log = DB.log.filter(x => x.r === r && x.prev == null); if (!log.length) return [];
-  const t0 = Math.floor(log[0].ts / 9e5) * 9e5, t1 = Math.floor(Date.now() / 9e5) * 9e5; const out = [];
+  const ts = Object.values(DB.cont[r] || {}).map(x => x.ts).filter(Boolean).sort((a, b) => a - b); if (!ts.length) return [];
+  const t0 = Math.floor(ts[0] / 9e5) * 9e5, t1 = Math.max(Math.floor(ts[ts.length - 1] / 9e5) * 9e5, Math.min(Math.floor(Date.now() / 9e5) * 9e5, t0 + 95 * 9e5)); const out = [];
   for (let t = t0; t <= t1 && out.length < 96; t += 9e5) out.push({ t, n: 0 });
-  log.forEach(x => { const i = Math.floor((x.ts - t0) / 9e5); if (out[i]) out[i].n++; });
+  ts.forEach(x => { const i = Math.floor((x - t0) / 9e5); if (out[i]) out[i].n++; });
   return out;
+}
+/** Resumen corto de los bloques de un operador: en ronda 1 los subgrupos; en 2 y 3 cuántos de faltantes y de sobrantes. */
+function resumenBlks(blks) {
+  if (!blks.length) return '—';
+  if (blks.length <= 3 || !blks.some(b => tipoBlk(b))) return blks.map(b => (tipoBlk(b) ? `<span class="pill ${tipoBlk(b) === 'F' ? 'p-bad' : 'p-ok'}">${tipoBlk(b) === 'F' ? 'F' : 'S'}</span> ` : '') + esc(subDeBlk(b))).join(', ');
+  const f = blks.filter(b => tipoBlk(b) === 'F').length, s = blks.filter(b => tipoBlk(b) === 'S').length;
+  return `<span title="${esc(blks.join(' · '))}">${f ? `<span class="pill p-bad">FALTANTES</span> ${fmtN(f)} bloques ` : ''}${s ? `<span class="pill p-ok">SOBRANTES</span> ${fmtN(s)} bloques` : ''}</span>`;
 }
 
 /* ---------- Hallazgos: lo que el auditor debería mirar ---------- */
-const COLS_L = [{ k: 'item', l: 'Ítem' }, { k: 'desc', l: 'Descripción', cls: 'desc' }, { k: 'sub', l: 'Subgrupo' }, { k: 'um', l: 'U.M.' }, { l: 'Existencia', n: 1, f: r => fmtQ(r.teo) }, { l: 'C1', n: 1, f: r => fmtQ(r.c1) }, { l: 'C2', n: 1, f: r => fmtQ(r.c2) }, { l: 'C3', n: 1, f: r => fmtQ(r.c3) }, { l: 'Final', n: 1, f: r => fmtQ(r.fin) }, { l: 'Diferencia', n: 1, f: r => `<span class="${sgn(r.difAj)}">${fmtQ(r.difAj)}</span>` }, { l: 'Valor', n: 1, f: r => `<span class="${sgn(r.vDif)}">${fmt$(r.vDif)}</span>` }, { l: 'Operador', f: r => esc(opNom(r.op)) }];
+const COLS_L = [{ l: 'Ítem', f: r => esc(r.item) }, { l: 'Descripción', f: r => esc(r.desc) + `<small class="sub2">${esc(r.sub)} · ${esc(r.um)}</small>`, cls: 'desc' }, { l: 'Existencia', n: 1, f: r => fmtQ(r.teo) }, { l: 'C1 · C2 · C3', n: 1, f: r => conteosHtml(r) }, { l: 'Final', n: 1, f: r => fmtQ(r.fin) }, { l: 'Diferencia', n: 1, f: r => `<span class="${sgn(r.difAj)}">${fmtQ(r.difAj)}</span>` }, { l: 'Valor', n: 1, f: r => `<span class="${sgn(r.vDif)}">${fmt$(r.vDif)}</span>` }, { l: 'Operador', f: r => esc(opNom(r.op)), cls: 'wrap' }];
+const COLS_BLK = [{ k: 'blk', l: 'Bloque' }, { l: 'Ítems', n: 1, f: q => fmtN(q.total) }, { l: 'Contados', n: 1, f: q => fmtN(q.cont) }];
 function construirHallazgos() {
   H = []; if (!R) return;
   const L = R.lines, r = R.rAct, av = R.av[r], big = +P.difGrande || 0;
   const add = (id, sev, t, x, rows, accion, cols, go) => { if (!rows || !rows.length) return; H.push({ id, sev, t, x, n: rows.length, valor: rows[0] && rows[0].vDif != null ? rows.reduce((a, q) => a + (q.vDif || 0), 0) : null, rows, accion, cols: cols || COLS_L, go }); };
   const byV = (a, b) => Math.abs(b.vDif) - Math.abs(a.vDif);
   add('grandes', 'bad', 'Diferencias grandes en pesos', `Ítems con diferencia superior a ${fmt$(big)} a costo (ins)`, L.filter(l => Math.abs(l.vDif) >= big && big > 0).sort(byV), 'Verificar en sitio antes de cerrar la ronda: ubicación, unidad de medida y si hay mercancía en recepción o en otro punto.', null, ['cons', { dif: true }]);
-  add('nuevos', 'bad', 'Códigos contados que no están en la consulta', 'Registrados por los operadores como «no encontrado en la lista»', R.nuevos, 'Buscar el ítem en SIESA: puede estar creado con otro código, inactivo o nunca creado. Si existe, cargar una consulta nueva.', null, ['datos', {}]);
-  add('fuera', 'warn', 'Ítems contados fuera de su subgrupo asignado', 'El operador los encontró en su zona pero pertenecen a otro subgrupo', L.filter(l => l.fuera), 'Confirmar la ubicación física y que el operador del subgrupo dueño no los cuente dos veces.', null, ['cons', {}]);
-  const sinAsig = Object.values(av.porSub).filter(s => !s.ops.length && s.total);
-  add('sinasig', av.estado === 'abierta' ? 'bad' : 'warn', 'Subgrupos sin operador en la ronda ' + r, 'Nadie los va a contar', sinAsig.map(s => ({ sub: s.sub, total: s.total, cont: s.cont })), 'Asignar un operador en Rondas y asignación.', [{ k: 'sub', l: 'Subgrupo' }, { l: 'Ítems', n: 1, f: q => fmtN(q.total) }, { l: 'Contados', n: 1, f: q => fmtN(q.cont) }], ['rondas', {}]);
+  add('nuevos', 'bad', 'Códigos contados que no están en la consulta', 'Registrados como «no encontrado en la lista»: no pueden ir al plano de SIESA', R.nuevos, 'Buscar el ítem en SIESA: puede estar creado con otro código, inactivo o nunca creado. Si existe, cargar una consulta nueva antes de generar el plano.', null, ['datos', {}]);
+  add('inact', 'warn', 'Ítems inactivos o bloqueados con existencia', 'Están en las hojas de conteo: si quedaran fuera, SIESA los dejaría en cero', L.filter(l => l.inact), 'Confirmar en sitio y definir con el cliente si se reactivan o se dan de baja después del ajuste.', null, ['cons', { q: '' }]);
+  add('fuera', 'warn', 'Ítems contados fuera de su bloque asignado', 'El operador los encontró en su zona pero pertenecen a otro bloque', L.filter(l => l.fuera), 'Confirmar la ubicación física y que el operador del bloque dueño no los cuente dos veces.', null, ['cons', {}]);
+  const sinAsig = av.lista.filter(s => !s.ops.length && s.total);
+  add('sinasig', av.estado === 'abierta' ? 'bad' : 'warn', 'Bloques sin operador en la ronda ' + r, 'Nadie los va a contar y la ronda no se puede cerrar con pendientes', sinAsig, 'Asignar un operador en Rondas y asignación.', COLS_BLK, ['rondas', {}]);
   add('edits', 'warn', 'Ítems corregidos tres veces o más', 'Cantidad cambiada varias veces por el operador', L.filter(l => l.n >= (+P.maxEdits || 3)).sort((a, b) => b.n - a.n), 'Preguntar al operador qué pasó; es una señal de duda en la unidad de medida o en la ubicación.', null, ['cons', {}]);
   add('decimal', 'warn', 'Decimales en unidades enteras', 'Conteo con fracción en ítems que se miden en UND', L.filter(l => l.fin != null && /^UND?$/.test(l.um) && l.fin % 1 !== 0), 'Revisar si se contó por empaque o por unidad.', null, ['cons', {}]);
   add('sobrpuro', 'warn', 'Sobrantes de ítems con existencia en cero', 'Hay mercancía física que el sistema no tiene', L.filter(l => l.teo === 0 && l.nov === 'SOBRANTE').sort(byV), 'Buscar compras sin causar o traslados pendientes antes de ajustar.', null, ['cons', { nov: 'SOBRANTE' }]);
@@ -1854,8 +2022,7 @@ function construirHallazgos() {
     const quietos = Object.values(av.porOp).filter(o => o.asig > 0 && o.cont < o.asig && (!o.ult || Date.now() - o.ult > (+P.inactMin || 30) * 60000));
     add('quietos', 'info', 'Operadores sin registros recientes', `Más de ${P.inactMin} minutos sin registrar y con ítems pendientes`, quietos.map(o => ({ nombre: o.nombre, cont: o.cont, asig: o.asig, ult: o.ult })), 'Preguntar si tienen dificultades con la lista o con el celular.', [{ k: 'nombre', l: 'Operador' }, { l: 'Contados', n: 1, f: q => fmtN(q.cont) }, { l: 'Asignados', n: 1, f: q => fmtN(q.asig) }, { l: 'Último registro', f: q => hace(q.ult) }], ['tablero', {}]);
   }
-  if (av.estado === 'cerrada' || DB.inv.estado === 'cerrado') add('pend', 'warn', 'Ítems sin contar en la ronda ' + r, 'Quedaron pendientes al cerrar', L.filter(l => l.enHoja[r - 1] && !(DB.cont[r] || {})[l.k]), P.cero ? 'Están tomados como cero: saldrían como faltante en el plano.' : 'No entran al plano. Si de verdad no existen, active «No contado = 0» en Parámetros.', null, ['cons', { nov: 'PENDIENTE' }]);
-  add('cero', 'info', 'Ítems con costo en cero y diferencia', 'La diferencia no se valoriza', L.filter(l => !l.cp && l.difAj), 'Revisar el costo en SIESA antes del plano de entradas.', null, ['cons', { dif: true }]);
+  add('cero', 'info', 'Ítems con costo en cero y diferencia', 'La diferencia no se valoriza', L.filter(l => !l.cp && l.difAj), 'Revisar el costo en SIESA antes de ajustar.', null, ['cons', { dif: true }]);
   const ordenSev = { bad: 0, warn: 1, info: 2 }; H.sort((a, b) => ordenSev[a.sev] - ordenSev[b.sev] || Math.abs(b.valor || 0) - Math.abs(a.valor || 0));
 }
 
@@ -1865,8 +2032,16 @@ function construirHallazgos() {
    ===================================================================== */
 const RENDER = {}, FILTROS = { cons: {} };
 let VISTA = 'inicio', T_SUB = '', T_R = 0, C_EST = '', REV_SEV = '', REV_ABRIR = null, D_TAB = 'items';
-const TIT = { inicio: ['Inicio', 'Carga de existencias'], tablero: ['Tablero en vivo', 'Avance del conteo'], rondas: ['Rondas y asignación', 'Operadores y subgrupos'], cons: ['Conteo consolidado', 'Existencia vs. físico por ítem'], revisar: ['Puntos a revisar', 'Hallazgos del auditor'], planos: ['Plano SIESA', 'Ajuste de inventario'], datos: ['Datos cargados', 'Existencias y bitácora'], params: ['Parámetros', 'Reglas, plano y acceso'] };
+const TIT = { inicio: ['Inicio', 'Carga de existencias'], tablero: ['Tablero en vivo', 'Avance del conteo'], rondas: ['Rondas y asignación', 'Operadores y bloques de conteo'], cons: ['Conteo consolidado', 'Existencia vs. físico por ítem'], revisar: ['Puntos a revisar', 'Hallazgos del auditor'], planos: ['Plano SIESA', 'Conteo físico definitivo'], datos: ['Datos cargados', 'Existencias y bitácora'], params: ['Parámetros', 'Reglas, plano y acceso'] };
 const mostrar = ARK.nav(v => { VISTA = v; ST.set('vista', v); const t = TIT[v] || ['', '']; $('#pgTitle').textContent = t[0]; $('#pgSub').textContent = t[1]; (RENDER[v] || (() => { }))(); window.scrollTo({ top: 0 }); });
+/* Menú lateral contraíble: en pantallas de portátil arranca contraído para dar espacio a las tablas */
+(function menuLateral() {
+  const app = $('#ctlApp'), tg = $('#sideTg'); let pref = null; try { pref = localStorage.getItem('agro_menu'); } catch (e) { }
+  const aplicar = mini => { app.classList.toggle('mini', mini); tg.textContent = mini ? '»' : '«'; };
+  aplicar(pref ? pref === 'mini' : window.innerWidth < 1500);
+  $$('.nav-item').forEach(b => { const t = b.querySelector('span:not(.ic)'); if (t && !b.title) b.title = t.textContent; });
+  tg.onclick = () => { const mini = !app.classList.contains('mini'); aplicar(mini); try { localStorage.setItem('agro_menu', mini ? 'mini' : 'full'); } catch (e) { } setTimeout(() => window.dispatchEvent(new Event('resize')), 250); };
+})();
 function ir(v, f) { if (f && v === 'cons') { Object.assign(FILTROS.cons, f); aplicarFiltrosCons(); } mostrar(v); }
 function renderTodo() { renderTop(); (RENDER[VISTA] || (() => { }))(); const n = H.filter(h => h.sev === 'bad').length; const b = $('#navRev'); b.hidden = !n; b.textContent = n; }
 function kpi(o) {
@@ -1876,12 +2051,17 @@ function kpi(o) {
 function wireKpis(host, map) { host.querySelectorAll('[data-k]').forEach(el => { const f = () => map[el.dataset.k] && map[el.dataset.k](); el.onclick = f; el.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); f(); } }; }); }
 const empty = (t, x) => `<div class="empty"><b>${esc(t)}</b>${esc(x || '')}</div>`;
 const estadoRonda = r => DB.inv ? DB.inv.rondas[r].estado : 'pendiente';
-const NOMR = { 1: 'Ronda 1 · conteo completo', 2: 'Ronda 2 · reconteo de diferencias', 3: 'Ronda 3 · conteo definitivo' };
+const NOMR = { 1: 'Ronda 1 · conteo completo', 2: 'Ronda 2 · reconteo de diferencias', 3: 'Ronda 3 · tercer conteo' };
+const pillTipo = b => { const t = tipoBlk(b); return t ? `<span class="pill ${t === 'F' ? 'p-bad' : 'p-ok'}">${t === 'F' ? 'FALTANTES' : 'SOBRANTES'}</span> ` : ''; };
+const blkHtml = b => pillTipo(b) + esc(subDeBlk(b));
+const avanceHtml = (c, t) => `<div class="av2"><div class="avance ${t && c >= t ? 'ok' : ''}"><i style="width:${t ? Math.min(100, c / t * 100) : 0}%"></i></div><span>${fmtN(c)}/${fmtN(t)}</span></div>`;
+const conteosHtml = r => `<span class="cts">${[r.c1, r.c2, r.c3].map((v, i) => `<i class="${v == null ? 'nul' : r.finR === i + 1 ? 'fin' : ''}">${fmtQ(v)}</i>`).join('')}</span>`;
+const VIVO = { ok: true, ts: Date.now(), msg: '' };
 function renderTop() {
   const c = [];
   if (DB.inv) { c.push(`<span class="mchip">${esc(DB.inv.nombre)} · ${ARK.fmtDate(DB.inv.fecha)}</span>`); const e = estadoRonda(DB.inv.ronda); c.push(`<span class="mchip ${e === 'abierta' ? 'y' : ''}">Ronda ${DB.inv.ronda} ${e}</span>`); if (R) c.push(`<span class="mchip">${fmtN(R.av[DB.inv.ronda].cont)} / ${fmtN(R.av[DB.inv.ronda].total)} contados</span>`); }
   else c.push('<span class="mchip">Sin inventario: cargue las existencias</span>');
-  c.push(`<span class="mchip">${SYNC.modo === 'remoto' ? 'Servidor compartido' : 'Modo local · este equipo'}</span>`);
+  c.push(`<span class="mchip ${VIVO.ok ? '' : 'off'}" id="chipSrv" title="${esc(VIVO.msg || '')}">${VIVO.ok ? '● En vivo · ' + fmtHs(VIVO.ts) : '○ Sin conexión · reintentando'}</span>`);
   $('#tchips').innerHTML = c.join('');
 }
 
@@ -1893,17 +2073,18 @@ RENDER.inicio = function () {
     const av = R ? R.av[inv.ronda] : { cont: 0, total: 0 };
     $('#invBox').innerHTML = `<div class="kv2"><span>Nombre</span><b>${esc(inv.nombre)}</b><span>Fecha</span><b>${ARK.fmtDate(inv.fecha)}</b><span>Estado</span><b>${inv.estado === 'abierto' ? 'En curso' : 'Cerrado'}</b><span>Ronda actual</span><b>${inv.ronda} · ${estadoRonda(inv.ronda)}</b><span>Avance de la ronda</span><b>${fmtN(av.cont)} / ${fmtN(av.total)} (${pct(av.total ? av.cont / av.total : 0, 0)})</b><span>Operadores</span><b>${fmtN(DB.ops.length)}</b><span>Registros en bitácora</span><b>${fmtN(DB.log.length)}</b></div>
       <div class="filters" style="margin:12px 0 0"><button class="btn pri" type="button" data-go="rondas">Rondas y asignación</button><button class="btn" type="button" data-go="tablero">Ver tablero</button><button class="btn" type="button" id="btnNuevoInv" style="margin-left:auto">Nuevo inventario</button></div>`;
-    $('#btnNuevoInv').onclick = async () => { const ok = await modal({ titulo: '¿Empezar un inventario nuevo?', html: '<p class="small">Se borran el inventario actual, sus conteos y asignaciones. Los operadores y las existencias se conservan. Haga un respaldo primero si lo necesita.</p>', ok: 'Borrar y empezar' }); if (!ok) return;
-      DB.inv = { id: uid(), nombre: 'Inventario físico ' + ARK.MESES[new Date().getMonth()] + ' ' + new Date().getFullYear(), fecha: ARK.isoDate(new Date()), creado: Date.now(), estado: 'abierto', ronda: 1, rondas: { 1: { estado: 'pendiente', items: null }, 2: { estado: 'pendiente', items: [] }, 3: { estado: 'pendiente', items: [] } } };
-      DB.cont = { 1: {}, 2: {}, 3: {} }; DB.asig = { 1: {}, 2: {}, 3: {} }; DB.log = [];
-      await SYNC.push({ inv: DB.inv, cont: DB.cont, asig: DB.asig, log: DB.log }); calcular(); renderTodo(); };
+    $('#btnNuevoInv').onclick = async () => { const ok = await modal({ titulo: '¿Empezar un inventario nuevo?', html: '<p class="small">El inventario actual se cierra y su hoja de conteos queda archivada en Google (no se borra). Los operadores y las existencias se conservan; las asignaciones empiezan de cero.</p>', ok: 'Empezar uno nuevo' }); if (!ok) return;
+      busy(true, 'Creando el inventario…');
+      try { DB.inv = invNuevo('Inventario físico ' + ARK.MESES[new Date().getMonth()] + ' ' + new Date().getFullYear()); DB.asig = { 1: {}, 2: {}, 3: {} }; await iniciarInventarioServidor(DB.inv, DB.asig); toast('Inventario nuevo creado. La hoja de conteos anterior quedó archivada en Google.'); }
+      catch (e) { toast(e.message || String(e)); } finally { busy(false); }
+      calcular(); renderTodo(); };
   }
   const its = Object.values(DB.items);
   if (!its.length) $('#cargaBox').innerHTML = empty('Sin existencias', 'Formato esperado: consulta de existencias por ítem de SIESA.');
   else {
     const porSub = {}; its.forEach(i => { const s = subCorta(i.sub); const p = porSub[s] || (porSub[s] = { sub: s, n: 0, saldo: 0, valor: 0 }); p.n++; if (i.teo > 0) p.saldo++; p.valor += i.teo * i.cp; });
-    const rows = Object.values(porSub).sort((a, b) => b.n - a.n);
-    $('#cargaBox').innerHTML = `<div class="kv2" style="margin-bottom:10px"><span>Ítems activos</span><b>${fmtN(its.length)}</b><span>Con existencia &gt; 0</span><b>${fmtN(its.filter(i => i.teo > 0).length)}</b><span>Valor a costo (ins)</span><b>${fmt$(its.reduce((a, i) => a + i.teo * i.cp, 0))}</b><span>Dejados por fuera</span><b>${fmtN(DB.excl.length)}</b><span>Período de la consulta</span><b>${esc(DB.corte || '—')}</b></div><div id="tblSubIni"></div>`;
+    const rows = Object.values(porSub).sort((a, b) => cmpS(llaveSub(ORD_SUB, a.sub), llaveSub(ORD_SUB, b.sub)));
+    $('#cargaBox').innerHTML = `<div class="kv2" style="margin-bottom:10px"><span>Ítems activos</span><b>${fmtN(its.length)}</b><span>Con existencia &gt; 0</span><b>${fmtN(its.filter(i => i.teo > 0).length)}</b><span>Valor a costo (ins)</span><b>${fmt$(its.reduce((a, i) => a + i.teo * i.cp, 0))}</b><span>Inactivos con existencia (se cuentan)</span><b>${fmtN(its.filter(i => i.inact).length)}</b><span>Dejados por fuera</span><b>${fmtN(DB.excl.length)}</b><span>Período de la consulta</span><b>${esc(DB.corte || '—')}</b></div><div id="tblSubIni"></div>`;
     ARK.table($('#tblSubIni'), [{ k: 'sub', l: 'Subgrupo' }, { l: 'Ítems', n: 1, f: r => fmtN(r.n) }, { l: 'Con saldo', n: 1, f: r => fmtN(r.saldo) }, { l: 'Valor', n: 1, f: r => fmt$(r.valor) }], rows, { size: 30, maxh: '300px' });
   }
   $$('[data-go]').forEach(b => b.onclick = () => mostrar(b.dataset.go));
@@ -1914,120 +2095,147 @@ $('#fRest').addEventListener('change', e => { restaurar(e.target.files[0]); e.ta
 
 /* ---------- TABLERO EN VIVO ---------- */
 RENDER.tablero = function () {
-  if (!R) { $('#kpisT').innerHTML = ''; $('#tblOps').innerHTML = $('#tblLog').innerHTML = empty('Sin inventario', 'Cargue las existencias en Inicio.'); return; }
+  if (!R) { $('#kpisT').innerHTML = ''; $('#tblOps').innerHTML = $('#tblLog').innerHTML = $('#tblPend').innerHTML = empty('Sin inventario', 'Cargue las existencias en Inicio.'); return; }
   const rs = [1, 2, 3].filter(r => estadoRonda(r) !== 'pendiente' || r === DB.inv.ronda);
   const sel = $('#t_ronda'); const keep = T_R || DB.inv.ronda; sel.innerHTML = rs.map(r => `<option value="${r}">Ronda ${r} · ${estadoRonda(r)}</option>`).join(''); sel.value = String(rs.includes(keep) ? keep : DB.inv.ronda); T_R = +sel.value;
-  const av = R.av[T_R], subs = Object.values(av.porSub).sort((a, b) => b.total - a.total);
-  ARK.selOpts($('#t_sub'), subs.map(s => s.sub), 'Todos los subgrupos', T_SUB); T_SUB = $('#t_sub').value;
-  const vis = T_SUB ? subs.filter(s => s.sub === T_SUB) : subs;
+  const av = R.av[T_R], blks = av.lista;
+  ARK.selOpts($('#t_sub'), blks.map(s => s.blk), 'Todos los bloques', T_SUB); T_SUB = $('#t_sub').value;
+  const vis = T_SUB ? blks.filter(s => s.blk === T_SUB) : blks;
   const total = vis.reduce((a, s) => a + s.total, 0), cont = vis.reduce((a, s) => a + s.cont, 0), nDif = vis.reduce((a, s) => a + s.nDif, 0);
-  const codes = new Set(hojaRonda(T_R).filter(c => !T_SUB || subDe(c) === T_SUB)); const lines = R.lines.filter(l => codes.has(l.k));
-  const vFalt = lines.reduce((a, l) => a + (estadoTras(l.k, T_R).difAj < 0 ? estadoTras(l.k, T_R).difAj * l.cp : 0), 0), vSobr = lines.reduce((a, l) => a + (estadoTras(l.k, T_R).difAj > 0 ? estadoTras(l.k, T_R).difAj * l.cp : 0), 0);
+  const codes = new Set(hojaRonda(T_R).filter(c => !T_SUB || blk(c, T_R) === T_SUB)); const lines = R.lines.filter(l => codes.has(l.k));
+  let vFalt = 0, vSobr = 0; lines.forEach(l => { const e = estadoTras(l.k, T_R); if (e.difAj < 0) vFalt += e.difAj * l.cp; else if (e.difAj > 0) vSobr += e.difAj * l.cp; });
   const ahora = Date.now(), ops = Object.values(av.porOp), activos = ops.filter(o => o.ult && ahora - o.ult < 15 * 60000).length;
-  const ult1h = DB.log.filter(x => x.r === T_R && x.prev == null && ahora - x.ts < 36e5).length;
+  const ult1h = Object.values(DB.cont[T_R] || {}).filter(x => ahora - x.ts < 36e5).length;
   $('#kpisT').innerHTML = [
     { l: 'Avance de la ronda', v: pct(total ? cont / total : 0, 0), s: `${fmtN(cont)} de ${fmtN(total)} ítems`, c: 'brand', bar: total ? cont / total : 0 },
-    { l: 'Pendientes', v: fmtN(total - cont), s: 'por contar', c: total - cont ? 'warn' : 'ok', go: 'pend' },
+    { l: 'Sin contar', v: fmtN(total - cont), s: total - cont ? 'la ronda no cierra hasta llegar a 0' : 'listo para cerrar', c: total - cont ? 'warn' : 'ok', go: 'pend' },
     { l: 'Operadores activos', v: fmtN(activos), s: `de ${fmtN(ops.length)} · últimos 15 min`, c: 'brand' },
-    { l: 'Ritmo última hora', v: fmtN(ult1h), s: 'registros / hora', c: 'or' },
+    { l: 'Ritmo última hora', v: fmtN(ult1h), s: 'ítems contados / hora', c: 'or' },
     { l: 'Con diferencia', v: fmtN(nDif), s: cont ? `${pct(nDif / cont, 1)} de lo contado` : '—', c: nDif ? 'bad' : 'ok', go: 'dif' },
     { l: 'Diferencia neta', v: fmtM(vFalt + vSobr), s: `faltante ${fmtM(vFalt)} · sobrante ${fmtM(vSobr)}`, c: 'acc' }
   ].map(kpi).join('');
-  wireKpis($('#kpisT'), { pend: () => ir('cons', { nov: 'PENDIENTE', sub: T_SUB }), dif: () => ir('cons', { dif: true, sub: T_SUB }) });
+  wireKpis($('#kpisT'), { pend: () => ir('cons', { est: 'pend', sub: T_SUB ? subDeBlk(T_SUB) : '' }), dif: () => ir('cons', { dif: true, sub: T_SUB ? subDeBlk(T_SUB) : '' }) });
   $('#t_info').textContent = `${NOMR[T_R]} · actualizado ${fmtHs(Date.now())}`;
   $('#liveT').classList.toggle('off', estadoRonda(T_R) !== 'abierta');
-  const labs = subs.map(s => s.sub);
-  ARK.chart('chSub', { type: 'bar', data: { labels: labs, datasets: [{ label: 'Contados', data: subs.map(s => s.cont), backgroundColor: '#1E6B3C', borderRadius: 4 }, { label: 'Pendientes', data: subs.map(s => s.total - s.cont), backgroundColor: '#DCE7DE', borderRadius: 4 }] },
-    options: { indexAxis: 'y', scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, ticks: { font: { size: 11 } } } }, onClick: (e, els) => { if (!els.length) return; const s = labs[els[0].index]; T_SUB = T_SUB === s ? '' : s; RENDER.tablero(); }, plugins: { tooltip: { callbacks: { afterBody: it => { const s = subs[it[0].dataIndex]; return [`Avance ${pct(s.total ? s.cont / s.total : 0, 0)} · ${s.ops.map(opNom).join(', ') || 'sin operador'}`]; } } } } } });
-  ARK.table($('#tblOps'), [{ l: '', f: o => `<span class="dot ${o.ult && ahora - o.ult < 15 * 60000 ? 'on' : o.ult ? 'idle' : 'off'}"></span>` }, { k: 'nombre', l: 'Operador' }, { l: 'Subgrupos', f: o => `<span class="small">${esc(o.subs.join(', ') || '—')}</span>`, cls: 'desc' }, { l: 'Asignados', n: 1, f: o => fmtN(o.asig) }, { l: 'Contados', n: 1, f: o => fmtN(o.cont) }, { l: 'Avance', f: o => `<div class="avance ${o.asig && o.cont >= o.asig ? 'ok' : ''}"><i style="width:${o.asig ? Math.min(100, o.cont / o.asig * 100) : 0}%"></i></div>` }, { l: 'Ítems / h', n: 1, f: o => o.ritmo ? fmtN(o.ritmo) : '—' }, { l: 'Último registro', f: o => hace(o.ult) }],
+  const labs = blks.map(s => s.blk);
+  ARK.chart('chSub', { type: 'bar', data: { labels: labs, datasets: [{ label: 'Contados', data: blks.map(s => s.cont), backgroundColor: '#1E6B3C', borderRadius: 4 }, { label: 'Sin contar', data: blks.map(s => s.total - s.cont), backgroundColor: '#DCE7DE', borderRadius: 4 }] },
+    options: { indexAxis: 'y', scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, ticks: { font: { size: 11 } } } }, onClick: (e, els) => { if (!els.length) return; const s = labs[els[0].index]; T_SUB = T_SUB === s ? '' : s; RENDER.tablero(); }, plugins: { tooltip: { callbacks: { afterBody: it => { const s = blks[it[0].dataIndex]; return [`Avance ${pct(s.total ? s.cont / s.total : 0, 0)} · ${s.ops.map(opNom).join(', ') || 'sin operador'}`]; } } } } } });
+  ARK.table($('#tblOps'), [{ l: 'Operador', f: o => `<span class="dot ${o.ult && ahora - o.ult < 15 * 60000 ? 'on' : o.ult ? 'idle' : 'off'}"></span>${esc(o.nombre)}`, cls: 'wrap' }, { l: 'Bloques', f: o => `<span class="small">${resumenBlks(o.blks)}</span>`, cls: 'desc' }, { l: 'Avance', f: o => avanceHtml(o.cont, o.asig) }, { l: 'Ítems/h', n: 1, f: o => o.ritmo ? fmtN(o.ritmo) : '—' }, { l: 'Último', f: o => hace(o.ult), cls: 'wrap' }],
     ops.sort((a, b) => b.cont - a.cont), { size: 30, empty: 'Sin operadores asignados en esta ronda.' });
   const rit = ritmoRonda(T_R);
   ARK.chart('chRitmo', { type: 'line', data: { labels: rit.map(x => fmtHs(x.t).slice(0, 5)), datasets: [{ label: 'Registros', data: rit.map(x => x.n), borderColor: '#F28C1E', backgroundColor: 'rgba(242,140,30,.15)', fill: true, tension: .3, pointRadius: 2 }] }, options: { scales: { y: { beginAtZero: true } }, plugins: { legend: { display: false } } } });
   $('#ritmo').textContent = rit.length ? `Inicio ${fmtH(rit[0].t)} · pico ${fmtN(Math.max(...rit.map(x => x.n)))} registros en 15 min` : 'Aún no hay registros en esta ronda.';
-  const difS = subs.map(s => s.vDif);
+  const difS = blks.map(s => s.vDif);
   ARK.chart('chDif', { type: 'bar', data: { labels: labs, datasets: [{ label: 'Diferencia $', data: difS, backgroundColor: difS.map(v => v < 0 ? '#C8102E' : '#17824A'), borderRadius: 4 }] }, options: { indexAxis: 'y', scales: { x: { ticks: { callback: v => fmtM(v) } } }, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => fmt$(c.raw) } } } } });
-  const pendSub = subs.filter(s => s.total > s.cont).map(s => ({ sub: s.sub, pend: s.total - s.cont, total: s.total, ops: s.ops.map(opNom).join(', ') || '—', ult: s.ult })).sort((a, b) => b.pend - a.pend);
-  ARK.table($('#tblPend'), [{ k: 'sub', l: 'Subgrupo' }, { l: 'Sin contar', n: 1, f: s => `<b class="neg">${fmtN(s.pend)}</b>` }, { l: 'De', n: 1, f: s => fmtN(s.total) }, { l: 'Avance', f: s => `<div class="avance"><i style="width:${s.total ? (s.total - s.pend) / s.total * 100 : 0}%"></i></div>` }, { l: 'Operador', f: s => `<span class="small">${esc(s.ops)}</span>`, cls: 'desc' }, { l: 'Último registro', f: s => hace(s.ult) }, { l: '', f: s => `<button class="btn" data-pend="${esc(s.sub)}">Ver ítems</button>` }], pendSub, { size: 30, maxh: '420px', empty: 'Todo contado en esta ronda.', after: h => h.querySelectorAll('[data-pend]').forEach(b => b.onclick = () => ir('cons', { nov: 'PENDIENTE', sub: b.dataset.pend, ronda: T_R })) });
+  const pendBlk = blks.filter(s => s.total > s.cont).map(s => ({ blk: s.blk, pend: s.total - s.cont, total: s.total, ops: s.ops.map(opNom).join(', ') || '—', ult: s.ult }));
+  ARK.table($('#tblPend'), [{ l: 'Bloque', f: s => blkHtml(s.blk) + `<small class="sub2">${esc(s.ops)} · ${hace(s.ult)}</small>`, cls: 'desc' }, { l: 'Sin contar', n: 1, f: s => `<b class="neg">${fmtN(s.pend)}</b> <span class="muted small">de ${fmtN(s.total)}</span>` }, { l: '', f: s => `<button class="btn" data-pend="${esc(s.blk)}">Ver</button>` }], pendBlk, { size: 30, maxh: '420px', empty: 'Todo contado en esta ronda.', after: h => h.querySelectorAll('[data-pend]').forEach(b => b.onclick = () => ir('cons', { est: 'pend', sub: subDeBlk(b.dataset.pend) })) });
   const log = DB.log.filter(x => x.r === T_R).slice(-40).reverse();
-  ARK.table($('#tblLog'), [{ l: 'Hora', f: x => fmtHs(x.ts) }, { l: 'Operador', f: x => esc(opNom(x.op)) }, { k: 'item', l: 'Ítem' }, { l: 'Descripción', f: x => esc((DB.items[x.item] || {}).desc || ((DB.cont[x.r] || {})[x.item] || {}).desc || ''), cls: 'desc' }, { l: 'Subgrupo', f: x => esc(subDe(x.item)) }, { l: 'Cantidad', n: 1, f: x => x.q == null ? '<span class="muted">borrado</span>' : `<b>${fmtQ(x.q)}</b>` }, { l: 'Antes', n: 1, f: x => x.prev == null ? '' : fmtQ(x.prev) }], log, { size: 40, maxh: '380px', empty: 'Todavía no hay registros.', rowAttr: x => `class="clk" data-it="${esc(x.item)}"`, after: h => h.querySelectorAll('tr[data-it]').forEach(tr => tr.onclick = () => abrirDetalle(tr.dataset.it)) });
+  ARK.table($('#tblLog'), [{ l: 'Hora', f: x => fmtHs(x.ts) }, { l: 'Operador', f: x => esc(opNom(x.op)) }, { l: 'Ítem', f: x => esc(x.item) }, { l: 'Descripción · bloque', f: x => esc((DB.items[x.item] || {}).desc || ((DB.cont[x.r] || {})[x.item] || {}).desc || '') + `<small class="sub2">${blkHtml(DB.items[x.item] ? blk(x.item, x.r) : SIN_SUB)}</small>`, cls: 'desc' }, { l: 'Cantidad', n: 1, f: x => x.q == null ? '<span class="muted">borrado</span>' : `<b>${fmtQ(x.q)}</b>` }, { l: 'Antes', n: 1, f: x => x.prev == null ? '' : fmtQ(x.prev) }], log, { size: 40, maxh: '380px', empty: 'Todavía no hay registros.', rowAttr: x => `class="clk" data-it="${esc(x.item)}"`, after: h => h.querySelectorAll('tr[data-it]').forEach(tr => tr.onclick = () => abrirDetalle(tr.dataset.it)) });
 };
 $('#t_ronda').addEventListener('change', e => { T_R = +e.target.value; RENDER.tablero(); });
 $('#t_sub').addEventListener('change', e => { T_SUB = e.target.value; RENDER.tablero(); });
 
 /* ---------- RONDAS Y ASIGNACIÓN ---------- */
-async function guardarRondas() { await SYNC.push({ inv: DB.inv, asig: DB.asig, ops: DB.ops }); calcular(); renderTodo(); }
+async function guardarRondas() { calcular(); renderTodo(); try { await guardarServidor({ inv: DB.inv, asig: DB.asig, ops: DB.ops }); } catch (e) { toast('No se pudo guardar en el servidor: ' + (e.message || e) + '. Se reintenta al refrescar.'); PEND_GUARDAR = true; } }
+let PEND_GUARDAR = false;
 RENDER.rondas = function () {
-  if (!DB.inv) { $('#rondaStrip').innerHTML = empty('Sin inventario', 'Cargue las existencias en Inicio.'); $('#tblOperadores').innerHTML = $('#tblAsig').innerHTML = ''; return; }
-  const inv = DB.inv, rA = inv.ronda;
+  if (!DB.inv) { $('#rondaStrip').innerHTML = empty('Sin inventario', 'Cargue las existencias en Inicio.'); $('#tblOperadores').innerHTML = $('#tblAsig').innerHTML = $('#asigTipo').innerHTML = ''; return; }
+  const inv = DB.inv, rA = +inv.ronda;
   $('#rondaStrip').innerHTML = [1, 2, 3].map(r => {
-    const e = estadoRonda(r), av = R.av[r], prevCerr = r === 1 || estadoRonda(r - 1) === 'cerrada', cand = r > 1 && e === 'pendiente' && prevCerr ? candidatosRonda(r).length : null;
+    const e = estadoRonda(r), av = R.av[r], prevCerr = r === 1 || estadoRonda(r - 1) === 'cerrada';
+    const cand = r > 1 && e === 'pendiente' && prevCerr && r === rA + 1 ? candidatosRonda(r) : null;
+    const nF = cand ? Object.values(cand.tipo).filter(t => t === 'F').length : 0, nS = cand ? cand.items.length - nF : 0;
     const acts = [];
     if (inv.estado === 'abierto') {
       if (e === 'pendiente' && r === 1) acts.push(`<button class="btn pri" data-r="${r}" data-a="abrir">Abrir ronda 1</button>`);
-      if (e === 'pendiente' && r > 1 && prevCerr) acts.push(`<button class="btn or" data-r="${r}" data-a="preparar">Preparar ronda ${r} (${fmtN(cand)} ítems)</button>`);
+      if (cand && cand.items.length) acts.push(`<button class="btn or" data-r="${r}" data-a="preparar">Preparar ronda ${r} · ${fmtN(nF)} faltantes / ${fmtN(nS)} sobrantes</button>`);
+      if (cand && !cand.items.length) acts.push(`<span class="small muted">Sin diferencias: no hace falta la ronda ${r}.</span>`);
       if (e === 'lista') acts.push(`<button class="btn pri" data-r="${r}" data-a="abrir">Abrir ronda ${r}</button>`, `<button class="btn" data-r="${r}" data-a="recalc">Recalcular lista</button>`);
       if (e === 'abierta') acts.push(`<button class="btn pri" data-r="${r}" data-a="cerrar">Cerrar ronda ${r}</button>`);
-      if (e === 'cerrada' && r === rA) acts.push(`<button class="btn" data-r="${r}" data-a="reabrir">Reabrir</button>`);
-      if (e === 'cerrada' && r === rA) acts.push(`<button class="btn" data-r="${r}" data-a="fin">Finalizar inventario</button>`);
+      if (e === 'cerrada' && r === rA) acts.push(`<button class="btn" data-r="${r}" data-a="reabrir">Reabrir</button>`, `<button class="btn pri" data-r="${r}" data-a="fin">Finalizar inventario</button>`);
     } else if (r === rA) acts.push(`<button class="btn" data-r="${r}" data-a="reabrirInv">Reabrir inventario</button>`);
-    const nDif = Object.values(av.porSub).reduce((a, s) => a + s.nDif, 0);
+    const nDif = av.lista.reduce((a, s) => a + s.nDif, 0), tipo = (inv.rondas[r] || {}).tipo || {}, tF = Object.values(tipo).filter(t => t === 'F').length;
     return `<div class="rcard ${e}"><h3>${esc(NOMR[r])}<span class="pill ${e === 'abierta' ? 'p-ok' : e === 'cerrada' ? 'p-info' : e === 'lista' ? 'p-warn' : 'p-mute'}">${e.toUpperCase()}</span></h3>
-      <div class="kv"><span>Ítems en la hoja</span><b>${fmtN(av.total)}</b></div><div class="kv"><span>Contados</span><b>${fmtN(av.cont)} (${pct(av.total ? av.cont / av.total : 0, 0)})</b></div><div class="kv"><span>Con diferencia</span><b>${fmtN(nDif)}</b></div>
+      <div class="kv"><span>Ítems en la hoja</span><b>${fmtN(av.total)}${r > 1 && av.total ? ` · ${fmtN(tF)} F / ${fmtN(av.total - tF)} S` : ''}</b></div><div class="kv"><span>Contados</span><b>${fmtN(av.cont)} (${pct(av.total ? av.cont / av.total : 0, 0)})</b></div><div class="kv"><span>Con diferencia</span><b>${fmtN(nDif)}</b></div>
       <div class="kv"><span>Abierta</span><b>${fmtH(inv.rondas[r].abierta)}</b></div><div class="kv"><span>Cerrada</span><b>${fmtH(inv.rondas[r].cerrada)}</b></div><div class="acts">${acts.join('')}</div></div>`;
-  }).join('');
+  }).join('') + (inv.estado === 'cerrado' ? `<div class="note" style="grid-column:1/-1;margin:0">Inventario finalizado: la cantidad definitiva de cada ítem es su último conteo. Ya puede generar el plano de SIESA.</div>` : '');
   $$('#rondaStrip [data-a]').forEach(b => b.onclick = () => accionRonda(+b.dataset.r, b.dataset.a));
   // operadores
   const av = R.av[rA];
-  ARK.table($('#tblOperadores'), [{ k: 'nombre', l: 'Nombre' }, { l: 'PIN', f: o => o.pin ? `<span class="num">${esc(o.pin)}</span>` : '<span class="muted">sin PIN</span>' }, { l: `Subgrupos ronda ${rA}`, f: o => `<span class="small">${esc(Object.keys(DB.asig[rA] || {}).filter(s => DB.asig[rA][s].includes(o.id)).join(', ') || '—')}</span>`, cls: 'desc' }, { l: 'Contados', n: 1, f: o => fmtN((av.porOp[o.id] || {}).cont || 0) }, { l: '', f: o => `<button class="btn" data-del="${o.id}" title="Quitar">✕</button>` }], DB.ops, { size: 50, empty: 'Agregue los operadores que van a contar.' , after: h => h.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { const id = b.dataset.del; const tiene = Object.values(DB.cont).some(c => Object.values(c).some(x => x.op === id)); if (tiene) { toast('Este operador ya tiene registros: no se puede quitar, solo desasignar.'); return; } DB.ops = DB.ops.filter(o => o.id !== id); [1, 2, 3].forEach(r => Object.keys(DB.asig[r]).forEach(s => DB.asig[r][s] = DB.asig[r][s].filter(x => x !== id))); guardarRondas(); }) });
+  ARK.table($('#tblOperadores'), [{ k: 'nombre', l: 'Nombre' }, { l: 'PIN', f: o => o.pin ? `<span class="num">${esc(o.pin)}</span>` : '<span class="muted">sin PIN</span>' }, { l: `Bloques ronda ${rA}`, f: o => `<span class="small">${resumenBlks(Object.keys(DB.asig[rA] || {}).filter(b => (DB.asig[rA][b] || []).includes(o.id)).sort(CMP_BLK))}</span>`, cls: 'desc' }, { l: 'Contados', n: 1, f: o => fmtN((av.porOp[o.id] || {}).cont || 0) }, { l: '', f: o => `<button class="btn" data-del="${o.id}" title="Quitar">✕</button>` }], DB.ops, { size: 50, empty: 'Agregue los operadores que van a contar.', after: h => h.querySelectorAll('[data-del]').forEach(b => b.onclick = async () => { const id = b.dataset.del; const tiene = Object.values(DB.cont).some(c => Object.values(c).some(x => x.op === id)); if (tiene) { toast('Este operador ya tiene registros: no se puede quitar, solo desasignar.'); return; } DB.ops = DB.ops.filter(o => o.id !== id); [1, 2, 3].forEach(r => Object.keys(DB.asig[r]).forEach(s => DB.asig[r][s] = DB.asig[r][s].filter(x => x !== id))); guardarRondas(); }) });
   // asignación de la ronda actual
   const e = estadoRonda(rA); $('#asigTag').textContent = `ronda ${rA} · ${e}`;
-  const subs = Object.values(av.porSub).sort((a, b) => b.total - a.total);
-  if (!subs.length) { $('#tblAsig').innerHTML = empty(rA > 1 ? 'La ronda aún no tiene lista' : 'Sin ítems', rA > 1 ? 'Prepare la ronda para ver qué subgrupos tienen diferencias.' : 'Cargue las existencias.'); return; }
-  const opts = DB.ops.map(o => `<option value="${o.id}">${esc(o.nombre)}</option>`).join('');
-  ARK.table($('#tblAsig'), [{ k: 'sub', l: 'Subgrupo' }, { l: 'Ítems', n: 1, f: s => fmtN(s.total) }, { l: 'Contados', n: 1, f: s => fmtN(s.cont) }, { l: 'Operadores', f: s => `<div class="chips">${s.ops.map(id => `<span class="chip on">${esc(opNom(id))}<button class="x" data-un="${esc(s.sub)}|${id}" title="Quitar">✕</button></span>`).join('')}<select data-add="${esc(s.sub)}" class="small" style="border:1px solid var(--line);border-radius:8px;padding:2px 6px"><option value="">+ asignar…</option>${opts}</select></div>` }],
-    subs, { size: 60, maxh: '560px', after: h => { h.querySelectorAll('[data-add]').forEach(s => s.onchange = () => { const id = s.value; if (!id) return; const a = DB.asig[rA][s.dataset.add] || (DB.asig[rA][s.dataset.add] = []); if (!a.includes(id)) a.push(id); guardarRondas(); });
-      h.querySelectorAll('[data-un]').forEach(b => b.onclick = () => { const [sub, id] = b.dataset.un.split('|'); DB.asig[rA][sub] = (DB.asig[rA][sub] || []).filter(x => x !== id); guardarRondas(); }); } });
+  const blks = av.lista, opts = DB.ops.map(o => `<option value="${o.id}">${esc(o.nombre)}</option>`).join('');
+  const hayF = blks.some(b => b.tipo === 'F'), hayS = blks.some(b => b.tipo === 'S');
+  $('#asigTipo').innerHTML = rA > 1 && (hayF || hayS) ? `<div class="opbox" style="margin-bottom:12px">${hayF ? `<label class="fld"><span><span class="pill p-bad">FALTANTES</span> todos a</span><select data-tipo="F"><option value="">elegir operador…</option>${opts}</select></label>` : ''}${hayS ? `<label class="fld"><span><span class="pill p-ok">SOBRANTES</span> todos a</span><select data-tipo="S"><option value="">elegir operador…</option>${opts}</select></label>` : ''}<span class="small muted">Asigna de una vez todos los bloques de ese tipo, en el orden de los subgrupos. Luego puede ajustar bloque por bloque.</span></div>` : '';
+  $$('#asigTipo [data-tipo]').forEach(sl => sl.onchange = () => { const id = sl.value; if (!id) return; blks.filter(b => b.tipo === sl.dataset.tipo).forEach(b => { DB.asig[rA][b.blk] = [id]; }); guardarRondas(); toast(`Todos los ${sl.dataset.tipo === 'F' ? 'faltantes' : 'sobrantes'} asignados a ${opNom(id)}.`); });
+  if (!blks.length) { $('#tblAsig').innerHTML = empty(rA > 1 ? 'La ronda aún no tiene lista' : 'Sin ítems', rA > 1 ? 'Prepare la ronda para ver qué bloques tienen diferencias.' : 'Cargue las existencias.'); return; }
+  ARK.table($('#tblAsig'), [{ l: 'Bloque', f: s => blkHtml(s.blk) }, { l: 'Ítems', n: 1, f: s => fmtN(s.total) }, { l: 'Contados', n: 1, f: s => fmtN(s.cont) }, { l: 'Operadores', f: s => `<div class="chips">${s.ops.map(id => `<span class="chip on">${esc(opNom(id))}<button class="x" data-un="${esc(s.blk)}|${id}" title="Quitar">✕</button></span>`).join('')}<select data-add="${esc(s.blk)}" class="small" style="border:1px solid var(--line);border-radius:8px;padding:2px 6px"><option value="">+ asignar…</option>${opts}</select></div>` }],
+    blks, { size: 80, maxh: '560px', after: h => { h.querySelectorAll('[data-add]').forEach(s => s.onchange = () => { const id = s.value; if (!id) return; const a = DB.asig[rA][s.dataset.add] || (DB.asig[rA][s.dataset.add] = []); if (!a.includes(id)) a.push(id); guardarRondas(); });
+      h.querySelectorAll('[data-un]').forEach(b => b.onclick = () => { const i = b.dataset.un.lastIndexOf('|'), bk = b.dataset.un.slice(0, i), id = b.dataset.un.slice(i + 1); DB.asig[rA][bk] = (DB.asig[rA][bk] || []).filter(x => x !== id); guardarRondas(); }); } });
 };
 $('#op_add').onclick = () => { const n = $('#op_nom').value.trim(), pin = $('#op_pin').value.trim(); if (!n) return toast('Escriba el nombre.'); if (DB.ops.some(o => norm(o.nombre) === norm(n))) return toast('Ese operador ya existe.'); DB.ops.push({ id: uid(), nombre: n, pin, creado: Date.now() }); $('#op_nom').value = ''; $('#op_pin').value = ''; guardarRondas(); };
 $('#op_nom').addEventListener('keydown', e => { if (e.key === 'Enter') $('#op_add').click(); });
-$('#asigAuto').onclick = () => { if (!DB.inv || !DB.ops.length) return toast('Primero agregue operadores.'); const rA = DB.inv.ronda, subs = Object.values(R.av[rA].porSub).sort((a, b) => b.total - a.total); const carga = DB.ops.map(o => ({ id: o.id, n: 0 })); DB.asig[rA] = {}; subs.forEach(s => { carga.sort((a, b) => a.n - b.n); DB.asig[rA][s.sub] = [carga[0].id]; carga[0].n += s.total; }); guardarRondas(); toast('Subgrupos repartidos por cantidad de ítems. Ajuste a mano lo que necesite.'); };
+$('#asigAuto').onclick = () => {
+  if (!DB.inv || !DB.ops.length) return toast('Primero agregue operadores.');
+  const rA = +DB.inv.ronda, blks = R.av[rA].lista, carga = DB.ops.map(o => ({ id: o.id, n: 0 })); DB.asig[rA] = {};
+  // reparte en el orden de los subgrupos, equilibrando la cantidad de ítems por operador
+  blks.forEach(s => { carga.sort((a, b) => a.n - b.n); DB.asig[rA][s.blk] = [carga[0].id]; carga[0].n += s.total; });
+  guardarRondas(); toast('Bloques repartidos por cantidad de ítems. Ajuste a mano lo que necesite.');
+};
 $('#asigClear').onclick = () => { if (!DB.inv) return; DB.asig[DB.inv.ronda] = {}; guardarRondas(); };
 async function accionRonda(r, a) {
   const inv = DB.inv, rd = inv.rondas[r];
-  if (a === 'abrir') { const sinAsig = Object.values(R.av[r].porSub).filter(s => s.total && !s.ops.length).length; if (sinAsig) { const ok = await modal({ titulo: `Hay ${sinAsig} subgrupos sin operador`, html: '<p class="small">Puede abrir la ronda y asignarlos después; los operadores verán los nuevos subgrupos al refrescar.</p>', ok: 'Abrir de todas formas' }); if (!ok) return; } rd.estado = 'abierta'; rd.abierta = Date.now(); inv.ronda = r; }
-  if (a === 'cerrar') { const av = R.av[r], pend = av.total - av.cont; const ok = await modal({ titulo: `¿Cerrar la ronda ${r}?`, html: `<p class="small">Contados ${fmtN(av.cont)} de ${fmtN(av.total)}.${pend ? ` Quedan <b>${fmtN(pend)}</b> sin contar: ${P.r2Pend && r < 3 ? 'pasarán a la ronda siguiente.' : P.cero ? 'se tomarán como cero.' : 'no entrarán al plano.'}` : ''} Los operadores dejan de poder registrar en esta ronda.</p>`, ok: 'Cerrar ronda' }); if (!ok) return; rd.estado = 'cerrada'; rd.cerrada = Date.now(); }
-  if (a === 'reabrir') { rd.estado = 'abierta'; rd.cerrada = null; if (r < 3 && inv.rondas[r + 1].estado === 'lista') { inv.rondas[r + 1].estado = 'pendiente'; inv.rondas[r + 1].items = []; } }
-  if (a === 'preparar' || a === 'recalc') { const items = candidatosRonda(r); if (!items.length) { toast('No hay diferencias: no hace falta la ronda ' + r + '. Puede finalizar el inventario.'); return; } rd.items = items; rd.estado = 'lista'; inv.ronda = r; if (a === 'preparar') { DB.asig[r] = {}; } toast(`Ronda ${r} lista con ${fmtN(items.length)} ítems en ${fmtN(new Set(items.map(subDe)).size)} subgrupos. Asigne operadores y ábrala.`); }
-  if (a === 'fin') { const ok = await modal({ titulo: '¿Finalizar el inventario?', html: '<p class="small">Se cierra el conteo. Podrá generar el plano, el consolidado y los informes. Puede reabrirlo si hace falta.</p>', ok: 'Finalizar' }); if (!ok) return; inv.estado = 'cerrado'; }
+  if (a === 'abrir') { const sinAsig = R.av[r].lista.filter(s => s.total && !s.ops.length).length; if (sinAsig) { const ok = await modal({ titulo: `Hay ${sinAsig} bloques sin operador`, html: '<p class="small">Puede abrir la ronda y asignarlos después; los operadores verán los nuevos bloques al refrescar. La ronda no se podrá cerrar hasta que todo esté contado.</p>', ok: 'Abrir de todas formas' }); if (!ok) return; } rd.estado = 'abierta'; rd.abierta = Date.now(); inv.ronda = r; }
+  if (a === 'cerrar') {
+    const av = R.av[r], pend = av.total - av.cont;
+    if (pend) {
+      const lista = av.lista.filter(s => s.total > s.cont);
+      const ver = await modal({ titulo: `No se puede cerrar la ronda ${r}`, html: `<p class="small">Faltan <b>${fmtN(pend)}</b> ítems por contar en ${fmtN(lista.length)} bloques. Nada puede quedar sin contar: si un ítem no está, el operador debe registrar <b>0</b>.</p><div class="kv2" style="margin-top:8px">${lista.slice(0, 8).map(s => `<span>${blkHtml(s.blk)}</span><b>${fmtN(s.total - s.cont)} · ${esc(s.ops.map(opNom).join(', ') || 'sin operador')}</b>`).join('')}</div>`, ok: 'Ver lo que falta', cancel: 'Volver' });
+      if (ver) ir('cons', { est: 'pend' }); return;
+    }
+    const ok = await modal({ titulo: `¿Cerrar la ronda ${r}?`, html: `<p class="small">Contados ${fmtN(av.cont)} de ${fmtN(av.total)}. Los operadores dejan de poder registrar en esta ronda.${r < 3 ? ' Después podrá preparar la siguiente con las diferencias, separadas en faltantes y sobrantes, o finalizar el inventario.' : ''}</p>`, ok: 'Cerrar ronda' }); if (!ok) return; rd.estado = 'cerrada'; rd.cerrada = Date.now();
+  }
+  if (a === 'reabrir') { rd.estado = 'abierta'; rd.cerrada = null; if (r < 3 && inv.rondas[r + 1].estado === 'lista') { inv.rondas[r + 1].estado = 'pendiente'; inv.rondas[r + 1].items = []; inv.rondas[r + 1].tipo = {}; } }
+  if (a === 'preparar' || a === 'recalc') {
+    const { items, tipo } = candidatosRonda(r); if (!items.length) { toast('No hay diferencias: no hace falta la ronda ' + r + '. Puede finalizar el inventario.'); return; }
+    rd.items = items; rd.tipo = tipo; rd.estado = 'lista'; inv.ronda = r; if (a === 'preparar') DB.asig[r] = {};
+    const nF = Object.values(tipo).filter(t => t === 'F').length;
+    toast(`Ronda ${r} lista: ${fmtN(nF)} faltantes y ${fmtN(items.length - nF)} sobrantes. Asigne operadores y ábrala.`);
+  }
+  if (a === 'fin') { const ok = await modal({ titulo: '¿Finalizar el inventario?', html: '<p class="small">Se cierra el conteo. La cantidad definitiva de cada ítem es su último conteo y queda lista para el plano de SIESA. Puede reabrirlo si hace falta.</p>', ok: 'Finalizar' }); if (!ok) return; inv.estado = 'cerrado'; }
   if (a === 'reabrirInv') inv.estado = 'abierto';
   await guardarRondas(); if (a === 'preparar' || a === 'recalc') mostrar('rondas');
 }
 
 /* ---------- CONSOLIDADO ---------- */
-function aplicarFiltrosCons() { const f = FILTROS.cons; if ('nov' in f) { $('#c_nov').value = f.nov || ''; C_EST = f.nov === 'PENDIENTE' ? 'pend' : ''; } if ('dif' in f) C_EST = f.dif ? 'dif' : C_EST; if ('sub' in f) { ARK.selOpts($('#c_sub'), R ? R.subs : [], 'Todos los subgrupos', f.sub || ''); } if ('q' in f) $('#c_q').value = f.q || ''; FILTROS.cons = {}; ARK.resetPage('tblCons'); }
+function aplicarFiltrosCons() { const f = FILTROS.cons; C_EST = ''; if ('nov' in f) $('#c_nov').value = f.nov || ''; else $('#c_nov').value = ''; if (f.est) { C_EST = f.est; $('#c_nov').value = ''; } if ('dif' in f) C_EST = f.dif ? 'dif' : C_EST; if ('sub' in f) { ARK.selOpts($('#c_sub'), R ? R.subs : [], 'Todos los subgrupos', f.sub || ''); } if ('q' in f) $('#c_q').value = f.q || ''; FILTROS.cons = {}; ARK.resetPage('tblCons'); }
 RENDER.cons = function () {
   if (!R) { $('#kpisC').innerHTML = ''; $('#tblCons').innerHTML = empty('Sin inventario', 'Cargue las existencias en Inicio.'); return; }
   ARK.selOpts($('#c_sub'), R.subs, 'Todos los subgrupos');
   $$('#c_est button').forEach(b => b.classList.toggle('on', b.dataset.v === C_EST));
   const q = norm($('#c_q').value), sub = $('#c_sub').value, nov = $('#c_nov').value;
-  const rows = R.lines.concat(R.nuevos).filter(l => (!q || norm(l.item + ' ' + l.ref + ' ' + l.desc).includes(q)) && (!sub || l.sub === sub) && (!nov || l.nov === nov) && (C_EST !== 'dif' || l.difAj) && (C_EST !== 'pend' || l.nov === 'PENDIENTE') && (C_EST !== 'cont' || l.contado)).sort((a, b) => Math.abs(b.vDif) - Math.abs(a.vDif) || a.sub.localeCompare(b.sub));
+  const rows = R.lines.concat(R.nuevos).filter(l => (!q || norm(l.item + ' ' + l.ref + ' ' + l.desc).includes(q)) && (!sub || l.sub === sub) && (!nov || l.nov === nov) && (C_EST !== 'dif' || l.difAj) && (C_EST !== 'pend' || l.pendAct || l.nov === 'PENDIENTE') && (C_EST !== 'cont' || l.contado)).sort((a, b) => Math.abs(b.vDif) - Math.abs(a.vDif) || cmpS(llaveSub(ORD_SUB, a.sub), llaveSub(ORD_SUB, b.sub)));
   const a = agg(rows);
-  $('#kpisC').innerHTML = [{ l: 'Ítems', v: fmtN(a.n), s: `${fmtN(a.cont)} contados · ${fmtN(a.pend)} pendientes`, c: 'brand' }, { l: 'Exactitud', v: pct(a.exact, 1), s: 'sin novedad sobre contados', c: a.exact >= .9 ? 'ok' : 'warn' }, { l: 'Faltantes', v: fmtN(a.falt), s: fmt$(a.vFalt), c: 'bad' }, { l: 'Sobrantes', v: fmtN(a.sobr), s: fmt$(a.vSobr), c: 'ok' }, { l: 'Diferencia neta', v: fmtM(a.vNeto), s: 'sobrante − faltante', c: 'acc' }, { l: 'Valor en sistema', v: fmtM(a.vTeo), s: 'existencia × costo (ins)', c: 'brand' }].map(kpi).join('');
-  ARK.table($('#tblCons'), [{ k: 'item', l: 'Ítem' }, { k: 'ref', l: 'Ref.' }, { k: 'desc', l: 'Descripción', cls: 'desc' }, { k: 'sub', l: 'Subgrupo' }, { k: 'um', l: 'U.M.' }, { l: 'Existencia', n: 1, f: r => fmtQ(r.teo) }, { l: 'C1', n: 1, f: r => fmtQ(r.c1) }, { l: 'C2', n: 1, f: r => fmtQ(r.c2) }, { l: 'C3', n: 1, f: r => fmtQ(r.c3) }, { l: 'Final', n: 1, f: r => `<b>${fmtQ(r.fin)}</b>` }, { l: 'Diferencia', n: 1, f: r => `<span class="${sgn(r.difAj)}">${fmtQ(r.difAj)}</span>` }, { l: 'Costo (ins)', n: 1, f: r => fmt$(r.cp) }, { l: 'Valor dif.', n: 1, f: r => `<span class="${sgn(r.vDif)}">${fmt$(r.vDif)}</span>` }, { l: 'Novedad', f: r => ARK.pill(r.nov, { FALTANTE: 'p-bad', SOBRANTE: 'p-ok', 'SIN NOVEDAD': 'p-info', PENDIENTE: 'p-warn' }) + (r.nuevo ? ' <span class="pill p-warn">NO EN CONSULTA</span>' : '') + (r.fuera ? ' <span class="pill p-warn">FUERA</span>' : '') }, { l: 'Operador', f: r => esc(opNom(r.op)) }, { l: 'Obs.', f: r => `<span class="small muted">${esc(r.obs || '')}</span>`, cls: 'desc' }], rows,
+  const pendR = rows.filter(l => l.pendAct).length;
+  $('#kpisC').innerHTML = [{ l: 'Ítems', v: fmtN(a.n), s: `${fmtN(a.cont)} contados · ${fmtN(pendR || a.pend)} sin contar en la ronda ${R.rAct}`, c: 'brand' }, { l: 'Exactitud', v: pct(a.exact, 1), s: 'sin novedad sobre contados', c: a.exact >= .9 ? 'ok' : 'warn' }, { l: 'Faltantes', v: fmtN(a.falt), s: fmt$(a.vFalt), c: 'bad' }, { l: 'Sobrantes', v: fmtN(a.sobr), s: fmt$(a.vSobr), c: 'ok' }, { l: 'Diferencia neta', v: fmtM(a.vNeto), s: 'sobrante − faltante', c: 'acc' }, { l: 'Valor en sistema', v: fmtM(a.vTeo), s: 'existencia × costo (ins)', c: 'brand' }].map(kpi).join('');
+  ARK.table($('#tblCons'), [{ l: 'Ítem', f: r => `<span class="num">${esc(r.item)}</span>` }, { l: 'Descripción', f: r => esc(r.desc) + (r.inact ? ' <span class="pill p-warn">INACTIVO</span>' : '') + `<small class="sub2">${esc(r.sub)} · ${esc(r.um)}${r.obs ? ' · «' + esc(r.obs) + '»' : ''}</small>`, cls: 'desc' },
+    { l: 'Existencia', n: 1, f: r => fmtQ(r.teo) }, { l: 'C1 · C2 · C3', n: 1, f: conteosHtml }, { l: 'Final', n: 1, f: r => r.fin == null ? '—' : `<b>${fmtQ(r.fin)}</b>` }, { l: 'Diferencia', n: 1, f: r => `<span class="${sgn(r.difAj)}">${fmtQ(r.difAj)}</span>` }, { l: 'Valor dif.', n: 1, f: r => `<span class="${sgn(r.vDif)}">${fmt$(r.vDif)}</span>` },
+    { l: 'Novedad', f: r => ARK.pill(r.nov, { FALTANTE: 'p-bad', SOBRANTE: 'p-ok', 'SIN NOVEDAD': 'p-info', PENDIENTE: 'p-warn' }) + (r.pendAct && r.nov !== 'PENDIENTE' ? ` <span class="pill p-warn">SIN CONTAR R${R.rAct}</span>` : '') + (r.nuevo ? ' <span class="pill p-warn">NO EN CONSULTA</span>' : '') + (r.fuera ? ' <span class="pill p-warn">FUERA</span>' : ''), cls: 'wrap' }, { l: 'Operador', f: r => esc(opNom(r.op)), cls: 'wrap' }], rows,
     { size: 100, empty: 'Sin ítems con los filtros actuales.', rowAttr: r => `class="clk" data-it="${esc(r.k)}"`, after: h => h.querySelectorAll('tr[data-it]').forEach(tr => tr.onclick = () => abrirDetalle(tr.dataset.it)) });
   RENDER.cons.rows = rows;
 };
 ['#c_q', '#c_sub', '#c_nov'].forEach(s => $(s).addEventListener('input', () => { ARK.resetPage('tblCons'); RENDER.cons(); }));
 $$('#c_est button').forEach(b => b.onclick = () => { C_EST = b.dataset.v; if (C_EST === 'pend') $('#c_nov').value = ''; ARK.resetPage('tblCons'); RENDER.cons(); });
-$('#btnXlsCons').onclick = () => { const rows = RENDER.cons.rows || []; ARK.exportXlsx(rows.map(r => ({ Ítem: r.item, Referencia: r.ref, Descripción: r.desc, Subgrupo: r.sub, 'U.M.': r.um, Existencia: r.teo, 'Conteo 1': r.c1, 'Conteo 2': r.c2, 'Conteo 3': r.c3, Final: r.fin, Diferencia: r.difAj, 'Costo (ins)': r.cp, 'Valor diferencia': Math.round(r.vDif), Novedad: r.nov, Operador: opNom(r.op), Observación: r.obs })), 'CONSOLIDADO', `CONTEO_CONSOLIDADO_AGRO_${ARK.isoDate(new Date())}.xlsx`); };
+$('#btnXlsCons').onclick = () => { const rows = RENDER.cons.rows || []; ARK.exportXlsx(rows.map(r => ({ Ítem: r.item, Referencia: r.ref, Descripción: r.desc, Subgrupo: r.sub, 'U.M.': r.um, Existencia: r.teo, 'Conteo 1': r.c1, 'Conteo 2': r.c2, 'Conteo 3': r.c3, Final: r.fin, 'Conteo que manda': r.finR ? 'R' + r.finR : '', Diferencia: r.difAj, 'Costo (ins)': r.cp, 'Valor diferencia': Math.round(r.vDif), Novedad: r.nov, Inactivo: r.inact ? 'SÍ' : '', Operador: opNom(r.op), Observación: r.obs })), 'CONSOLIDADO', `CONTEO_CONSOLIDADO_AGRO_${ARK.isoDate(new Date())}.xlsx`); };
 $('#btnPdfCons').onclick = () => pdfConteo(RENDER.cons.rows || []);
 
 /* ---------- DETALLE DE UN ÍTEM ---------- */
 function abrirDetalle(code) {
   const it = DB.items[code]; const l = R && (R.lines.find(x => x.k === code) || R.nuevos.find(x => x.k === code)); if (!l) return;
   const hist = DB.log.filter(x => x.item === code).slice(-30).reverse();
-  $('#drawerBody').innerHTML = `<h3>${esc(l.desc)}</h3><p class="muted">Ítem ${esc(l.item)} · Ref. ${esc(l.ref)} · ${esc(l.sub)} · ${esc(l.um)}${it ? ' · ' + esc(it.grupo) : ''}</p>
-    <div class="kpis" style="margin-top:12px">${[{ l: 'Existencia', v: fmtQ(l.teo), s: 'en SIESA', c: 'brand' }, { l: 'Final', v: fmtQ(l.fin), s: l.finR ? 'ronda ' + l.finR : 'sin contar', c: 'brand' }, { l: 'Diferencia', v: fmtQ(l.difAj), s: fmt$(l.vDif), c: l.difAj < 0 ? 'bad' : l.difAj > 0 ? 'ok' : 'brand' }, { l: 'Costo (ins)', v: fmt$(l.cp), s: 'valor sistema ' + fmt$(l.vTeo), c: 'acc' }].map(kpi).join('')}</div>
+  $('#drawerBody').innerHTML = `<h3>${esc(l.desc)}</h3><p class="muted">Ítem ${esc(l.item)}${l.cod && l.cod !== l.item ? ` (en el plano: ${esc(l.cod)})` : ''} · Ref. ${esc(l.ref)} · ${esc(l.sub)} · ${esc(l.um)}${it ? ' · ' + esc(it.grupo) : ''}${l.inact ? ' · <span class="pill p-warn">INACTIVO</span>' : ''}</p>
+    <div class="kpis" style="margin-top:12px">${[{ l: 'Existencia', v: fmtQ(l.teo), s: 'en SIESA', c: 'brand' }, { l: 'Final', v: fmtQ(l.fin), s: l.finR ? 'manda el conteo de la ronda ' + l.finR : 'sin contar', c: 'brand' }, { l: 'Diferencia', v: fmtQ(l.difAj), s: fmt$(l.vDif), c: l.difAj < 0 ? 'bad' : l.difAj > 0 ? 'ok' : 'brand' }, { l: 'Costo (ins)', v: fmt$(l.cp), s: 'valor sistema ' + fmt$(l.vTeo), c: 'acc' }].map(kpi).join('')}</div>
     <h3 style="font-size:15px;margin:10px 0 6px">Conteos por ronda</h3><div class="kv2">${[1, 2, 3].map(r => { const c = (DB.cont[r] || {})[code]; return `<span>Ronda ${r}</span><b>${c ? `${fmtQ(c.q)} · ${esc(opNom(c.op))} · ${fmtH(c.ts)}${c.n > 1 ? ` · ${c.n} cambios` : ''}${c.obs ? ` · «${esc(c.obs)}»` : ''}` : (l.enHoja[r - 1] ? '<span class="muted">pendiente</span>' : '<span class="muted">no está en la hoja</span>')}</b>`; }).join('')}</div>
     <h3 style="font-size:15px;margin:14px 0 6px">Historial</h3><div id="tblHist"></div>`;
   ARK.table($('#tblHist'), [{ l: 'Fecha', f: x => fmtH(x.ts) }, { l: 'R', f: x => x.r }, { l: 'Operador', f: x => esc(opNom(x.op)) }, { l: 'Cantidad', n: 1, f: x => x.q == null ? 'borrado' : fmtQ(x.q) }, { l: 'Antes', n: 1, f: x => x.prev == null ? '' : fmtQ(x.prev) }], hist, { size: 30, maxh: '300px', empty: 'Sin registros.' });
@@ -2056,12 +2264,27 @@ $$('#r_sev button').forEach(b => b.onclick = () => { REV_SEV = b.dataset.v; REND
 /* ---- src/js/04_operador.js ---- */
 /* =====================================================================
    04 · Hoja de conteo (celular): entrar con el nombre, ver solo ítem y
-   descripción de los subgrupos asignados y registrar cantidades.
-   Nunca muestra existencias, costos ni conteos anteriores.
+   descripción de los bloques asignados y registrar cantidades.
+   Ronda 1: nunca muestra existencias, costos ni conteos.
+   Rondas 2 y 3: muestra si el bloque es de FALTANTES o SOBRANTES y la
+   cantidad del conteo anterior, para rectificar.
+
+   Cómo se mantiene al día con muchos celulares a la vez (v3):
+   · Lo que el operador escribe queda en la pantalla («local») hasta que el
+     servidor devuelve esa misma fila; ningún refresco lo puede borrar.
+   · Los conteos salen en lotes (varios ítems por llamada) y la cola se
+     guarda en el teléfono: si se va la señal o se recarga, no se pierde.
+   · El refresco pide solo lo nuevo desde la última fila leída.
    ===================================================================== */
-const OP = { op: null, hoja: null, sub: null, filtro: 'pend', q: '', cola: [], timer: null, enviando: false };
-const OPST = ARK.store('agro_op1_');
+const OPST = ARK.store('agro_op3_');
+const OP = { op: null, pin: '', h: null, ver: '', fila: 1, idx: new Map(), srv: {}, loc: {}, cola: [], fuera: {}, sub: null, filtro: 'pend', q: '',
+  timer: null, envTimer: null, enviando: false, refrescando: false, fallos: 0, maestra: null };
 const opEl = { body: $('#opBody'), title: $('#opTitle'), who: $('#opWho'), prog: $('#opProg'), bar: $('#opBar'), pct: $('#opPct'), back: $('#opBack'), salir: $('#opSalir'), foot: $('#opFoot'), st: $('#opSt'), footR: $('#opFootR') };
+const persistir = () => { if (OP.op && OP.h && OP.h.inv) OPST.set('estado', { opId: OP.op.id, invId: OP.h.inv.id, ronda: OP.h.inv.ronda, cola: OP.cola, loc: OP.loc }); };
+const valorDe = c => OP.loc[c] ? OP.loc[c].q : (OP.srv[c] ? OP.srv[c].q : null);
+const obsDe = c => OP.loc[c] ? (OP.loc[c].obs || '') : (OP.srv[c] ? OP.srv[c].obs || '' : '');
+const quienDe = c => OP.loc[c] ? (OP.op && OP.op.id) : (OP.srv[c] ? OP.srv[c].op : null);
+const contadoEn = s => s.items.filter(i => valorDe(i.item) != null).length;
 
 async function opIniciar() {
   const rec = OPST.get('op'); OP.sub = null;
@@ -2069,174 +2292,319 @@ async function opIniciar() {
   opLogin();
 }
 async function opLogin(msg) {
-  OP.op = null; OP.hoja = null; opEl.prog.hidden = true; opEl.back.hidden = true; opEl.salir.hidden = true; opEl.foot.hidden = true; opEl.who.textContent = ''; opEl.title.textContent = 'Hoja de conteo';
+  OP.op = null; OP.h = null; clearTimeout(OP.timer); opEl.prog.hidden = true; opEl.back.hidden = true; opEl.salir.hidden = true; opEl.foot.hidden = true; opEl.who.textContent = ''; opEl.title.textContent = 'Hoja de conteo';
   let lista = { ops: [], inv: null }; try { lista = await SYNC.opLista(); } catch (e) { msg = 'No hay conexión con el servidor: ' + e.message; }
   opEl.body.innerHTML = `<div class="op-login"><div class="panel"><h2>¿Quién cuenta?</h2><p class="muted small" style="margin:0 0 12px">${lista.inv ? esc(lista.inv.nombre) : 'Todavía no hay un inventario creado.'}</p>
-    <label class="fld">Nombre<select id="lgOp"><option value="">Elija su nombre…</option>${lista.ops.map(o => `<option value="${o.id}" data-pin="${o.pin ? 1 : 0}">${esc(o.nombre)}</option>`).join('')}</select></label>
+    <label class="fld">Nombre<select id="lgOp"><option value="">Elija su nombre…</option>${(lista.ops || []).map(o => `<option value="${esc(o.id)}" data-pin="${o.pin ? 1 : 0}">${esc(o.nombre)}</option>`).join('')}</select></label>
     <label class="fld" id="lgPinW" hidden>PIN<input type="password" id="lgPin" inputmode="numeric" autocomplete="off" placeholder="PIN"></label>
     <p class="small neg" id="lgMsg" ${msg ? '' : 'hidden'}>${esc(msg || '')}</p>
     <button class="btn pri" type="button" id="lgGo">Entrar</button></div>
-    <p class="muted small" style="text-align:center">Solo verá los subgrupos que le asignaron. Cada cantidad se guarda al instante.</p>
+    <p class="muted small" style="text-align:center">Solo verá los bloques que le asignaron. Cada cantidad se guarda al instante, aunque se vaya la señal.</p>
     <p style="text-align:center"><button class="btn ghost" type="button" data-go-portada>← Volver al inicio</button></p></div>`;
   $('#lgOp').onchange = () => { const o = $('#lgOp').selectedOptions[0]; $('#lgPinW').hidden = !(o && o.dataset.pin === '1'); };
-  $('#lgGo').onclick = async () => { const id = $('#lgOp').value; if (!id) return; const ok = await opCargar(id, $('#lgPin').value); if (!ok) { $('#lgMsg').hidden = false; } };
+  $('#lgGo').onclick = async () => { const id = $('#lgOp').value, btn = $('#lgGo'); if (!id) return; btn.disabled = true; const ok = await opCargar(id, $('#lgPin').value); if (!ok) { btn.disabled = false; const m = $('#lgMsg'); if (m) m.hidden = false; } };
   $('#lgPin').addEventListener('keydown', e => { if (e.key === 'Enter') $('#lgGo').click(); });
   wirePortada();
 }
 async function opCargar(id, pin) {
-  try { const r = await SYNC.opEntrar(id, pin); if (!r.ok) { const m = $('#lgMsg'); if (m) m.textContent = r.msg; return false; }
-    OP.op = r.op; OP.hoja = r; OPST.set('op', { id, pin }); opEl.who.textContent = r.op.nombre; opEl.salir.hidden = false; opEl.foot.hidden = false; opRender(); opProgramarRefresco(); return true;
+  try {
+    const r = await SYNC.opEntrar(id, pin); if (!r.ok) { const m = $('#lgMsg'); if (m) m.textContent = r.msg; return false; }
+    OP.op = r.op; OP.pin = pin || ''; OPST.set('op', { id, pin: OP.pin });
+    aplicarHoja(r, true);
+    opEl.who.textContent = r.op.nombre; opEl.salir.hidden = false; opEl.foot.hidden = false; opRender();
+    opProgramarRefresco(5000);
+    if (OP.cola.length) { opEstado('off', `${OP.cola.length} por enviar`); programarEnvio(50); } else opEstado('', 'Al día ' + fmtHs(Date.now()));
+    return true;
   } catch (e) { const m = $('#lgMsg'); if (m) m.textContent = 'Sin conexión: ' + e.message; return false; }
 }
-function opProgramarRefresco() { clearInterval(OP.timer); OP.timer = setInterval(opRefrescar, SYNC.modo === 'remoto' ? 8000 : 2500); SYNC.onChange(opRefrescar); }
-let OP_REF = false;
-async function opRefrescar() {
-  if (!OP.op || OP_REF || document.hidden) return; OP_REF = true;
-  try { const r = await SYNC.opRefrescar(OP.op.id); if (r.ok) { r.maestra = r.maestra || OP.hoja.maestra; const cambioRonda = OP.hoja.inv && r.inv && OP.hoja.inv.ronda !== r.inv.ronda; if (cambioRonda) { OP.sub = null; OP.hoja = r; opRender(); toast('Cambió la ronda: ahora va la ronda ' + r.inv.ronda + '.'); OP_REF = false; return; } const antes = JSON.stringify([OP.hoja.inv, OP.hoja.subs.map(s => [s.sub, s.items.map(i => [i.item, i.q, i.op])])]); OP.hoja = r; const ahora = JSON.stringify([r.inv, r.subs.map(s => [s.sub, s.items.map(i => [i.item, i.q, i.op])])]); if (antes !== ahora) opRender(true); } }
-  catch (e) { opEstado('off', 'Sin conexión'); }
-  OP_REF = false;
+/** Recibe la hoja completa del servidor y le pone encima lo que este celular tiene sin confirmar. */
+function aplicarHoja(r, alEntrar) {
+  const antes = OP.h && OP.h.inv ? OP.h.inv.ronda : null;
+  OP.h = r; OP.ver = r.ver; OP.fila = r.fila || 1; OP.idx = new Map();
+  (r.subs || []).forEach(s => { s.items = s.items.map(a => Array.isArray(a) ? { item: a[0], ref: a[1], desc: a[2], um: a[3], inact: !!a[4], prev: a[5] } : a); s.items.forEach(i => OP.idx.set(i.item, { i, blk: s.sub })); });
+  OP.srv = {}; Object.entries(r.cont || {}).forEach(([k, v]) => { OP.srv[k] = { q: v[0], op: v[1], obs: v[2] || '' }; });
+  OP.fuera = {}; (r.fuera || []).forEach(f => { OP.fuera[f.item] = f; });
+  if (alEntrar) {   // recuperar lo que quedó sin enviar en este teléfono (solo si es la misma persona, inventario y ronda)
+    const g = OPST.get('estado'), misma = g && r.inv && g.opId === r.op.id && g.invId === r.inv.id && g.ronda === r.inv.ronda;
+    if (misma) { OP.cola = g.cola || []; OP.loc = g.loc || {}; }
+    else { if (g && g.cola && g.cola.length && g.opId === r.op.id) toast(`La ronda cambió: ${g.cola.length} registro(s) que no alcanzaron a enviarse ya no aplican.`); OP.cola = []; OP.loc = {}; }
+  } else if (r.inv && antes && r.inv.ronda !== antes) {
+    if (OP.cola.length) toast(`La ronda cambió: ${OP.cola.length} registro(s) sin enviar ya no aplican.`);
+    OP.cola = []; OP.loc = {}; OP.sub = null; toast('Cambió la ronda: ahora va la ronda ' + r.inv.ronda + '.');
+  }
+  Object.keys(OP.loc).forEach(k => { if (OP.loc[k].ack) delete OP.loc[k]; });   // confirmados: ya vienen en la hoja del servidor
+  OP.cola.forEach(c => { if (c.fuera && c.q != null) OP.fuera[c.item] = Object.assign(OP.fuera[c.item] || {}, { item: c.item, desc: c.desc, q: c.q, obs: c.obs, nuevo: !!c.nuevo }); });
+  persistir();
 }
-function opEstado(cls, txt) { opEl.st.className = 'st ' + (cls || ''); opEl.st.querySelector('span').textContent = txt; }
+/** Un solo ciclo de refresco, con un pequeño desfase al azar para que los celulares no lleguen todos juntos. */
+function opProgramarRefresco(ms) {
+  clearTimeout(OP.timer);
+  const espera = ms != null ? ms : (OP.fallos ? Math.min(30000, 4000 * 2 ** Math.min(3, OP.fallos)) : 4500 + Math.random() * 2000);
+  OP.timer = setTimeout(async () => { await opRefrescar(); if (OP.op) opProgramarRefresco(); }, espera);
+}
+async function opRefrescar() {
+  if (!OP.op || OP.refrescando || document.hidden) return; OP.refrescando = true;
+  try {
+    const r = await SYNC.opRefrescar(OP.op.id, OP.ver, OP.fila);
+    if (r.ok === false) { if (/no encontrado/i.test(r.msg || '')) { OPST.del('op'); opLogin(r.msg); } return; }
+    if (r.recargar) { const h = await SYNC.opEntrar(OP.op.id, OP.pin); if (h.ok) { aplicarHoja(h, false); opRender(); } else { OPST.del('op'); opLogin(h.msg); return; } }
+    else { OP.fila = r.fila || OP.fila; const ch = aplicarFilasOp(r.filas || []); if (ch.size) opRender(true, ch); }
+    OP.fallos = 0; if (!OP.cola.length && !OP.enviando) opEstado('', 'Al día ' + fmtHs(Date.now()));
+  } catch (e) { OP.fallos++; opEstado('off', OP.cola.length ? `Sin conexión · ${OP.cola.length} por enviar` : 'Sin conexión'); }
+  finally { OP.refrescando = false; }
+}
+function aplicarFilasOp(filas) {
+  const ch = new Set(), yo = OP.op.id, ronda = OP.h && OP.h.inv ? OP.h.inv.ronda : 0;
+  filas.forEach(([ts, r, item, q, op, obs, fuera, nuevo, desc, id]) => {
+    if (r !== ronda) return;
+    if (q == null) delete OP.srv[item]; else OP.srv[item] = { q, op, obs: obs || '' };
+    if (fuera && op === yo) { if (q == null) delete OP.fuera[item]; else OP.fuera[item] = Object.assign(OP.fuera[item] || {}, { item, desc, q, obs, nuevo: !!nuevo }); }
+    const l = OP.loc[item]; if (l && l.id === id) delete OP.loc[item];   // el servidor ya devolvió lo que este celular guardó
+    ch.add(item);
+  });
+  if (ch.size) persistir();
+  return ch;
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden && OP.op && !PANT.op.hidden) { opRefrescar(); if (OP.cola.length) programarEnvio(50); } });
+window.addEventListener('online', () => { if (OP.op && OP.cola.length) programarEnvio(50); });
 
-function opRender(suave) {
-  const h = OP.hoja; if (!h) return;
+function opEstado(cls, txt) { opEl.st.className = 'st ' + (cls || ''); opEl.st.querySelector('span').textContent = txt; }
+const tituloBlk = b => { const t = tipoBlk(b); return (t ? `<span class="pill ${t === 'F' ? 'p-bad' : 'p-ok'}">${t === 'F' ? 'FALTANTES' : 'SOBRANTES'}</span> ` : '') + esc(subDeBlk(b)); };
+
+function opRender(suave, cambios) {
+  const h = OP.h; if (!h) return;
   if (!h.inv) { opEl.title.textContent = 'Hoja de conteo'; opEl.prog.hidden = true; opEl.body.innerHTML = `<div class="op-wait"><div class="big">⏳</div><b>Todavía no hay inventario</b><p>Espere a que el centro de control lo cree.</p></div>`; return; }
-  const total = h.subs.reduce((a, s) => a + s.items.length, 0), cont = h.subs.reduce((a, s) => a + s.items.filter(i => i.q != null).length, 0);
+  const total = h.subs.reduce((a, s) => a + s.items.length, 0), cont = h.subs.reduce((a, s) => a + contadoEn(s), 0);
   opEl.footR.textContent = `Ronda ${h.inv.ronda} · ${fmtN(cont)} / ${fmtN(total)}`;
-  if (!h.inv.abierta) { opEl.title.textContent = `Ronda ${h.inv.ronda}`; opEl.prog.hidden = true; opEl.back.hidden = true; opEl.body.innerHTML = `<div class="op-wait"><div class="big">${h.inv.estado === 'cerrado' ? '✅' : '⏸️'}</div><b>${h.inv.estado === 'cerrado' ? 'Inventario finalizado' : `La ronda ${h.inv.ronda} no está abierta`}</b><p>${h.inv.estado === 'cerrado' ? 'Gracias por su trabajo.' : 'Cuando el centro de control la abra, aquí aparecerán sus subgrupos. Esta pantalla se actualiza sola.'}</p></div>`; return; }
+  if (!h.inv.abierta) { opEl.title.textContent = `Ronda ${h.inv.ronda}`; opEl.prog.hidden = true; opEl.back.hidden = true; opEl.body.innerHTML = `<div class="op-wait"><div class="big">${h.inv.estado === 'cerrado' ? '✅' : '⏸️'}</div><b>${h.inv.estado === 'cerrado' ? 'Inventario finalizado' : `La ronda ${h.inv.ronda} no está abierta`}</b><p>${h.inv.estado === 'cerrado' ? 'Gracias por su trabajo.' : 'Cuando el centro de control la abra, aquí aparecerán sus bloques. Esta pantalla se actualiza sola.'}</p></div>`; return; }
   if (OP.sub && !h.subs.some(s => s.sub === OP.sub)) OP.sub = null;
+  if (suave && OP.pantalla === 'buscar') { opActualizarProgreso(); return; }   // no sacar al operador del buscador
   if (!OP.sub) return opRenderInicio(cont, total);
-  opRenderHoja(suave);
+  opRenderHoja(suave, cambios);
 }
 function opRenderInicio(cont, total) {
-  const h = OP.hoja; opEl.title.textContent = `Ronda ${h.inv.ronda}${h.inv.ronda > 1 ? ' · reconteo' : ''}`; opEl.back.hidden = true;
+  OP.pantalla = 'lista'; const h = OP.h; opEl.title.textContent = `Ronda ${h.inv.ronda}${h.inv.ronda > 1 ? ' · reconteo' : ''}`; opEl.back.hidden = true;
   opEl.prog.hidden = !total; opEl.bar.style.width = (total ? cont / total * 100 : 0) + '%'; opEl.pct.textContent = pct(total ? cont / total : 0, 0);
-  const cards = h.subs.map(s => { const c = s.items.filter(i => i.q != null).length, t = s.items.length, done = t && c >= t; return `<div class="sub-card ${done ? 'done' : ''}" data-sub="${esc(s.sub)}"><span class="ring">${done ? '✓' : fmtN(t - c)}</span><div class="t"><b>${esc(s.sub)}</b><span>${fmtN(c)} de ${fmtN(t)} ítems contados${done ? ' · listo' : ''}</span><div class="bar"><i style="width:${t ? c / t * 100 : 0}%"></i></div></div><span class="pc">${pct(t ? c / t : 0, 0)}</span></div>`; }).join('');
-  opEl.body.innerHTML = (h.inv.ronda > 1 ? `<div class="op-done" style="background:var(--warn-bg);border-color:#F7C38E;color:var(--warn)">🔁 Reconteo: cuente otra vez estos ítems con calma, como si fuera la primera vez.</div>` : '') + (total && cont >= total ? `<div class="op-done">✅ Terminó todo lo asignado. Si encuentra algo más, use «Ítem no listado».</div>` : '') + (cards || `<div class="op-wait"><div class="big">📋</div><b>Aún no tiene subgrupos asignados</b><p>El centro de control se los asignará en un momento. Esta pantalla se actualiza sola.</p></div>`) +
-    `<div class="op-add" id="opAddBtn"><b>＋ Ítem no listado</b><br><span class="small">Encontró algo que no está en sus subgrupos</span></div>` + (h.fuera && h.fuera.length ? `<h3 style="font-size:14px;margin:14px 0 6px;color:var(--muted)">Registrados por fuera de sus subgrupos</h3><div class="items">${h.fuera.map(i => `<div class="it other done"><div class="cod">${esc(i.item)}${i.nuevo ? ' <span class="pill p-warn">NO EN LISTA</span>' : ''}</div><div class="des">${esc(i.desc)}</div><div class="q"><input type="text" value="${fmtQ(i.q)}" disabled><button class="ok" data-delf="${esc(i.item)}" title="Borrar">✕</button></div></div>`).join('')}</div>` : '');
-  $$('.sub-card', opEl.body).forEach(c => c.onclick = () => { OP.sub = c.dataset.sub; OP.filtro = 'pend'; OP.q = ''; opRenderHoja(); });
+  const cards = h.subs.map(s => { const c = contadoEn(s), t = s.items.length, done = t && c >= t; return `<div class="sub-card ${done ? 'done' : ''} ${s.tipo ? 't' + s.tipo : ''}" data-sub="${esc(s.sub)}"><span class="ring">${done ? '✓' : fmtN(t - c)}</span><div class="t"><b>${tituloBlk(s.sub)}</b><span>${fmtN(c)} de ${fmtN(t)} ítems contados${done ? ' · listo' : ''}</span><div class="bar"><i style="width:${t ? c / t * 100 : 0}%"></i></div></div><span class="pc">${pct(t ? c / t : 0, 0)}</span></div>`; }).join('');
+  const fuera = Object.values(OP.fuera).filter(f => valorDe(f.item) != null);
+  opEl.body.innerHTML = (h.inv.ronda > 1 ? `<div class="op-done" style="background:var(--warn-bg);border-color:#F7C38E;color:var(--warn)">🔁 Reconteo: cada ítem muestra lo que se contó antes. Vuelva a contarlo con calma y escriba la cantidad real, aunque sea la misma.</div>` : '') + (total && cont >= total ? `<div class="op-done">✅ Terminó todo lo asignado. Si encuentra algo más, use «Ítem no listado».</div>` : '') + (cards || `<div class="op-wait"><div class="big">📋</div><b>Aún no tiene bloques asignados</b><p>El centro de control se los asignará en un momento. Esta pantalla se actualiza sola.</p></div>`) +
+    `<div class="op-add" id="opAddBtn"><b>＋ Ítem no listado</b><br><span class="small">Encontró algo que no está en sus bloques</span></div>` + (fuera.length ? `<h3 style="font-size:14px;margin:14px 0 6px;color:var(--muted)">Registrados por fuera de sus bloques</h3><div class="items">${fuera.map(i => `<div class="it other done"><div class="c1"><b class="code">${esc(i.item)}</b>${i.nuevo ? '<span class="pill p-warn">NO EN LISTA</span>' : ''}</div><div class="des">${esc(i.desc || '')}</div><div class="q"><input type="text" value="${fmtQ(valorDe(i.item))}" disabled><button class="ok" data-delf="${esc(i.item)}" title="Borrar">✕</button></div></div>`).join('')}</div>` : '');
+  $$('.sub-card', opEl.body).forEach(c => c.onclick = () => { OP.sub = c.dataset.sub; OP.filtro = 'pend'; OP.q = ''; opRenderHoja(); window.scrollTo(0, 0); });
   $('#opAddBtn').onclick = opBuscarFuera;
-  $$('[data-delf]', opEl.body).forEach(b => b.onclick = async () => { if (!confirm('¿Borrar este registro?')) return; await opGuardar(b.dataset.delf, null, '', {}); await opRefrescar(); opRender(); });
+  $$('[data-delf]', opEl.body).forEach(b => b.onclick = () => { if (!confirm('¿Borrar este registro?')) return; const f = OP.fuera[b.dataset.delf] || {}; opGuardar(b.dataset.delf, null, '', { fuera: true, desc: f.desc, nuevo: f.nuevo }); delete OP.fuera[b.dataset.delf]; opRender(); });
 }
-function opRenderHoja(suave) {
-  const h = OP.hoja, s = h.subs.find(x => x.sub === OP.sub); if (!s) return;
-  const c = s.items.filter(i => i.q != null).length, t = s.items.length;
-  opEl.title.textContent = s.sub; opEl.back.hidden = false; opEl.prog.hidden = false; opEl.bar.style.width = (t ? c / t * 100 : 0) + '%'; opEl.pct.textContent = `${fmtN(c)}/${fmtN(t)}`;
-  const q = norm(OP.q); const rows = s.items.filter(i => (OP.filtro !== 'pend' || i.q == null) && (!q || norm(i.item + ' ' + i.ref + ' ' + i.desc).includes(q)));
+function opRenderHoja(suave, cambios) {
+  OP.pantalla = 'hoja'; const h = OP.h, s = h.subs.find(x => x.sub === OP.sub); if (!s) return;
+  const c = contadoEn(s), t = s.items.length;
+  opEl.title.innerHTML = tituloBlk(s.sub); opEl.back.hidden = false; opEl.prog.hidden = false; opEl.bar.style.width = (t ? c / t * 100 : 0) + '%'; opEl.pct.textContent = `${fmtN(c)}/${fmtN(t)}`;
   if (suave && $('#opItems')) {   // actualización en vivo sin perder el foco: solo repinta filas que cambiaron
-    const foco = document.activeElement; const focoItem = foco && foco.closest('.it') ? foco.closest('.it').dataset.it : null;
-    rows.forEach(i => { const el = opEl.body.querySelector(`.it[data-it="${CSS.escape(i.item)}"]`); if (!el || i.item === focoItem) return; const inp = el.querySelector('input.qty'); const v = i.q == null ? '' : String(i.q); if (inp.value !== v) { inp.value = v; el.classList.toggle('done', i.q != null); el.querySelector('.by').textContent = i.q != null && i.op !== OP.op.id ? 'contado por otro operador' : ''; } });
+    const foco = document.activeElement, focoItem = foco && foco.closest && foco.closest('.it') ? foco.closest('.it').dataset.it : null;
+    $$('#opItems .it').forEach(el => {
+      const code = el.dataset.it; if (code === focoItem || (cambios && !cambios.has(code))) return;
+      const v = valorDe(code), inp = el.querySelector('input.qty'), txt = v == null ? '' : String(v);
+      if (inp.value !== txt) inp.value = txt;
+      el.classList.toggle('done', v != null);
+      const by = el.querySelector('.by'); if (by) by.textContent = v != null && quienDe(code) && quienDe(code) !== OP.op.id ? 'contado por otro operador' : '';
+    });
     return;
   }
+  const q = norm(OP.q); const rows = s.items.filter(i => (OP.filtro !== 'pend' || valorDe(i.item) == null) && (!q || norm(i.item + ' ' + (i.ref || '') + ' ' + i.desc).includes(q)));
+  const r2 = h.inv.ronda > 1;
   opEl.body.innerHTML = `<div class="op-tools"><input type="search" id="opQ" placeholder="Buscar ítem o descripción" value="${esc(OP.q)}"><div class="seg"><button type="button" data-f="pend" class="${OP.filtro === 'pend' ? 'on' : ''}">Pendientes</button><button type="button" data-f="todo" class="${OP.filtro === 'todo' ? 'on' : ''}">Todos</button></div></div>
-    ${t && c >= t && OP.filtro === 'pend' ? `<div class="op-done">✅ Subgrupo completo. Puede revisar «Todos» o volver a la lista.</div>` : ''}
-    <div class="items" id="opItems"><div class="it-head"><span>Ítem · U.M.</span><span>Descripción</span><span>Cantidad</span><span>Observación</span></div>${rows.map(opFila).join('') || `<div class="op-wait">${q ? 'Nada coincide con la búsqueda.' : 'No hay ítems pendientes aquí.'}</div>`}</div>`;
+    ${t && c >= t && OP.filtro === 'pend' ? `<div class="op-done">✅ Bloque completo. Puede revisar «Todos» o volver a la lista.</div>` : ''}
+    <div class="items ${r2 ? 'r2' : ''}" id="opItems"><div class="it-head"><span>Ítem · U.M.</span><span>Descripción</span>${r2 ? '<span>Conteo anterior</span>' : ''}<span>Cantidad</span><span>Observación</span></div>${rows.map(opFila).join('') || `<div class="op-wait">${q ? 'Nada coincide con la búsqueda.' : 'No hay ítems pendientes aquí.'}</div>`}</div>`;
   $('#opQ').addEventListener('input', e => { OP.q = e.target.value; opRenderHoja(); setTimeout(() => { const el = $('#opQ'); el.focus(); el.setSelectionRange(el.value.length, el.value.length); }, 0); });
   $$('.op-tools [data-f]').forEach(b => b.onclick = () => { OP.filtro = b.dataset.f; opRenderHoja(); });
   opWireFilas();
 }
 function opFila(i) {
-  const done = i.q != null;
-  return `<div class="it ${done ? 'done' : ''}" data-it="${esc(i.item)}"><div class="c1"><b class="code">${esc(i.item)}</b>${i.ref && i.ref !== i.item ? `<small>${esc(i.ref)}</small>` : ''}<span class="um">${esc(i.um || 'UND')}</span></div><div class="des">${esc(i.desc)}${done && i.op !== OP.op.id ? '<span class="by">contado por otro operador</span>' : '<span class="by"></span>'}</div>
-    <div class="q"><button class="cero" type="button" title="Cero">0</button><input class="qty" type="text" inputmode="decimal" value="${done ? esc(String(i.q)) : ''}" placeholder="cant." aria-label="Cantidad"><button class="ok" type="button" title="Guardar">✓</button></div>
-    <input class="obs" type="text" placeholder="observación (opcional)" value="${esc(i.obs || '')}"></div>`;
+  const v = valorDe(i.item), done = v != null, r2 = OP.h.inv.ronda > 1, otro = done && quienDe(i.item) && quienDe(i.item) !== OP.op.id;
+  return `<div class="it ${done ? 'done' : ''}" data-it="${esc(i.item)}"><div class="c1"><b class="code">${esc(i.item)}</b><span class="um">${esc(i.um || 'UND')}</span></div><div class="des">${esc(i.desc)}${i.inact ? ' <span class="pill p-warn">INACTIVO</span>' : ''}<span class="by">${otro ? 'contado por otro operador' : ''}</span></div>
+    ${r2 ? `<div class="prevq" title="Lo que se contó en la ronda anterior"><small>Antes</small><b>${fmtQ(i.prev)}</b></div>` : ''}
+    <div class="q"><button class="cero" type="button" title="Cero">0</button><input class="qty" type="text" inputmode="decimal" enterkeyhint="next" value="${done ? esc(String(v)) : ''}" placeholder="cant." aria-label="Cantidad"><button class="ok" type="button" title="Guardar">✓</button></div>
+    <input class="obs" type="text" placeholder="observación (opcional)" value="${esc(obsDe(i.item))}"></div>`;
 }
 function opWireFilas() {
   $$('#opItems .it').forEach(el => {
-    const inp = el.querySelector('input.qty'), obs = el.querySelector('input.obs'), ok = el.querySelector('.ok'), cero = el.querySelector('.cero');
-    const guardar = async () => { const raw = inp.value.trim().replace(',', '.'); if (raw === '') { if (el.classList.contains('done')) { if (!confirm('¿Borrar la cantidad registrada?')) { opRenderHoja(); return; } await opGuardar(el.dataset.it, null, ''); el.classList.remove('done'); } return; }
+    const inp = el.querySelector('input.qty'), obs = el.querySelector('input.obs'), ok = el.querySelector('.ok'), cero = el.querySelector('.cero'), code = el.dataset.it;
+    const guardar = () => {
+      const raw = inp.value.trim().replace(',', '.');
+      if (raw === '') { if (valorDe(code) != null) { if (!confirm('¿Borrar la cantidad registrada? El ítem vuelve a quedar sin contar.')) { inp.value = String(valorDe(code)); return; } el.classList.remove('done'); opGuardar(code, null, ''); } return; }
       const v = Number(raw); if (!isFinite(v) || v < 0) { toast('Cantidad no válida.'); inp.focus(); return; }
-      const cur = (OP.hoja.subs.find(x => x.sub === OP.sub) || { items: [] }).items.find(i => i.item === el.dataset.it); if (cur && cur.q === v && (cur.obs || '') === obs.value.trim()) { el.classList.add('done'); opSiguiente(el); return; }
-      el.classList.add('done'); await opGuardar(el.dataset.it, v, obs.value.trim()); opSiguiente(el); };
+      el.classList.add('done'); inp.value = String(v);
+      if (valorDe(code) === v && obsDe(code) === obs.value.trim()) { opSiguiente(el); return; }
+      opGuardar(code, v, obs.value.trim()); opSiguiente(el);
+    };
     ok.onclick = guardar; cero.onclick = () => { inp.value = '0'; guardar(); };
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); guardar(); } });
-    inp.addEventListener('blur', () => { const raw = inp.value.trim(); const cur = (OP.hoja.subs.find(x => x.sub === OP.sub) || { items: [] }).items.find(i => i.item === el.dataset.it); if (raw !== '' && (!cur || String(cur.q) !== raw.replace(',', '.'))) guardar(); });
-    obs.addEventListener('change', () => { if (el.classList.contains('done')) opGuardar(el.dataset.it, Number(inp.value.replace(',', '.')), obs.value.trim()); });
+    inp.addEventListener('blur', () => { const raw = inp.value.trim().replace(',', '.'); if (raw !== '' && String(valorDe(code)) !== raw) guardar(); });
+    obs.addEventListener('change', () => { const v = valorDe(code); if (v != null) opGuardar(code, v, obs.value.trim()); });
   });
 }
-function opSiguiente(el) { let n = el.nextElementSibling; while (n && n.classList.contains('done')) n = n.nextElementSibling; if (n) { const i = n.querySelector('input.qty'); i.focus(); n.scrollIntoView({ block: 'center', behavior: 'smooth' }); } else { const h = OP.hoja, s = h.subs.find(x => x.sub === OP.sub); if (s && s.items.every(i => i.q != null) ) setTimeout(() => { toast('Subgrupo completo.'); }, 300); } }
+function opSiguiente(el) { let n = el.nextElementSibling; while (n && n.classList.contains('done')) n = n.nextElementSibling; if (n && n.querySelector('input.qty')) { const i = n.querySelector('input.qty'); i.focus({ preventScroll: true }); n.scrollIntoView({ block: 'center', behavior: 'smooth' }); } else { const s = OP.h.subs.find(x => x.sub === OP.sub); if (s && contadoEn(s) >= s.items.length) setTimeout(() => toast('Bloque completo.'), 300); } }
 
-/* ---------- Guardado con cola (si se va la señal, reintenta) ---------- */
-async function opGuardar(item, q, obs, extra) {
-  const h = OP.hoja; const s = h.subs.find(x => x.sub === OP.sub); const it = s && s.items.find(i => i.item === item);
-  if (it) { it.q = q; it.obs = obs; it.op = OP.op.id; it.ts = Date.now(); }
-  OP.cola = OP.cola.filter(c => c.item !== item); OP.cola.push({ item, q, obs, extra: extra || {}, r: h.inv.ronda });
-  OPST.set('cola', OP.cola); opActualizarProgreso(); return opVaciarCola();
+/* ---------- Guardado: cola local + envío por lotes (si se va la señal, reintenta; sobrevive a recargar la página) ---------- */
+function opGuardar(item, q, obs, extra) {
+  extra = extra || {}; const x = OP.idx.get(item), id = uid() + Math.random().toString(36).slice(2, 5);
+  OP.loc[item] = { q, obs: obs || '', id, ts: Date.now() };
+  if (extra.fuera && q != null) OP.fuera[item] = { item, desc: extra.desc || '', q, obs: obs || '', nuevo: !!extra.nuevo };
+  OP.cola = OP.cola.filter(c => c.item !== item);
+  OP.cola.push({ id, r: OP.h.inv.ronda, item, q, obs: obs || '', desc: x ? x.i.desc : (extra.desc || ''), sub: x ? x.blk : 'FUERA DE HOJA', fuera: extra.fuera ? 1 : 0, nuevo: extra.nuevo ? 1 : 0 });
+  persistir(); opActualizarProgreso(); programarEnvio();
 }
-function opActualizarProgreso() { const h = OP.hoja; if (!h || !h.inv) return; const total = h.subs.reduce((a, s) => a + s.items.length, 0), cont = h.subs.reduce((a, s) => a + s.items.filter(i => i.q != null).length, 0); opEl.footR.textContent = `Ronda ${h.inv.ronda} · ${fmtN(cont)} / ${fmtN(total)}`; if (OP.sub) { const s = h.subs.find(x => x.sub === OP.sub); const c = s.items.filter(i => i.q != null).length; opEl.bar.style.width = (s.items.length ? c / s.items.length * 100 : 0) + '%'; opEl.pct.textContent = `${fmtN(c)}/${fmtN(s.items.length)}`; } }
-async function opVaciarCola() {
-  if (OP.enviando) return; OP.enviando = true;
-  while (OP.cola.length) {
-    const c = OP.cola[0];
-    try { const r = await SYNC.opContar(OP.op.id, c.r, c.item, c.q, c.obs, c.extra); if (!r.ok) { toast(r.msg || 'No se pudo guardar.'); opEstado('bad', r.msg || 'Error'); OP.cola.shift(); OPST.set('cola', OP.cola); await opRefrescar(); opRender(); continue; } OP.cola.shift(); OPST.set('cola', OP.cola); opEstado('', 'Guardado ' + fmtHs(r.ts)); }
-    catch (e) { opEstado('off', `Sin conexión · ${OP.cola.length} por enviar`); OP.enviando = false; setTimeout(opVaciarCola, 5000); return; }
-  }
-  OP.enviando = false;
+function programarEnvio(ms) { if (OP.envTimer) return; OP.envTimer = setTimeout(() => { OP.envTimer = null; enviarCola(); }, ms != null ? ms : 700); }
+async function enviarCola() {
+  if (OP.enviando || !OP.op || !OP.cola.length) return; OP.enviando = true;
+  const lote = OP.cola.slice(0, 60); let otra = 0;
+  opEstado('off', `Guardando ${lote.length}…`);
+  try {
+    const r = await SYNC.opGuardar(OP.op.id, lote);
+    if (!r.ok) {
+      const n = OP.cola.length; OP.cola = []; OP.loc = {}; persistir();
+      toast((r.msg || 'No se pudo guardar.') + (n ? ` ${n} registro(s) no se guardaron.` : '')); opEstado('bad', r.msg || 'No se pudo guardar');
+      const h = await SYNC.opEntrar(OP.op.id, OP.pin); if (h.ok) { aplicarHoja(h, false); opRender(); }
+    } else {
+      const okIds = new Set(r.ids || []), enLote = new Set(lote.map(c => c.id));
+      OP.cola = OP.cola.filter(c => !enLote.has(c.id));          // aceptados o rechazados por ser de otra ronda: salen de la cola
+      lote.forEach(c => { const l = OP.loc[c.item]; if (l && l.id === c.id) { if (okIds.has(c.id)) l.ack = true; else delete OP.loc[c.item]; } });
+      persistir(); OP.fallos = 0;
+      opEstado(OP.cola.length ? 'off' : '', `Guardado ${fmtHs(r.ts)}${OP.cola.length ? ' · ' + OP.cola.length + ' por enviar' : ''}`);
+      if (OP.cola.length) otra = 50;
+    }
+  } catch (e) {
+    OP.fallos++; otra = Math.min(20000, 1500 * 2 ** Math.min(4, OP.fallos));
+    opEstado('off', `${e.ocupado ? 'Servidor ocupado' : 'Sin conexión'} · ${OP.cola.length} por enviar · reintenta solo`);
+  } finally { OP.enviando = false; if (otra && OP.cola.length) programarEnvio(otra); }
+}
+function opActualizarProgreso() {
+  const h = OP.h; if (!h || !h.inv) return;
+  const total = h.subs.reduce((a, s) => a + s.items.length, 0), cont = h.subs.reduce((a, s) => a + contadoEn(s), 0);
+  opEl.footR.textContent = `Ronda ${h.inv.ronda} · ${fmtN(cont)} / ${fmtN(total)}`;
+  if (OP.sub) { const s = h.subs.find(x => x.sub === OP.sub); if (!s) return; const c = contadoEn(s); opEl.bar.style.width = (s.items.length ? c / s.items.length * 100 : 0) + '%'; opEl.pct.textContent = `${fmtN(c)}/${fmtN(s.items.length)}`; }
 }
 /* ---------- Ítem no listado: buscar en toda la consulta ---------- */
-function opBuscarFuera() {
-  const h = OP.hoja;
+async function opBuscarFuera() {
+  OP.pantalla = 'buscar';
   opEl.body.innerHTML = `<div class="panel"><div class="hd"><h2>Ítem no listado</h2><button class="btn" type="button" id="bfBack">← Volver</button></div><p class="muted small" style="margin:0 0 8px">Busque por código o descripción en toda la consulta. Si no aparece, regístrelo como «no encontrado» con la descripción que tenga.</p>
-    <input type="search" id="bfQ" placeholder="Código o descripción" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:16px"><div class="busca-res" id="bfRes"></div></div>`;
-  $('#bfBack').onclick = () => opRender(); const q = $('#bfQ'); q.focus();
-  const mios = new Set(h.subs.map(s => s.sub));
-  q.addEventListener('input', () => { const t = norm(q.value); const res = $('#bfRes'); if (t.length < 2) { res.innerHTML = ''; return; }
-    const hits = h.maestra.filter(i => norm(i.item + ' ' + i.ref + ' ' + i.desc).includes(t)).slice(0, 25);
-    res.innerHTML = hits.map(i => `<button type="button" data-pick="${esc(i.item)}"><span class="c">${esc(i.item)}</span><span>${esc(i.desc)}</span><span class="s">${esc(i.sub)}${mios.has(i.sub) ? ' · suyo' : ''}</span></button>`).join('') + `<button type="button" data-nuevo="1" style="border-style:dashed"><span class="c">?</span><span>No está en la lista: registrar «${esc(q.value)}» como no encontrado</span></button>`;
-    $$('[data-pick]', res).forEach(b => b.onclick = () => opCantidadFuera(h.maestra.find(i => i.item === b.dataset.pick)));
+    <input type="search" id="bfQ" placeholder="Código o descripción" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:16px"><div class="busca-res" id="bfRes"><p class="muted small">Cargando la lista…</p></div></div>`;
+  $('#bfBack').onclick = () => { OP.pantalla = ''; opRender(); };
+  if (!OP.maestra) { try { OP.maestra = (await SYNC.opMaestra()).maestra.map(a => ({ item: a[0], desc: a[1], sub: a[2], um: a[3] })); } catch (e) { $('#bfRes').innerHTML = `<p class="small neg">Sin conexión: ${esc(e.message)}. Puede registrar el ítem como no encontrado.</p>`; OP.maestra = null; } }
+  const q = $('#bfQ'); if (!q) return; q.focus(); $('#bfRes').innerHTML = '';
+  q.addEventListener('input', () => { const t = norm(q.value), res = $('#bfRes'); if (t.length < 2) { res.innerHTML = ''; return; }
+    const tc = t.replace(/^0+(?=\d)/, ''), hits = (OP.maestra || []).filter(i => i.item === tc || norm(i.item + ' ' + i.desc).includes(t)).slice(0, 25);
+    res.innerHTML = hits.map(i => `<button type="button" data-pick="${esc(i.item)}"><span class="c">${esc(i.item)}</span><span>${esc(i.desc)}</span><span class="s">${esc(i.sub)}${OP.idx.has(i.item) ? ' · en su hoja' : ''}</span></button>`).join('') + `<button type="button" data-nuevo="1" style="border-style:dashed"><span class="c">?</span><span>No está en la lista: registrar «${esc(q.value)}» como no encontrado</span></button>`;
+    $$('[data-pick]', res).forEach(b => b.onclick = () => opCantidadFuera(OP.maestra.find(i => i.item === b.dataset.pick)));
     $('[data-nuevo]', res).onclick = () => opCantidadFuera({ item: q.value.trim(), desc: '', nuevo: true }); });
 }
-async function opCantidadFuera(i) {
-  const h = OP.hoja; if (!i.nuevo && h.subs.some(s => s.sub === i.sub)) { OP.sub = i.sub; OP.filtro = 'todo'; OP.q = i.item; opRenderHoja(); return; }
-  opEl.body.innerHTML = `<div class="panel"><div class="hd"><h2>${i.nuevo ? 'Ítem no encontrado' : 'Ítem de otro subgrupo'}</h2></div><p><b>${esc(i.item)}</b> ${esc(i.desc || '')}${i.sub ? ` <span class="pill p-mute">${esc(i.sub)}</span>` : ''}</p>
+function opCantidadFuera(i) {
+  const dueno = !i.nuevo && OP.idx.get(i.item);
+  if (dueno) { OP.pantalla = ''; OP.sub = dueno.blk; OP.filtro = 'todo'; OP.q = i.item; opRenderHoja(); return; }
+  opEl.body.innerHTML = `<div class="panel"><div class="hd"><h2>${i.nuevo ? 'Ítem no encontrado' : 'Ítem de otro bloque'}</h2></div><p><b>${esc(i.item)}</b> ${esc(i.desc || '')}${i.sub ? ` <span class="pill p-mute">${esc(i.sub)}</span>` : ''}</p>
     ${i.nuevo ? '<label class="fld">Descripción (lo que dice el empaque)<input type="text" id="cfDesc" placeholder="Descripción"></label>' : ''}<label class="fld" style="margin-top:8px">Cantidad<input type="text" id="cfQ" inputmode="decimal" style="font-size:20px"></label><label class="fld" style="margin-top:8px">Observación<input type="text" id="cfObs" placeholder="dónde estaba, etc."></label>
     <div class="row" style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button class="btn" type="button" id="cfCancel">Cancelar</button><button class="btn pri" type="button" id="cfOk">Guardar</button></div></div>`;
-  $('#cfQ').focus(); $('#cfCancel').onclick = () => opRender();
-  $('#cfOk').onclick = async () => { const v = Number($('#cfQ').value.replace(',', '.')); if (!isFinite(v) || v < 0) return toast('Cantidad no válida.'); const code = String(i.item).replace(/^0+(?=\d)/, ''); if (!code) return toast('Falta el código.');
-    await opGuardar(code, v, $('#cfObs').value.trim(), { fuera: true, nuevo: !!i.nuevo, desc: i.nuevo ? ($('#cfDesc').value.trim() || '(sin descripción)') : i.desc }); await opRefrescar(); OP.sub = null; opRender(); toast('Registrado.'); };
+  $('#cfQ').focus(); $('#cfCancel').onclick = () => { OP.pantalla = ''; opRender(); };
+  $('#cfOk').onclick = () => { const v = Number($('#cfQ').value.replace(',', '.')); if (!isFinite(v) || v < 0 || $('#cfQ').value.trim() === '') return toast('Cantidad no válida.'); const code = String(i.item).trim().replace(/^0+(?=\d)/, ''); if (!code) return toast('Falta el código.');
+    opGuardar(code, v, $('#cfObs').value.trim(), { fuera: true, nuevo: !!i.nuevo, desc: i.nuevo ? ($('#cfDesc').value.trim() || '(sin descripción)') : i.desc }); OP.sub = null; OP.pantalla = ''; opRender(); toast('Registrado.'); };
 }
 opEl.back.onclick = () => { OP.sub = null; opRender(); };
-opEl.salir.onclick = () => { if (OP.cola.length && !confirm('Hay registros sin enviar. ¿Salir de todas formas?')) return; OPST.del('op'); clearInterval(OP.timer); opLogin(); };
+opEl.salir.onclick = () => { if (OP.cola.length && !confirm(`Hay ${OP.cola.length} registro(s) sin enviar. Si sale ahora quedan guardados en este teléfono y se envían cuando vuelva a entrar con su nombre. ¿Salir?`)) return; OPST.del('op'); clearTimeout(OP.timer); OP.op = null; opLogin(); };
 
 /* ---- src/js/05_salidas.js ---- */
 /* =====================================================================
    05 · Plano SIESA, PDF, Datos, Parámetros, firmas y arranque (portada / modos)
    ===================================================================== */
+/* ---------- PLANO SIESA · CONTEO FÍSICO (formato principal) ----------
+   Plantilla del conector de SIESA: hojas «Inicial», «Físico» y «Final».
+   Físico: una fila por ítem de la toma (toda la maestra activa + inactivos con existencia),
+   con la cantidad contada definitiva (el último conteo de cada ítem, también los que cuadran y los ceros).
+   SIESA calcula la diferencia contra su existencia. */
+const H_FISICO = ['Compañía', 'Coonsecutivo', 'Id_Bodega', 'Cantidad_Conteo', 'Item'];
+const bodDe = l => ((DB.items[l.k] || {}).bods || [])[0] || P.bodega;
+function planoFilas() { return R ? R.lines.slice().sort((a, b) => cmpS(llaveSub(ORD_SUB, a.sub), llaveSub(ORD_SUB, b.sub)) || cmpS(String(a.cod), String(b.cod))) : []; }
+function planoChequeos() {
+  const filas = planoFilas(), cons = $('#pl_cons').value.trim(), cia = $('#pl_cia').value.trim();
+  const sinContar = filas.filter(l => l.fin == null).length, bods = [...new Set(filas.map(bodDe))];
+  const c = [
+    { ok: !!DB.inv && DB.inv.estado === 'cerrado', t: 'Inventario finalizado', x: DB.inv && DB.inv.estado === 'cerrado' ? 'cerrado en Rondas y asignación' : 'finalícelo en Rondas y asignación (cerrar la última ronda → Finalizar inventario)', bloquea: true },
+    { ok: !sinContar, t: 'Todos los ítems tienen conteo', x: sinContar ? `${fmtN(sinContar)} ítems sin contar` : `${fmtN(filas.length)} ítems con cantidad definitiva`, bloquea: true },
+    { ok: /^\d+$/.test(cons), t: 'Consecutivo del conteo físico', x: cons ? (/^\d+$/.test(cons) ? cons : 'solo números') : 'escriba el número que le dio SIESA al generar el conteo físico', bloquea: true },
+    { ok: /^\d+$/.test(cia), t: 'Compañía', x: cia || 'falta', bloquea: true },
+    { ok: bods.length === 1, t: 'Bodega', x: bods.join(', ') + (bods.length > 1 ? ' · la consulta trae varias bodegas' : ''), bloquea: false },
+    { ok: true, t: 'Inactivos', x: `${fmtN(filas.filter(l => l.inact).length)} con existencia van en el plano · ${fmtN(DB.excl.length)} sin existencia no van (SIESA les asigna cero)`, bloquea: false }
+  ];
+  if (R && R.nuevos.length) c.push({ ok: false, t: 'Códigos que no están en la consulta', x: `${fmtN(R.nuevos.length)} registrados como «no encontrado» no van en el plano: créelos o revíselos en SIESA`, bloquea: false });
+  return { c, filas, listo: c.every(x => x.ok || !x.bloquea), cons, cia };
+}
+RENDER.planos = function () {
+  if ($('#pl_cia').value === '') $('#pl_cia').value = P.cia || 1;
+  if (!R) { $('#kpisPla').innerHTML = ''; $('#plaChecks').innerHTML = ''; $('#tblPla').innerHTML = empty('Sin inventario', 'Cargue las existencias y haga el conteo.'); $('#btnPlano').disabled = true; RENDER.ajuste(); return; }
+  const { c, filas, listo } = planoChequeos();
+  $('#plaChecks').innerHTML = c.map(x => `<div class="chk-row ${x.ok ? 'ok' : x.bloquea ? 'bad' : 'warn'}"><span class="ic">${x.ok ? '✓' : x.bloquea ? '✕' : '!'}</span><div><b>${esc(x.t)}</b><small>${esc(x.x)}</small></div></div>`).join('');
+  $('#btnPlano').disabled = !listo;
+  const porR = [1, 2, 3].map(r => filas.filter(l => l.finR === r).length), unid = filas.reduce((a, l) => a + (l.fin || 0), 0);
+  const a = agg(filas);
+  $('#kpisPla').innerHTML = [{ l: 'Ítems en el plano', v: fmtN(filas.length), s: 'toda la maestra de la toma', c: 'brand' }, { l: 'Unidades contadas', v: fmtN(unid, unid % 1 ? 2 : 0), s: `${fmtN(filas.filter(l => l.fin === 0).length)} ítems en cero`, c: 'brand' },
+    { l: 'Manda el conteo', v: `${fmtN(porR[0])} · ${fmtN(porR[1])} · ${fmtN(porR[2])}`, s: 'ítems con cantidad de R1 · R2 · R3', c: 'or' }, { l: 'Faltantes', v: fmtN(a.falt), s: fmt$(a.vFalt) + ' a costo (ins)', c: 'bad' }, { l: 'Sobrantes', v: fmtN(a.sobr), s: fmt$(a.vSobr) + ' a costo (ins)', c: 'ok' }, { l: 'Ajuste neto esperado', v: fmtM(a.vNeto), s: 'lo que SIESA debería calcular', c: 'acc' }].map(kpi).join('');
+  const q = norm($('#pl_q').value), rows = filas.filter(l => !q || norm(l.cod + ' ' + l.desc).includes(q));
+  ARK.table($('#tblPla'), [{ l: 'Compañía', f: () => esc($('#pl_cia').value) }, { l: 'Coonsecutivo', f: () => esc($('#pl_cons').value) || '<span class="muted">—</span>' }, { l: 'Id_Bodega', f: l => esc(bodDe(l)) }, { l: 'Cantidad_Conteo', n: 1, f: l => l.fin == null ? '<span class="neg">sin contar</span>' : `<b>${fmtQ(l.fin)}</b>` }, { l: 'Item', f: l => `<span class="num">${esc(l.cod)}</span>` },
+    { l: 'Descripción', f: l => esc(l.desc) + (l.inact ? ' <span class="pill p-warn">INACTIVO</span>' : ''), cls: 'desc' }, { l: 'Existencia', n: 1, f: l => fmtQ(l.teo) }, { l: 'Manda', f: l => l.finR ? `<span class="pill p-mute">R${l.finR}</span>` : '' }, { l: 'Diferencia', n: 1, f: l => `<span class="${sgn(l.difAj)}">${fmtQ(l.difAj)}</span>` }], rows,
+    { size: 100, empty: 'Sin ítems.' });
+  RENDER.ajuste();
+};
+['#pl_cons', '#pl_cia'].forEach(id => $(id).addEventListener('input', () => { if (id === '#pl_cia') { P.cia = +$('#pl_cia').value || 1; saveP(); } RENDER.planos(); }));
+$('#pl_q').addEventListener('input', () => { ARK.resetPage('tblPla'); RENDER.planos(); });
+function textoCelda(ws, r, c) { const a = XLSX.utils.encode_cell({ r, c }); if (ws[a]) { ws[a].t = 's'; ws[a].v = String(ws[a].v); ws[a].z = '@'; } }
+$('#btnPlano').onclick = () => {
+  const { filas, listo, cons, cia } = planoChequeos(); if (!listo) return toast('Revise los puntos en rojo antes de generar el plano.');
+  if (typeof XLSX === 'undefined') return toast('No cargó la librería de Excel.');
+  const nCia = +cia, nCons = +cons;
+  const fis = [H_FISICO].concat(filas.map(l => [nCia, nCons, String(bodDe(l)), l.fin, String(l.cod)]));
+  const wsF = XLSX.utils.aoa_to_sheet(fis);
+  for (let r = 1; r < fis.length; r++) { textoCelda(wsF, r, 2); textoCelda(wsF, r, 4); }   // bodega e ítem como texto (conservan los ceros)
+  wsF['!cols'] = [{ wch: 10 }, { wch: 13 }, { wch: 10 }, { wch: 16 }, { wch: 12 }];
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Compañía'], [nCia]]), 'Inicial');
+  XLSX.utils.book_append_sheet(wb, wsF, 'Físico');
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Compañía'], [nCia]]), 'Final');
+  ARK.saveWb(wb, `Agro_CONTEO_FISICO_${nCons}_${ARK.isoDate(new Date())}.xlsx`);
+};
+$('#btnPlanoSop').onclick = () => {
+  const filas = planoFilas(); if (!filas.length) return;
+  ARK.exportXlsx(filas.map(l => ({ Item: l.cod, Referencia: l.ref, Descripción: l.desc, Subgrupo: l.sub, 'U.M.': l.um, Bodega: bodDe(l), Existencia: l.teo, 'Conteo 1': l.c1, 'Conteo 2': l.c2, 'Conteo 3': l.c3, 'Cantidad plano': l.fin, 'Conteo que manda': l.finR ? 'R' + l.finR : '', Diferencia: l.difAj, 'Costo (ins)': l.cp, 'Valor diferencia': Math.round(l.vDif), Inactivo: l.inact ? 'SÍ' : '', Operador: opNom(l.op) })), 'SOPORTE PLANO', `SOPORTE_PLANO_CONTEO_FISICO_AGRO_${ARK.isoDate(new Date())}.xlsx`);
+};
+
+/* ---------- Otro formato: ajuste por diferencias (salidas / entradas), se conserva de la v2 ---------- */
 const EXCL = new Set();
 function planLines() {
   if (!R) return [];
   return R.lines.filter(l => l.nov === 'FALTANTE' || l.nov === 'SOBRANTE').map(l => Object.assign({}, l, { tipo: l.difAj < 0 ? 'SALIDA' : 'ENTRADA', qty: r3(Math.abs(l.difAj)), co: P.co, bod: P.bodega }));
 }
 let PLAN_ROWS = [];
-RENDER.planos = function () {
-  if (!R) { $('#kpisPla').innerHTML = ''; $('#plaMsg').innerHTML = ''; $('#tblPla').innerHTML = empty('Sin diferencias para ajustar', 'Cargue las existencias y haga el conteo.'); $('#btnSal').disabled = $('#btnEnt').disabled = true; return; }
+RENDER.ajuste = function () {
+  if (!R) { $('#tblAj').innerHTML = ''; $('#btnSal').disabled = $('#btnEnt').disabled = true; return; }
   const all = planLines();
   ARK.selOpts($('#p_sub'), [...new Set(all.map(l => l.sub))].sort(), 'Todos los subgrupos');
   const t = $('#p_tipo').value, s = $('#p_sub').value;
-  const rows = all.filter(l => (!t || l.tipo[0] === t) && (!s || l.sub === s)).sort((a, b) => a.tipo.localeCompare(b.tipo) || a.sub.localeCompare(b.sub) || (+a.item - +b.item));
-  const inc = rows.filter(l => !EXCL.has(l.k)), sal = inc.filter(l => l.tipo === 'SALIDA'), ent = inc.filter(l => l.tipo === 'ENTRADA'), noCost = ent.filter(l => !l.cp);
-  $('#kpisPla').innerHTML = [{ l: 'Líneas de salida', v: fmtN(sal.length), s: fmt$(sal.reduce((a, l) => a + l.vDif, 0)) + ' a costo', c: 'bad' }, { l: 'Líneas de entrada', v: fmtN(ent.length), s: fmt$(ent.reduce((a, l) => a + l.vDif, 0)) + ' a costo', c: 'ok' }, { l: 'Neto del ajuste', v: fmtM(inc.reduce((a, l) => a + l.vDif, 0)), s: 'entradas − salidas', c: 'acc' }, { l: 'Entradas sin costo', v: fmtN(noCost.length), s: 'saldrían a $0', c: noCost.length ? 'warn' : 'ok' }, { l: 'Ronda que manda', v: P.final === 'ultimo' ? 'Último conteo' : 'Mayoría', s: 'regla en Parámetros', c: 'brand' }, { l: 'Inventario', v: DB.inv.estado === 'cerrado' ? 'Finalizado' : 'En curso', s: DB.inv.estado === 'cerrado' ? 'listo para el plano' : 'el plano cambia mientras cuentan', c: DB.inv.estado === 'cerrado' ? 'ok' : 'warn' }].map(kpi).join('');
-  const pend = R.a.pendSaldo;
-  $('#plaMsg').innerHTML = (DB.inv.estado !== 'cerrado' ? `<div class="note" style="margin:0 0 10px">El inventario sigue en curso: el plano se arma con lo contado hasta ahora. Finalícelo en Rondas y asignación antes de generarlo.</div>` : '') + (pend ? `<div class="note" style="margin:0 0 10px">Quedan ${fmtN(pend)} ítems con existencia sin contar: no están en el plano. Si de verdad no existen, active «No contado = 0» en Parámetros.</div>` : '');
+  const rows = all.filter(l => (!t || l.tipo[0] === t) && (!s || l.sub === s)).sort((a, b) => a.tipo.localeCompare(b.tipo) || a.sub.localeCompare(b.sub) || String(a.cod).localeCompare(String(b.cod)));
+  const inc = rows.filter(l => !EXCL.has(l.k)), sal = inc.filter(l => l.tipo === 'SALIDA'), ent = inc.filter(l => l.tipo === 'ENTRADA');
   PLAN_ROWS = rows;
-  ARK.table($('#tblPla'), [{ l: '', f: r => `<input type="checkbox" data-pk="${esc(r.k)}" ${EXCL.has(r.k) ? '' : 'checked'} aria-label="Incluir">` }, { l: 'Tipo', f: r => `<span class="pill ${r.tipo === 'SALIDA' ? 'p-bad' : 'p-ok'}">${r.tipo}</span>` }, { k: 'item', l: 'Ítem' }, { k: 'ref', l: 'Referencia' }, { k: 'desc', l: 'Descripción', cls: 'desc' }, { k: 'sub', l: 'Subgrupo' }, { k: 'um', l: 'U.M.' },
-    { l: 'Existencia', n: 1, f: r => fmtQ(r.teo) }, { l: 'Físico', n: 1, f: r => fmtQ(r.fin) }, { l: 'Cantidad a ajustar', n: 1, f: r => `<b>${fmtQ(r.qty)}</b>` }, { l: 'Costo (ins)', n: 1, f: r => fmt$(r.cp) }, { l: 'Valor', n: 1, f: r => `<span class="${sgn(r.vDif)}">${fmt$(r.vDif)}</span>` }], rows,
-    { size: 200, empty: 'No hay diferencias por ajustar con los filtros actuales.', after: h => h.querySelectorAll('[data-pk]').forEach(c => c.onchange = () => { c.checked ? EXCL.delete(c.dataset.pk) : EXCL.add(c.dataset.pk); RENDER.planos(); }) });
+  ARK.table($('#tblAj'), [{ l: '', f: r => `<input type="checkbox" data-pk="${esc(r.k)}" ${EXCL.has(r.k) ? '' : 'checked'} aria-label="Incluir">` }, { l: 'Tipo', f: r => `<span class="pill ${r.tipo === 'SALIDA' ? 'p-bad' : 'p-ok'}">${r.tipo}</span>` }, { l: 'Ítem', f: r => esc(r.cod) }, { k: 'desc', l: 'Descripción', cls: 'desc' }, { k: 'um', l: 'U.M.' },
+    { l: 'Existencia', n: 1, f: r => fmtQ(r.teo) }, { l: 'Físico', n: 1, f: r => fmtQ(r.fin) }, { l: 'Cantidad a ajustar', n: 1, f: r => `<b>${fmtQ(r.qty)}</b>` }, { l: 'Valor', n: 1, f: r => `<span class="${sgn(r.vDif)}">${fmt$(r.vDif)}</span>` }], rows,
+    { size: 100, maxh: '420px', empty: 'No hay diferencias por ajustar.', after: h => h.querySelectorAll('[data-pk]').forEach(c => c.onchange = () => { c.checked ? EXCL.delete(c.dataset.pk) : EXCL.add(c.dataset.pk); RENDER.ajuste(); }) });
   $('#btnSal').disabled = !sal.length; $('#btnEnt').disabled = !ent.length;
 };
-['#p_tipo', '#p_sub'].forEach(s => $(s).addEventListener('change', () => { ARK.resetPage('tblPla'); RENDER.planos(); }));
-$('#p_all').onclick = () => { PLAN_ROWS.forEach(r => EXCL.delete(r.k)); RENDER.planos(); };
-$('#p_none').onclick = () => { PLAN_ROWS.forEach(r => EXCL.add(r.k)); RENDER.planos(); };
+['#p_tipo', '#p_sub'].forEach(s => $(s).addEventListener('change', () => { ARK.resetPage('tblAj'); RENDER.ajuste(); }));
+$('#p_all').onclick = () => { PLAN_ROWS.forEach(r => EXCL.delete(r.k)); RENDER.ajuste(); };
+$('#p_none').onclick = () => { PLAN_ROWS.forEach(r => EXCL.add(r.k)); RENDER.ajuste(); };
 function fechaDoc() { const d = ARK.toD(P.fecha) || ARK.toD(DB.inv && DB.inv.fecha) || new Date(); const p2 = ARK.pad2;
   return P.ffmt === 'DD/MM/AAAA' ? `${p2(d.getDate())}/${p2(d.getMonth() + 1)}/${d.getFullYear()}` : P.ffmt === 'AAAA-MM-DD' ? ARK.isoDate(d) : `${d.getFullYear()}${p2(d.getMonth() + 1)}${p2(d.getDate())}`; }
-const asNum = v => /^\d+$/.test(String(v)) ? Number(v) : v;
 function notasDoc(lines) { const subs = [...new Set(lines.map(l => l.sub))]; return `${P.notas} ${fechaDoc()} ${subs.length <= 3 ? subs.join(', ') : subs.length + ' SUBGRUPOS'}`.slice(0, 250); }
 $('#btnSal').onclick = () => {
   const lines = PLAN_ROWS.filter(l => l.tipo === 'SALIDA' && !EXCL.has(l.k)); const n = +P.num || 1;
   const docs = [['CO', 'TIPO DE DOCUMENTO', 'NUMERO DE DOCUMENTO', 'FECHA DE DOCUMENTO', 'ESTADO DEL DOCUMENTO  (0=En elaboración, 1=Aprobado/Contabilizado)', 'NOTAS DOCUMENTO'], [P.co, P.tipoSal, n, fechaDoc(), +P.estado, notasDoc(lines)]];
   const movs = [['CODIGO CO', 'CODIGO DOCUMENTO', 'NUMERO DE DOCUMENTO', 'NUMERO DE REGISTRO', 'CODIGO BODEGA SALIDA', 'Motivo', 'CENTRO DE OPERACION MOVIMIENTO', 'UNIDAD MEDIDA', 'CANTIDAD', 'ITEM', 'UNIDAD NEGOCIO. MOV']];
-  lines.forEach((l, i) => movs.push([P.co, P.tipoSal, n, i + 1, P.bodega, P.motSal, P.co, l.um, l.qty, asNum(l.item), P.un]));
-  planoWb(docs, movs, `AJUSTE_INVENTARIO_-_SALIDAS_${fechaDoc().replace(/\//g, '')}.xlsx`, [0, 6]);
+  lines.forEach((l, i) => movs.push([P.co, P.tipoSal, n, i + 1, P.bodega, P.motSal, P.co, l.um, l.qty, String(l.cod), P.un]));
+  planoWb(docs, movs, `AJUSTE_INVENTARIO_-_SALIDAS_${fechaDoc().replace(/\//g, '')}.xlsx`, [0, 6, 9]);
 };
 $('#btnEnt').onclick = () => {
   const lines = PLAN_ROWS.filter(l => l.tipo === 'ENTRADA' && !EXCL.has(l.k));
@@ -2249,7 +2617,7 @@ function planoWb(docs, movs, name, textCols) {
   if (typeof XLSX === 'undefined') return toast('No cargó la librería de Excel.');
   const wb = XLSX.utils.book_new();
   const mk = (aoa, txt) => { const ws = XLSX.utils.aoa_to_sheet(aoa);
-    for (let r = 1; r < aoa.length; r++) for (const c of txt) { const a = XLSX.utils.encode_cell({ r, c }); if (ws[a]) { ws[a].t = 's'; ws[a].v = String(ws[a].v); ws[a].z = '@'; } }
+    for (let r = 1; r < aoa.length; r++) for (const c of txt) textoCelda(ws, r, c);
     ws['!cols'] = aoa[0].map(h => ({ wch: Math.min(40, Math.max(10, String(h).length + 2)) })); return ws; };
   XLSX.utils.book_append_sheet(wb, mk(docs, [0]), 'Documentos'); XLSX.utils.book_append_sheet(wb, mk(movs, textCols), 'Movimientos');
   ARK.saveWb(wb, name);
@@ -2262,9 +2630,9 @@ function pdfConteo(rows) {
     const doc = ARK.pdf.nuevo('letter'); const a = agg(rows);
     ARK.pdf.membrete(doc, { rgb: VERDE, titulo: 'Conteo físico de inventario · consolidado', sub: `${DB.inv ? DB.inv.nombre : ''} · ${ARK.fmtDate(DB.inv ? DB.inv.fecha : new Date())} · bodega ${P.bodega}`, empresa: P.empresa + ' · Área de Control Arketops', ark: ARK_LOGO });
     doc.setTextColor(40); doc.setFontSize(9.5); doc.setFont('helvetica', 'normal');
-    doc.text(`Ítems ${fmtN(a.n)} · contados ${fmtN(a.cont)} · pendientes ${fmtN(a.pend)} · exactitud ${pct(a.exact, 1)} · faltantes ${fmtN(a.falt)} (${fmt$(a.vFalt)}) · sobrantes ${fmtN(a.sobr)} (${fmt$(a.vSobr)}) · neto ${fmt$(a.vNeto)}`, 10, 32);
+    doc.text(`Ítems ${fmtN(a.n)} · contados ${fmtN(a.cont)} · sin contar ${fmtN(a.pend)} · exactitud ${pct(a.exact, 1)} · faltantes ${fmtN(a.falt)} (${fmt$(a.vFalt)}) · sobrantes ${fmtN(a.sobr)} (${fmt$(a.vSobr)}) · neto ${fmt$(a.vNeto)}`, 10, 32);
     doc.autoTable({ startY: 36, head: [['Ítem', 'Descripción', 'Subgrupo', 'U.M.', 'Existencia', 'C1', 'C2', 'C3', 'Final', 'Dif.', 'Costo (ins)', 'Valor dif.', 'Novedad', 'Operador']],
-      body: rows.map(r => [r.item, r.desc, r.sub, r.um, fmtQ(r.teo), fmtQ(r.c1), fmtQ(r.c2), fmtQ(r.c3), fmtQ(r.fin), fmtQ(r.difAj), fmt$(r.cp), fmt$(r.vDif), r.nov, opNom(r.op)]),
+      body: rows.map(r => [r.item, r.desc + (r.inact ? ' (INACTIVO)' : ''), r.sub, r.um, fmtQ(r.teo), fmtQ(r.c1), fmtQ(r.c2), fmtQ(r.c3), fmtQ(r.fin), fmtQ(r.difAj), fmt$(r.cp), fmt$(r.vDif), r.nov, opNom(r.op)]),
       styles: { fontSize: 7, cellPadding: 1.4 }, headStyles: { fillColor: VERDE, fontSize: 7 }, columnStyles: { 1: { cellWidth: 60 }, 4: { halign: 'right' }, 5: { halign: 'right' }, 6: { halign: 'right' }, 7: { halign: 'right' }, 8: { halign: 'right' }, 9: { halign: 'right' }, 10: { halign: 'right' }, 11: { halign: 'right' } },
       didParseCell: d => { if (d.section === 'body' && d.column.index === 12) { const v = d.cell.raw; d.cell.styles.textColor = v === 'FALTANTE' ? [200, 16, 46] : v === 'SOBRANTE' ? [23, 130, 74] : v === 'PENDIENTE' ? [163, 95, 0] : [90, 90, 90]; d.cell.styles.fontStyle = 'bold'; } } });
     { let y = doc.lastAutoTable.finalY + 16; const W = doc.internal.pageSize.getWidth(); if (y > doc.internal.pageSize.getHeight() - 30) { doc.addPage(); y = 30; } firmasLista().forEach((f, i) => { const x = 20 + i * (W - 40) / 3; doc.setDrawColor(120); doc.line(x, y, x + 70, y); doc.setFontSize(8); doc.setTextColor(40); doc.text(f.n || '______________________', x, y + 5); doc.setTextColor(120); doc.text(f.c, x, y + 9.5); }); }
@@ -2279,9 +2647,9 @@ function renderFirmas() { $('#sigs').innerHTML = firmasLista().map(f => `<div cl
 RENDER.datos = function () {
   $$('#d_tab button').forEach(b => b.classList.toggle('on', b.dataset.v === D_TAB));
   const q = norm($('#d_q').value); let rows = [], cols = [];
-  if (D_TAB === 'items') { rows = Object.values(DB.items).filter(i => !q || norm(i.item + ' ' + i.ref + ' ' + i.desc).includes(q)); cols = [{ k: 'item', l: 'Ítem' }, { k: 'ref', l: 'Ref.' }, { k: 'desc', l: 'Descripción', cls: 'desc' }, { l: 'Subgrupo', f: i => esc(subCorta(i.sub)) }, { k: 'grupo', l: 'Grupo' }, { k: 'linea', l: 'Línea' }, { k: 'um', l: 'U.M.' }, { l: 'Existencia', n: 1, f: i => fmtQ(i.teo) }, { l: 'Costo (ins)', n: 1, f: i => fmt$(i.cp) }, { l: 'Valor', n: 1, f: i => fmt$(i.teo * i.cp) }, { l: 'Bodega', f: i => esc(i.bods.join(', ')) }]; }
-  if (D_TAB === 'log') { rows = DB.log.slice().reverse().filter(x => !q || norm(x.item + ' ' + ((DB.items[x.item] || {}).desc || '') + ' ' + opNom(x.op)).includes(q)); cols = [{ l: 'Fecha y hora', f: x => fmtH(x.ts) + ':' + ARK.pad2(new Date(x.ts).getSeconds()) }, { l: 'Ronda', f: x => x.r }, { l: 'Operador', f: x => esc(opNom(x.op)) }, { k: 'item', l: 'Ítem' }, { l: 'Descripción', f: x => esc((DB.items[x.item] || {}).desc || ''), cls: 'desc' }, { l: 'Cantidad', n: 1, f: x => x.q == null ? 'borrado' : fmtQ(x.q) }, { l: 'Antes', n: 1, f: x => x.prev == null ? '' : fmtQ(x.prev) }]; }
-  if (D_TAB === 'excl') { rows = DB.excl.filter(x => !q || norm(x.item + ' ' + x.desc).includes(q)); cols = [{ k: 'item', l: 'Ítem' }, { k: 'desc', l: 'Descripción', cls: 'desc' }, { l: 'Subgrupo', f: x => esc(subCorta(x.sub)) }, { k: 'bod', l: 'Bodega' }, { l: 'Existencia', n: 1, f: x => fmtQ(x.teo) }, { k: 'motivo', l: 'Por qué quedó fuera' }]; }
+  if (D_TAB === 'items') { rows = Object.values(DB.items).filter(i => !q || norm((i.cod || '') + ' ' + i.item + ' ' + i.ref + ' ' + i.desc).includes(q)); cols = [{ l: 'Ítem', f: i => esc(i.item) }, { l: 'Descripción', f: i => esc(i.desc) + (i.inact ? ' <span class="pill p-warn">INACTIVO</span>' : '') + `<small class="sub2">${esc(subCorta(i.sub))}${i.grupo ? ' · ' + esc(subCorta(i.grupo)) : ''}${i.linea ? ' · ' + esc(subCorta(i.linea)) : ''}${i.ref && i.ref !== i.item ? ' · Ref. ' + esc(i.ref) : ''}</small>`, cls: 'desc' }, { k: 'um', l: 'U.M.' }, { l: 'Existencia', n: 1, f: i => fmtQ(i.teo) }, { l: 'Costo (ins)', n: 1, f: i => fmt$(i.cp) }, { l: 'Valor', n: 1, f: i => fmt$(i.teo * i.cp) }, { l: 'Bodega', f: i => esc(i.bods.join(', ')) }, { l: 'Código plano', f: i => `<span class="muted num">${esc(i.cod || '')}</span>` }]; }
+  if (D_TAB === 'log') { rows = DB.log.slice().reverse().filter(x => !q || norm(x.item + ' ' + ((DB.items[x.item] || {}).desc || '') + ' ' + opNom(x.op)).includes(q)); cols = [{ l: 'Fecha y hora', f: x => fmtH(x.ts) + ':' + ARK.pad2(new Date(x.ts).getSeconds()) }, { l: 'Ronda', f: x => x.r }, { l: 'Operador', f: x => esc(opNom(x.op)) }, { l: 'Ítem', f: x => esc(x.item) }, { l: 'Descripción', f: x => esc((DB.items[x.item] || {}).desc || ''), cls: 'desc' }, { l: 'Cantidad', n: 1, f: x => x.q == null ? 'borrado' : fmtQ(x.q) }, { l: 'Antes', n: 1, f: x => x.prev == null ? '' : fmtQ(x.prev) }]; }
+  if (D_TAB === 'excl') { rows = DB.excl.filter(x => !q || norm(x.item + ' ' + x.desc).includes(q)); cols = [{ l: 'Ítem', f: x => esc(x.item) }, { l: 'Descripción', f: x => esc(x.desc) + `<small class="sub2">${esc(subCorta(x.sub))}</small>`, cls: 'desc' }, { k: 'bod', l: 'Bodega' }, { l: 'Existencia', n: 1, f: x => fmtQ(x.teo) }, { k: 'motivo', l: 'Por qué quedó fuera' }]; }
   $('#d_info').textContent = `${fmtN(rows.length)} filas`;
   ARK.table($('#tblDatos'), cols, rows, { size: 100, empty: 'Sin datos.' });
   RENDER.datos.rows = rows; RENDER.datos.cols = cols;
@@ -2299,10 +2667,11 @@ function campo([k, l, t, op, full]) {
 }
 RENDER.params = function () {
   $('#prForm').innerHTML = [['tolUnd', 'Tolerancia en unidades (UND)', 'num'], ['tolDec', 'Tolerancia en KL / MT / g', 'num'], ['difGrande', 'Diferencia grande en pesos (hallazgo crítico)', 'num'], ['maxEdits', 'Cambios de cantidad que generan hallazgo', 'num'], ['inactMin', 'Minutos sin registrar para marcar operador quieto', 'num'],
-    ['final', 'Cantidad final', 'sel', [['ultimo', 'El último conteo hecho (R3 > R2 > R1)'], ['mayoria', 'La cantidad que se repite en dos rondas; si no, el último']]], ['r3Crit', 'Qué pasa a la ronda 3', 'sel', [['teo', 'Ítems cuyo conteo 2 sigue distinto a la existencia'], ['c1', 'Ítems cuyo conteo 2 es distinto al conteo 1']]],
-    ['r2Pend', 'Los ítems sin contar pasan a la ronda siguiente', 'chk', null, true], ['cero', 'No contado = 0 (al final, lo que nadie contó se toma como cero)', 'chk', null, true], ['excluir', 'Dejar por fuera ítems cuya descripción contenga (separar con coma)', 'text', null, true]].map(campo).join('');
-  $('#prPlano').innerHTML = [['co', 'Centro de operación (CO)', 'text'], ['bodega', 'Código de bodega', 'text'], ['tipoSal', 'Tipo doc. salidas', 'text'], ['tipoEnt', 'Tipo doc. entradas', 'text'], ['motSal', 'Motivo salidas', 'text'], ['motEnt', 'Motivo entradas', 'text'], ['un', 'Unidad de negocio', 'text'], ['estado', 'Estado del documento', 'sel', [['0', '0 = En elaboración'], ['1', '1 = Aprobado']]], ['num', 'Número de documento (salidas)', 'num'], ['fecha', 'Fecha del documento (vacío = fecha del inventario)', 'date'], ['ffmt', 'Formato de fecha', 'sel', [['AAAAMMDD', 'AAAAMMDD'], ['DD/MM/AAAA', 'DD/MM/AAAA'], ['AAAA-MM-DD', 'AAAA-MM-DD']]], ['notas', 'Notas del documento', 'text', null, true]].map(campo).join('');
-  $('#prAcc').innerHTML = (SERVIDOR_FIJO ? '<p class="note full" style="margin:0">Servidor compartido fijo en el archivo (Google Apps Script). La clave del centro de control se define en el script del servidor, no aquí.</p>' : '') + [['clave', 'Clave del centro de control', 'text'], ['empresa', 'Empresa', 'text'], ['servidor', 'URL del servidor compartido (vacío = modo local en este equipo)', 'text', null, true], ['firma1n', 'Firma 1 · nombre', 'text'], ['firma1c', 'Firma 1 · cargo', 'text'], ['firma2n', 'Firma 2 · nombre', 'text'], ['firma2c', 'Firma 2 · cargo', 'text'], ['firma3n', 'Firma 3 · nombre', 'text'], ['firma3c', 'Firma 3 · cargo', 'text']].filter(f => !(SERVIDOR_FIJO && (f[0] === 'clave' || f[0] === 'servidor'))).map(campo).join('');
+    ['r3Crit', 'Qué pasa a la ronda 3', 'sel', [['teo', 'Ítems cuyo conteo 2 sigue distinto a la existencia'], ['c1', 'Ítems cuyo conteo 2 es distinto al conteo 1']]],
+    ['excluir', 'Inactivos: marcas en la descripción, separadas con coma (con * = comienzo de palabra). Sin existencia quedan fuera; con existencia se cuentan', 'text', null, true]].map(campo).join('') +
+    '<p class="note full" style="margin:0">Reglas fijas: nada queda sin contar (un 0 es un conteo y la ronda no cierra con pendientes) y la cantidad definitiva de cada ítem es su último conteo.</p>';
+  $('#prPlano').innerHTML = '<p class="note full" style="margin:0 0 4px"><b>Conteo físico (principal):</b></p>' + [['cia', 'Compañía en SIESA', 'num'], ['itemLen', 'Dígitos del ítem en SIESA (se completan con ceros; 0 = sin completar)', 'num'], ['bodega', 'Bodega si la consulta no la trae', 'text']].map(campo).join('') + '<p class="note full" style="margin:8px 0 4px"><b>Ajuste por diferencias (otro formato):</b></p>' + [['co', 'Centro de operación (CO)', 'text'], ['bodega', 'Código de bodega', 'text'], ['tipoSal', 'Tipo doc. salidas', 'text'], ['tipoEnt', 'Tipo doc. entradas', 'text'], ['motSal', 'Motivo salidas', 'text'], ['motEnt', 'Motivo entradas', 'text'], ['un', 'Unidad de negocio', 'text'], ['estado', 'Estado del documento', 'sel', [['0', '0 = En elaboración'], ['1', '1 = Aprobado']]], ['num', 'Número de documento (salidas)', 'num'], ['fecha', 'Fecha del documento (vacío = fecha del inventario)', 'date'], ['ffmt', 'Formato de fecha', 'sel', [['AAAAMMDD', 'AAAAMMDD'], ['DD/MM/AAAA', 'DD/MM/AAAA'], ['AAAA-MM-DD', 'AAAA-MM-DD']]], ['notas', 'Notas del documento', 'text', null, true]].map(campo).join('');
+  $('#prAcc').innerHTML = '<p class="note full" style="margin:0">Servidor compartido fijo en el archivo (Google Apps Script). La clave del centro de control se define en el script del servidor, no aquí.</p>' + ([['empresa', 'Empresa', 'text'], ['firma1n', 'Firma 1 · nombre', 'text'], ['firma1c', 'Firma 1 · cargo', 'text'], ['firma2n', 'Firma 2 · nombre', 'text'], ['firma2c', 'Firma 2 · cargo', 'text'], ['firma3n', 'Firma 3 · nombre', 'text'], ['firma3c', 'Firma 3 · cargo', 'text']]).map(campo).join('');
   $$('#v-params [data-p]').forEach(el => el.addEventListener('change', () => { const k = el.dataset.p; P[k] = el.type === 'checkbox' ? el.checked : el.type === 'number' ? (el.value === '' ? 0 : +el.value) : el.value; saveP(); if (k === 'servidor') { toast('Recargue la página para conectar con el servidor.'); } calcular(); renderTop(); renderFirmas(); }));
 };
 
@@ -2313,30 +2682,57 @@ function wirePortada() { $$('[data-go-portada]').forEach(b => b.onclick = () => 
 $('#goConteo').onclick = () => { location.hash = '#conteo'; pantalla('op'); opIniciar(); };
 $('#goControl').onclick = () => { if (sessionStorage.getItem('agro_ctl_ok') === '1') return entrarControl(); location.hash = '#control'; pantalla('gate'); $('#gateKey').value = ''; $('#gateMsg').hidden = true; setTimeout(() => $('#gateKey').focus(), 50); };
 $('#gateOk').onclick = async () => {
-  const k = $('#gateKey').value.trim(), msg = $('#gateMsg'); msg.hidden = true;
-  if (SYNC.modo === 'remoto') {   // la clave vive en el servidor: se verifica allá
-    busy(true, 'Verificando clave…');
-    try { const r = await fetch(P.servidor, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ accion: 'pull', clave: k }) }); const j = await r.json(); busy(false);
-      if (j && j.error) { msg.textContent = j.error; msg.hidden = false; return; }
-      P.clave = k; ST.set('p', P); sessionStorage.setItem('agro_ctl_ok', '1'); entrarControl(); }
-    catch (e) { busy(false); msg.textContent = 'Sin conexión con el servidor: ' + (e.message || e); msg.hidden = false; }
-    return;
-  }
-  if (k === String(P.clave || '2026')) { sessionStorage.setItem('agro_ctl_ok', '1'); entrarControl(); } else { msg.textContent = 'Clave incorrecta.'; msg.hidden = false; }
+  const k = $('#gateKey').value.trim(), msg = $('#gateMsg'); msg.hidden = true; if (!k) return;
+  busy(true, 'Verificando clave…');
+  const antes = P.clave; P.clave = k;
+  try { await SYNC.login(k); busy(false); ST.set('p', P); sessionStorage.setItem('agro_ctl_ok', '1'); entrarControl(); }
+  catch (e) { busy(false); P.clave = antes; msg.textContent = /clave/i.test(e.message || '') ? e.message : (e.servidor ? e.message : 'Sin conexión con el servidor: ' + (e.message || e)); msg.hidden = false; }
 };
 $('#gateKey').addEventListener('keydown', e => { if (e.key === 'Enter') $('#gateOk').click(); });
-let CTL_ON = false;
+
+/* ---------- Centro de control en vivo: una foto al entrar y luego solo lo nuevo cada pocos segundos ---------- */
+let CTL_TIMER = null, CTL_BUSY = false, CTL_FALLOS = 0;
 async function entrarControl() {
-  let d; busy(true, 'Conectando con el servidor…');
+  busy(true, 'Conectando con el servidor…');
+  let d;
   try { d = await SYNC.pull(); busy(false); }
-  catch (e) { busy(false); sessionStorage.removeItem('agro_ctl_ok'); location.hash = '#control'; pantalla('gate'); $('#gateMsg').textContent = e.message || String(e); $('#gateMsg').hidden = false; return; }
+  catch (e) { busy(false); if (/clave/i.test(e.message || '')) sessionStorage.removeItem('agro_ctl_ok'); location.hash = '#control'; pantalla('gate'); $('#gateMsg').textContent = e.message || String(e); $('#gateMsg').hidden = false; return; }
   location.hash = '#control'; pantalla('ctl');
-  DB = Object.assign(DB_VACIA(), d); calcular(); renderFirmas();
+  cargarFoto(d); calcular(); renderFirmas(); VIVO.ok = true; VIVO.ts = Date.now();
   mostrar(ST.get('vista', 'inicio')); renderTodo();
-  if (!CTL_ON) { CTL_ON = true;
-    SYNC.onChange(async () => { if (PANT.ctl.hidden) return; const ae = document.activeElement; if (ae && /INPUT|SELECT|TEXTAREA/.test(ae.tagName) && ae.closest('#v-params,#v-rondas')) return; DB = Object.assign(DB_VACIA(), await SYNC.pull()); calcular(); renderTodo(); });
-  }
+  clearTimeout(CTL_TIMER); CTL_TIMER = setTimeout(ctlCiclo, 5000);
 }
+async function ctlCiclo() {
+  await ctlRefrescar();
+  const espera = CTL_FALLOS ? Math.min(30000, 5000 * 2 ** Math.min(3, CTL_FALLOS)) : 5000;
+  CTL_TIMER = setTimeout(ctlCiclo, espera);
+}
+async function ctlRefrescar() {
+  if (PANT.ctl.hidden || CTL_BUSY || document.hidden) return; CTL_BUSY = true;
+  try {
+    if (PEND_GUARDAR && !PUSHING) { PEND_GUARDAR = false; try { await guardarServidor({ inv: DB.inv, asig: DB.asig, ops: DB.ops }); toast('Cambios pendientes guardados en el servidor.'); } catch (e) { PEND_GUARDAR = true; throw e; } }
+    const gen = PUSH_GEN;
+    const d = await SYNC.pullDelta(DB.ver, DB.iver, DB.fila);
+    if (d.reinicio) { cargarFoto(await SYNC.pull()); calcular(); renderVivo(); return; }
+    const limpio = gen === PUSH_GEN && !PUSHING;      // si hubo un cambio propio mientras tanto, del estado manda lo local
+    const cambio = aplicarDelta(d, limpio);
+    CTL_FALLOS = 0; VIVO.ok = true; VIVO.ts = Date.now(); VIVO.msg = '';
+    if (cambio) { calcular(); renderVivo(); } else marcarVivo();
+  } catch (e) { CTL_FALLOS++; VIVO.ok = false; VIVO.msg = e.message || String(e); marcarVivo(); console.warn('Centro de control sin conexión', e); }
+  finally { CTL_BUSY = false; }
+}
+function marcarVivo() { renderTop(); const t = $('#t_info'); if (t && VISTA === 'tablero' && R) t.textContent = `${NOMR[T_R] || ''} · actualizado ${fmtHs(VIVO.ts)}`; }
+/** Repinta la vista abierta sin perder la posición de lectura, y sin interrumpir a quien está escribiendo o eligiendo. */
+function renderVivo() {
+  const ae = document.activeElement;
+  if (ae && /INPUT|SELECT|TEXTAREA/.test(ae.tagName) && ae.closest('#v-params,#v-rondas,#v-planos,#modal')) { renderTop(); return; }
+  if (!$('#modal').hidden) { renderTop(); return; }
+  const vista = $('#v-' + VISTA), scr = vista ? [...vista.querySelectorAll('.tbl-wrap')].map(w => [w.closest('[id]') && w.closest('[id]').id, w.scrollTop, w.scrollLeft]) : [], y = window.scrollY;
+  renderTodo();
+  scr.forEach(([id, t, l]) => { const host = id && document.getElementById(id), w = host && host.querySelector('.tbl-wrap'); if (w) { w.scrollTop = t; w.scrollLeft = l; } });
+  window.scrollTo(0, y);
+}
+document.addEventListener('visibilitychange', () => { if (!document.hidden && !PANT.ctl.hidden) ctlRefrescar(); });
 $$('[data-ic]').forEach(el => { if (!el.innerHTML.trim()) el.innerHTML = ARK.svg(el.dataset.ic); });
 wirePortada();
 (function arrancar() {
